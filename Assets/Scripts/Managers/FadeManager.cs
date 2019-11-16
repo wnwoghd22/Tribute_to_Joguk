@@ -1,0 +1,105 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class FadeManager : MonoBehaviour
+{
+    [SerializeField]
+    private Image white;
+    [SerializeField]
+    private Image black;
+    private Color color;
+
+    private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
+
+    public void FadeOut(float _speed)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeOutCoroutine(_speed));
+    }
+    IEnumerator FadeOutCoroutine(float _speed)
+    {
+        color = black.color;
+
+        while (color.a < 1f)
+        {
+            color.a += _speed;
+            black.color = color;
+            yield return waitTime;
+        }
+    }
+    public void FadeIn(float _speed)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeInCoroutine(_speed));
+    }
+    IEnumerator FadeInCoroutine(float _speed)
+    {
+        black.
+        color = black.color;
+
+        while (color.a > 0f)
+        {
+            color.a -= _speed;
+            black.color = color;
+            yield return waitTime;
+        }
+    }
+
+    public void Flash(float _speed)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FlashCoroutine(_speed));
+    }
+    IEnumerator FlashCoroutine(float _speed)
+    {
+        color = white.color;
+
+        while (color.a < 1f)
+        {
+            color.a += _speed;
+            white.color = color;
+            yield return waitTime;
+        }
+        while (color.a > 0f)
+        {
+            color.a -= _speed;
+            white.color = color;
+            yield return waitTime;
+        }
+    }
+
+    public void FlashOut(float _speed)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FlashOutCoroutine(_speed));
+    }
+    IEnumerator FlashOutCoroutine(float _speed)
+    {
+        color = white.color;
+
+        while (color.a < 1f)
+        {
+            color.a += _speed;
+            white.color = color;
+            yield return waitTime;
+        }
+    }
+    public void FlashIn(float _speed)
+    {
+        StopAllCoroutines();
+        StartCoroutine(FlashInCoroutine(_speed));
+    }
+    IEnumerator FlashInCoroutine(float _speed)
+    {
+        color = white.color;
+
+        while (color.a > 0f)
+        {
+            color.a -= _speed;
+            white.color = color;
+            yield return waitTime;
+        }
+    }
+}
