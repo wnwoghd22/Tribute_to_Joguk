@@ -155,7 +155,7 @@ public class ChoiceManager : MonoBehaviour, Manager
             {
                 ui.PlaySound(keySound);
                 
-                ui.SetBase();
+                ui.ExitState();
                 keyInput = false;
             }
         }

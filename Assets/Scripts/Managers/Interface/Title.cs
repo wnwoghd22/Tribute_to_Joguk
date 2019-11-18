@@ -145,7 +145,7 @@ public class Title : MonoBehaviour, Manager
                 else if (Input.GetKeyDown(KeyCode.Z))
                 {
                     ui.PlaySound(clickSound);
-                    ui.SetBase();
+                    ui.ExitState();
                     if (result)
                         StartGame();
                     else
