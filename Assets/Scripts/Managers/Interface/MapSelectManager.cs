@@ -127,12 +127,12 @@ public class MapSelectManager : MonoBehaviour, Manager
             }
             else if (Input.GetKeyDown(KeyCode.Z))
             {
-                ui.SetBase();
+                ui.ExitState();
             }
             else if (Input.GetKeyDown(KeyCode.C))
             {
                 result = current;
-                ui.SetBase();
+                ui.ExitState();
             }
         }
     }

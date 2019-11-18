@@ -27,6 +27,7 @@ public class UI : MonoBehaviour
     private FadeManager theFM;
     private AudioManager theAM;
     private DialogManager theDM;
+    private TestimonyManager theTM;
     private ChoiceManager theCM;
     private MapSelectManager theMM;
 
@@ -48,9 +49,31 @@ public class UI : MonoBehaviour
         currentManager = _manager;
         currentManager.Enter(this);
     }
-    public void SetBase()
+
+    public enum StateStack
+    {
+        BaseManager,
+        Testimony,
+    }
+    public StateStack stateStack { get; private set; }
+    public void SetTestimony(bool _b)
+    {
+        stateStack = _b ? StateStack.Testimony : StateStack.BaseManager;
+    }
+    private void SetBase()
     {
         ChangeManager(theB);
+    }
+    private void BackToTestimony()
+    {
+        ChangeManager(theTM);
+    }
+    public void ExitState()
+    {
+        if (stateStack == StateStack.BaseManager)
+            SetBase();
+        else if (stateStack == StateStack.Testimony)
+            BackToTestimony();
     }
 
     // Start is called before the first frame update
@@ -61,6 +84,7 @@ public class UI : MonoBehaviour
         theAM = FindObjectOfType<AudioManager>();
         theCM = FindObjectOfType<ChoiceManager>();
         theDM = FindObjectOfType<DialogManager>();
+        theTM = FindObjectOfType<TestimonyManager>();
 
         theFM = FindObjectOfType<FadeManager>();
         theIV = FindObjectOfType<Inventory>();
@@ -226,6 +250,15 @@ public class UI : MonoBehaviour
     {
         theIV.GetItem(_itemID, _c);
     }
+    #endregion
+
+    #region Testimony
+    private int testimony_count;
+    public void ReturnToTestimony(int _count)
+    {
+        
+    }
+
     #endregion
 
     #region Title

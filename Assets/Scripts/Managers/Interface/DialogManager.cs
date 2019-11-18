@@ -166,7 +166,7 @@ public class DialogManager : MonoBehaviour, Manager
                 if (count == listSentences.Count)
                 {
                     StopAllCoroutines();
-                    ui.SetBase();
+                    ui.ExitState();
                 }
                 else
                 {

@@ -37,15 +37,13 @@ public class Inventory : MonoBehaviour, Manager
 
     private int page; //페이지
     private int slotCount; //활성화된 슬롯 수
-    private const int MAX_SLOTS_COUNT = 9; //최대 슬롯 수
+    private const int MAX_SLOTS_COUNT = 8; //최대 슬롯 수
     
     private Activated currentActivated;
     private enum Activated
     {
         Tab,
         Item,
-        Tab_court,
-        Item_court,
     }
     private bool stopKeyInput = false;
     private bool preventExc;
@@ -224,7 +222,7 @@ public class Inventory : MonoBehaviour, Manager
                 case Activated.Tab:
                     if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.X) && !preventExc)
                     {
-                        ui.SetBase();
+                        ui.ExitState();
                     }
                     else if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
@@ -259,7 +257,7 @@ public class Inventory : MonoBehaviour, Manager
                 case Activated.Item:
                     if (Input.GetKeyDown(KeyCode.I))
                     {
-                        ui.SetBase();
+                        ui.ExitState();
                     }
                     else if (Input.GetKeyDown(KeyCode.X))
                     {
@@ -369,6 +367,10 @@ public class Inventory : MonoBehaviour, Manager
                             currentActivated = Activated.Tab;
                             ShowTab();
                         }
+                    else if (Input.GetKeyDown(KeyCode.Z))
+                    {
+                        //if(ui.)
+                    }
                     break; //아이템 활성화 시
             }
             if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow)) //중복 실행 방지

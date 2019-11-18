@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Managers\Interface\Inventory.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Manager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\MapSelectManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\Interface\Testimony.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Title.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\UI.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveLoad.cs" />
