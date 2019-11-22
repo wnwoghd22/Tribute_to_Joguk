@@ -9,6 +9,7 @@ public class Dialog
     {
         public string sentence;
         public string name;
+        public emotion emotion;
     }
     public enum emotion
     {

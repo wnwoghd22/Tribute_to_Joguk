@@ -6,6 +6,9 @@ public abstract class CourtScene : Event
 {
     private TestimonyManager theTM;
     protected Testimony testimony;
+    [SerializeField]
+    protected Event[] interrogations;
+    protected Dialog backToTheFirst;
 
     protected void Testimony()
     {
@@ -21,6 +24,7 @@ public abstract class CourtScene : Event
     {
         base.Start();
         theTM = FindObjectOfType<TestimonyManager>();
+        theTM.SetEvents(interrogations);
     }
 
     // Update is called once per frame

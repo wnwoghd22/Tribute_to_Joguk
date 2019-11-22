@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TestimonyManager : MonoBehaviour, Manager
 {
     private bool keyActivated = false;
-    private int count = 0;
+    private int count = -1;
     public int Count { get => count; }
 
     [SerializeField]
@@ -15,6 +15,13 @@ public class TestimonyManager : MonoBehaviour, Manager
     private Text text_middle;
     public SpriteRenderer rendererSprite;
 
+    private List<Event> events;
+    public void SetEvents(Event[] _events)
+    {
+        for (int i = 0; i < _events.Length; i++)
+            events.Add(_events[i]);
+    }
+    private string description;
     private List<string> listSentences;
     private List<Dialog.emotion> listEmotion;
     private int logNum; //정답 조회용
@@ -25,9 +32,9 @@ public class TestimonyManager : MonoBehaviour, Manager
 
     public string typesound;
     public string entersound;
-
-    private bool onlyText = false;
+    
     private UI ui;
+    private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
 
     public void Enter(UI _ui)
     {
@@ -44,7 +51,12 @@ public class TestimonyManager : MonoBehaviour, Manager
     }
     private void AssignTestimony(Testimony _testimony) //심문 내용 넣기
     {
-
+        description = _testimony.name;
+        for (int i = 0; i < _testimony.testimony.infos.Length; i++)
+        {
+            listSentences[i] = _testimony.testimony.infos[i].sentence;
+            listEmotion[i] = _testimony.testimony.infos[i].emotion;
+        }
     }
     private void ClearTestimony() //심문 종료, 모든 변수 초기화
     {
@@ -74,15 +86,14 @@ public class TestimonyManager : MonoBehaviour, Manager
                 else
                 {
                     StopAllCoroutines();
-                    if (onlyText)
-                        StartCoroutine(StartTextCoroutine());
-                    else
-                        StartCoroutine(StartDialogueCoroutine());
+                    StartCoroutine(StartTextCoroutine());
                 }
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-
+                //심문...?
+                //잠깐! 대사 띄우기
+                ui.GetEvent(events[count]);
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -105,8 +116,6 @@ public class TestimonyManager : MonoBehaviour, Manager
 
     public void ShowText(string[] _sentences)
     {
-        onlyText = true;
-
         for (int i = 0; i < _sentences.Length; i++)
         {
             listSentences.Add(_sentences[i]);
@@ -114,47 +123,27 @@ public class TestimonyManager : MonoBehaviour, Manager
 
         StartCoroutine(StartTextCoroutine());
     }
-    public void ShowDialogue(Dialog dialogue)
+    IEnumerator StartInterrogationCoroutine()
     {
-        onlyText = false;
+        keyActivated = false;
 
-        for (int i = 0; i < dialogue.infos.Length; i++)
+        //심문개시 글자 애니메이션 띄우기
+
+        for (int i = 0; i < description.Length; i++)
         {
-            listSentences.Add(dialogue.infos[i].sentence);
-        }
-        Character.SetBool("Appear", true);
-        Dialog.SetBool("Appear", true);
-
-        StartCoroutine(StartDialogueCoroutine());
-
-    }
-
-    IEnumerator StartDialogueCoroutine()
-    {
-        if (count > 0)
-        {
-            if (listEmotion[count] != listEmotion[count - 1])
-            {
-                Character.SetBool("Change", true);
-                yield return new WaitForSeconds(0.1f);
-
-                //rendererSprite.sprite = listEmotion[count];
-                Character.SetBool("Change", false);
-            }
-        }
-
-        keyActivated = true;
-
-        for (int i = 0; i < listSentences[count].Length; i++)
-        {
-            text.text += listSentences[count][i];
+            text_middle.text += description[i];
             if (i % 7 == 1)
             {
                 ui.PlaySound(entersound);
             }
-            yield return new WaitForSeconds(0.01f);
+            yield return waitTime;
         }
+
+        text_middle.text = "";
+
+        yield return waitTime;
     }
+
     IEnumerator StartTextCoroutine()
     {
         keyActivated = true;
@@ -166,7 +155,7 @@ public class TestimonyManager : MonoBehaviour, Manager
             {
                 ui.PlaySound(entersound);
             }
-            yield return new WaitForSeconds(0.01f);
+            yield return waitTime;
         }
     }
     // Start is called before the first frame update
