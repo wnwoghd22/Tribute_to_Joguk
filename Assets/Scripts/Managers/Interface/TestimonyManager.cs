@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
-public class Testimony
-{
-    public string name;
-    public Dialog testimony;
-    public int logCount;
-    public int itemID;
-}
 public class TestimonyManager : MonoBehaviour, Manager
 {
     private bool keyActivated = false;
@@ -27,13 +19,13 @@ public class TestimonyManager : MonoBehaviour, Manager
     private List<Dialog.emotion> listEmotion;
     private int logNum; //정답 조회용
     private int ItemID; //정답 조회용
-        
+
     public Animator Character;
     public Animator Dialog;
 
     public string typesound;
     public string entersound;
-    
+
     private bool onlyText = false;
     private UI ui;
 
@@ -86,11 +78,11 @@ public class TestimonyManager : MonoBehaviour, Manager
                         StartCoroutine(StartTextCoroutine());
                     else
                         StartCoroutine(StartDialogueCoroutine());
-                }                   
-            }  
+                }
+            }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                
+
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -100,14 +92,14 @@ public class TestimonyManager : MonoBehaviour, Manager
                     //다음 대사
                 }
             }
-            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 if (count > 0)
                 {
                     count--;
                     //이전 대사
                 }
-            }           
+            }
         }
     }
 
@@ -180,12 +172,12 @@ public class TestimonyManager : MonoBehaviour, Manager
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -1582,6 +1582,7 @@ GameObject:
   - component: {fileID: 861080868}
   - component: {fileID: 861080867}
   - component: {fileID: 861080866}
+  - component: {fileID: 861080873}
   - component: {fileID: 861080865}
   - component: {fileID: 861080864}
   - component: {fileID: 861080863}
@@ -1720,9 +1721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642510bc43232694a860afee254117a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  text: {fileID: 1347903290}
   rendererSprite: {fileID: 0}
-  whoIs: {fileID: 0}
+  whoIs: {fileID: 1823395394}
   Character: {fileID: 0}
   Dialog: {fileID: 0}
   typesound: typesound
@@ -1850,6 +1851,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &861080873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861080861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac8ff549da30c54c87ba5b426ea59f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1456579114}
+  text_middle: {fileID: 1714158607}
+  rendererSprite: {fileID: 0}
+  Character: {fileID: 0}
+  Dialog: {fileID: 0}
+  typesound: 
+  entersound: 
 --- !u!1001 &867248749
 PrefabInstance:
   m_ObjectHideFlags: 0

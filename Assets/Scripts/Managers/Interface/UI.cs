@@ -95,6 +95,8 @@ public class UI : MonoBehaviour
         title = FindObjectOfType<Title>();
         @event = null;
         @map = null;
+
+        //\if(FindObjectOfType<Event>().)
     }
 
     // Update is called once per frame
