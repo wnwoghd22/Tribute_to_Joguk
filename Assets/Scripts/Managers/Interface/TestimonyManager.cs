@@ -3,26 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestimonyManager : MonoBehaviour, Manager
+public partial class TestimonyManager : MonoBehaviour, Manager
 {
-    private bool keyActivated = false;
-    private int count = -1;
-    public int Count { get => count; }
+    private bool keyActivated = false; //입력 가능 상태인가?
+    private int count = -1; //증언이 몇 번째 장면인가?
+    public int GetCount()
+    {
+        return GetCount();
+    }
+    public void NextCount()
+    {
+        if(0 <= count || count <= listSentences.Count)
+            count++;
+        else if(count == listSentences.Count)
+            count = 0;
+    }
+
+    public enum InputState
+    {
+        interrogate,
+        objection,
+        testimony,
+        back_to_zero,
+    }
+    private InputState state;
+    public InputState GetState()
+    {
+        return state;
+    }
 
     [SerializeField]
     private Text text;
     [SerializeField]
     private Text text_middle;
     public SpriteRenderer rendererSprite;
-
-    private List<Event> events;
-    public void SetEvents(Event[] _events)
-    {
-        for (int i = 0; i < _events.Length; i++)
-            events.Add(_events[i]);
-    }
-    private string description;
-    private List<string> listSentences;
+    
+    private string description; //진입 시, ~증언 내용~
+    private List<string> listSentences; //증언 내용
     private List<Dialog.emotion> listEmotion;
     private int logNum; //정답 조회용
     private int ItemID; //정답 조회용
@@ -39,7 +56,11 @@ public class TestimonyManager : MonoBehaviour, Manager
     public void Enter(UI _ui)
     {
         ui = _ui;
-        if (count == -1)
+        if (count == -1) //완전히 새로운 심문에 진입했을 때
+        {
+            //assign?
+        }
+        else //추궁, 이의 제기 후 다시 진입할 때
         {
 
         }
@@ -51,18 +72,19 @@ public class TestimonyManager : MonoBehaviour, Manager
     }
     private void AssignTestimony(Testimony _testimony) //심문 내용 넣기
     {
-        description = _testimony.name;
-        for (int i = 0; i < _testimony.testimony.infos.Length; i++)
+        description = _testimony.testimony.name;
+        for (int i = 0; i < _testimony.testimony.sentence.Length; i++)
         {
-            listSentences[i] = _testimony.testimony.infos[i].sentence;
-            listEmotion[i] = _testimony.testimony.infos[i].emotion;
+            listSentences.Add(_testimony.testimony.sentence[i]);
+            listEmotion.Add(_testimony.testimony._emotion[i]);
         }
     }
     private void ClearTestimony() //심문 종료, 모든 변수 초기화
     {
 
-        count = 0;
+        count = -1;
         listSentences.Clear();
+        listEmotion.Clear();
         Character.SetBool("Appear", false);
         Dialog.SetBool("Appear", false);
     }
@@ -82,46 +104,47 @@ public class TestimonyManager : MonoBehaviour, Manager
                     StopAllCoroutines();
                     //ui.SetBase(); 
                     //확인 대사 후 첫번째부터
+                    state = InputState.back_to_zero; //상태전이, count를 0으로 초기화하고 다시 돌아감.
                 }
                 else
                 {
                     StopAllCoroutines();
-                    StartCoroutine(StartTextCoroutine());
+                    StartCoroutine(StartTextCoroutine(count));
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Q))
+            if(count >= 0)
             {
-                //심문...?
-                //잠깐! 대사 띄우기
-                ui.GetEvent(events[count]);
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                if (count < listSentences.Count - 1)
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    count++;
-                    //다음 대사
+                    //심문...?
+                    //잠깐! 대사 띄우기
+                    state = InputState.interrogate; //상태전이, 대사를 완료하고 count++
                 }
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                if (count > 0)
+                if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    count--;
-                    //이전 대사
+                    if (count < listSentences.Count - 1)
+                    {
+                        count++;
+                        //다음 대사
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    if (count > 0)
+                    {
+                        count--;
+                        //이전 대사
+                    }
                 }
             }
         }
     }
 
-    public void ShowText(string[] _sentences)
+    public void ShowText(int _c)
     {
-        for (int i = 0; i < _sentences.Length; i++)
-        {
-            listSentences.Add(_sentences[i]);
-        }
-
-        StartCoroutine(StartTextCoroutine());
+        if (_c == -1)
+            StartCoroutine(StartInterrogationCoroutine());
+        StartCoroutine(StartTextCoroutine(_c));
     }
     IEnumerator StartInterrogationCoroutine()
     {
@@ -143,14 +166,13 @@ public class TestimonyManager : MonoBehaviour, Manager
 
         yield return waitTime;
     }
-
-    IEnumerator StartTextCoroutine()
+    IEnumerator StartTextCoroutine(int _c)
     {
         keyActivated = true;
 
-        for (int i = 0; i < listSentences[count].Length; i++)
+        for (int i = 0; i < listSentences[_c].Length; i++)
         {
-            text.text += listSentences[count][i];
+            text.text += listSentences[_c][i];
             if (i % 7 == 1)
             {
                 ui.PlaySound(entersound);
@@ -158,15 +180,15 @@ public class TestimonyManager : MonoBehaviour, Manager
             yield return waitTime;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
+    //// Start is called before the first frame update
+    //void Start()
+    //{
 
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
 
-    }
+    //}
 }

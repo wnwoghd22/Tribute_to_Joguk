@@ -71,10 +71,10 @@ public class DialogManager : MonoBehaviour, Manager
     {
         onlyText = false;
 
-        for ( int i=0; i < dialogue.infos.Length; i++)
+        for ( int i=0; i < dialogue.sentence.Length; i++)
         {
-            listSentences.Add(dialogue.infos[i].sentence);
-            listName.Add(dialogue.infos[i].name);
+            listSentences.Add(dialogue.sentence[i]);
+            listName.Add(dialogue._name[i]);
         }
         Character.SetBool("Appear", true);
         Dialog.SetBool("Appear", true);

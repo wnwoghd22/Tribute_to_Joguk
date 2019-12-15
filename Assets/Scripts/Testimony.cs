@@ -6,7 +6,6 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Testimony
 {
-    public string name;
     public Dialog testimony;
     public int logCount;
     public int itemID;

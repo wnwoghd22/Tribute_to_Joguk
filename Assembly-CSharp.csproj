@@ -66,9 +66,11 @@
     <Compile Include="Assets\Scripts\Choice.cs" />
     <Compile Include="Assets\Scripts\Dialog.cs" />
     <Compile Include="Assets\Scripts\Event\CourtScene.cs" />
+    <Compile Include="Assets\Scripts\Event\CourtTest.cs" />
     <Compile Include="Assets\Scripts\Event\Event.cs" />
     <Compile Include="Assets\Scripts\Event\Event1.cs" />
     <Compile Include="Assets\Scripts\Event\Event2.cs" />
+    <Compile Include="Assets\Scripts\Event\TestEvent.cs" />
     <Compile Include="Assets\Scripts\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Assets\Scripts\Managers\Interface\Inventory.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Manager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\MapSelectManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\Interface\State.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\TestimonyManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Title.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\UI.cs" />

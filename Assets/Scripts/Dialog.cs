@@ -5,12 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class Dialog
 {
-    public struct info
-    {
-        public string sentence;
-        public string name;
-        public emotion emotion;
-    }
     public enum emotion
     {
         normal,
@@ -20,10 +14,10 @@ public class Dialog
         doubt,
         interrogate,
         check,
-
     }
 
     public string name;
-    [TextArea(1, 2)]
-    public info[] infos;
+    public string[] sentence;
+    public string[] _name;
+    public emotion[] _emotion;
 }

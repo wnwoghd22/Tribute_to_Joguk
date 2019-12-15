@@ -9,7 +9,21 @@ public class UI : MonoBehaviour
 
     private void Awake()
     {
-        
+        Player = FindObjectOfType<PlayerController>();
+        theB = FindObjectOfType<BaseManager>();
+        theAM = FindObjectOfType<AudioManager>();
+        theCM = FindObjectOfType<ChoiceManager>();
+        theDM = FindObjectOfType<DialogManager>();
+        theTM = FindObjectOfType<TestimonyManager>();
+
+        theFM = FindObjectOfType<FadeManager>();
+        theIV = FindObjectOfType<Inventory>();
+
+        theMM = FindObjectOfType<MapSelectManager>();
+        theBGM = FindObjectOfType<BGMManager>();
+        theCut = FindObjectOfType<ImageCutManager>();
+        title = FindObjectOfType<Title>();
+
         if (instance == null)
         {
             DontDestroyOnLoad(this.gameObject);
@@ -54,6 +68,7 @@ public class UI : MonoBehaviour
     {
         BaseManager,
         Testimony,
+        MapSelect,
     }
     public StateStack stateStack { get; private set; }
     public void SetTestimony(bool _b)
@@ -79,20 +94,6 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = FindObjectOfType<PlayerController>();
-        theB = FindObjectOfType<BaseManager>();
-        theAM = FindObjectOfType<AudioManager>();
-        theCM = FindObjectOfType<ChoiceManager>();
-        theDM = FindObjectOfType<DialogManager>();
-        theTM = FindObjectOfType<TestimonyManager>();
-
-        theFM = FindObjectOfType<FadeManager>();
-        theIV = FindObjectOfType<Inventory>();
-
-        theMM = FindObjectOfType<MapSelectManager>();
-        theBGM = FindObjectOfType<BGMManager>();
-        theCut = FindObjectOfType<ImageCutManager>();
-        title = FindObjectOfType<Title>();
         @event = null;
         @map = null;
 
@@ -255,10 +256,10 @@ public class UI : MonoBehaviour
     #endregion
 
     #region Testimony
-    private int testimony_count;
-    public void ReturnToTestimony(int _count)
+    public void CallTestimony(int _c)
     {
-        
+        ChangeManager(theTM);
+        theTM.ShowText(_c);
     }
 
     #endregion

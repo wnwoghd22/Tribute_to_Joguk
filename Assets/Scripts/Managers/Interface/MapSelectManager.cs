@@ -46,12 +46,12 @@ public class MapSelectManager : MonoBehaviour, Manager
     {
         ui = FindObjectOfType<UI>();
 
-        text.text = "";
-        for ( int i = 0; i < mapList.Length; i++)
-        {
-            mapShape[i].SetActive(false);
-        }
-        keyInput = false;
+        //text.text = "";
+        //for ( int i = 0; i < mapList.Length; i++)
+        //{
+        //    mapShape[i].SetActive(false);
+        //}
+        //keyInput = false;
     }
 
     void Update()

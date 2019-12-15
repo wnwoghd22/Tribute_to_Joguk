@@ -13,7 +13,7 @@ public abstract class Event : MonoBehaviour
 
     private UI EventHandler;
     protected bool flag = false;
-    protected bool isActive = false; //false = start event automatically
+    protected bool isActive = false; //false = start event automatically, 조사용 이벤트인가? 자동 이벤트인가?
     protected WaitForSeconds waitTime = new WaitForSeconds(1f);
 
     // Start is called before the first frame update
@@ -21,8 +21,8 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler = FindObjectOfType<UI>();
     }
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
-    {     
+    protected virtual void OnTriggerEnter2D(Collider2D collision) //조사화면에서 커서를 맞출 때.
+    {
         if (!flag && collision.gameObject.tag == "Player")
         {
             EventHandler.GetEvent(this);
@@ -37,7 +37,12 @@ public abstract class Event : MonoBehaviour
             EventHandler.ClearEvent();
         }
     }
-
+    protected void SetEvent()
+    {
+        EventHandler.GetEvent(this);
+        if (!isActive)
+            EventHandler.StartEvent();
+    }
     public void Excute()
     {
         flag = true;
@@ -52,6 +57,10 @@ public abstract class Event : MonoBehaviour
     protected void StartChoice(Choice _c)
     {
         EventHandler.StartChoice(_c);
+    }
+    protected void CallTestimony(int _i)
+    {
+        EventHandler.CallTestimony(_i);
     }
     protected bool IsExcuting()
     {
@@ -95,7 +104,6 @@ public abstract class Event : MonoBehaviour
         EventHandler.PlayBGM(_track);
     }
 
-
     protected void GetItem(int _itemID, int _count = 1)
     {
         EventHandler.GetItem(_itemID, _count);
@@ -105,5 +113,9 @@ public abstract class Event : MonoBehaviour
     {
 
         Debug.Log("flag" + flag);
+    }
+    protected void NextEvent(Event _e)
+    {
+        _e.SetEvent();
     }
 }
