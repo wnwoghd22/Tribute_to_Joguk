@@ -222,7 +222,7 @@ public class Inventory : MonoBehaviour, Manager
                 case Activated.Tab:
                     if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.X) && !preventExc)
                     {
-                        ui.SetBase();////////////////////////////////////////////////////////////
+                        ui.ExitInventory();////////////////////////////////////////////////////////////
                     }
                     else if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
@@ -257,7 +257,7 @@ public class Inventory : MonoBehaviour, Manager
                 case Activated.Item:
                     if (Input.GetKeyDown(KeyCode.I))
                     {
-                        ui.SetBase();///////////////////////////////////////////////////////
+                        ui.ExitInventory();///////////////////////////////////////////////////////
                     }
                     else if (Input.GetKeyDown(KeyCode.X))
                     {

@@ -178,6 +178,10 @@ public class DialogManager : MonoBehaviour, Manager
                         StartCoroutine(StartDialogueCoroutine());
                 }
             }
+            if(Input.GetKeyDown(KeyCode.W))
+            {
+                ui.GoToInventory();
+            }
         }
     }
     public void Enter(UI _ui)
@@ -186,14 +190,17 @@ public class DialogManager : MonoBehaviour, Manager
     }
     public void Exit(bool _b) //대화 종료, 모든 변수 초기화
     {
-        text.text = "";
-        whoIs.text = "";
-        count = 0;
-        listSentences.Clear();
-        //listSprite.Clear();
-        listName.Clear();
-        //Character.SetBool("Appear", false);
-        Dialog.SetBool("Appear", false);
-        //ui.SetPlayerMove(true);
+        if(_b)
+        {
+            text.text = "";
+            whoIs.text = "";
+            count = 0;
+            listSentences.Clear();
+            //listSprite.Clear();
+            listName.Clear();
+            //Character.SetBool("Appear", false);
+            Dialog.SetBool("Appear", false);
+            //ui.SetPlayerMove(true);
+        }
     }
 }

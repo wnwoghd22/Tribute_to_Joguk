@@ -70,6 +70,7 @@ public class UI : MonoBehaviour
         currentManager = _manager;
         currentManager.Enter(this);
     }
+    private Manager _stack;
 
     public enum StateStack
     {
@@ -214,7 +215,6 @@ public class UI : MonoBehaviour
         return theMM.GetResult();
     }
     #endregion
-
     #region AudioManager
     public void PlaySound(string _name)
     {
@@ -256,10 +256,10 @@ public class UI : MonoBehaviour
     #region Inventory
     public void GoToInventory()
     {
-
-        ChangeManager(theIV);
+        _stack = currentManager;
+        ChangeManager(theIV, false); //상태만 전이
     }
-    public void ReturnItem(Item _item)
+    public void ReturnItem(Item _item) //아이템 제시
     {
         theIV.ReturnItem(_item);
     }
@@ -267,8 +267,11 @@ public class UI : MonoBehaviour
     {
         theIV.GetItem(_itemID, _c);
     }
+    public void ExitInventory()
+    {
+        ChangeManager(_stack);
+    }
     #endregion
-
     #region Testimony
     public void CallTestimony(int _c)
     {
@@ -276,7 +279,6 @@ public class UI : MonoBehaviour
         theTM.ShowText(_c);
     }
     #endregion
-
     #region Title
     public void StartAsTitle()
     {
