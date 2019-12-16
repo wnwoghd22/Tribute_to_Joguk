@@ -10,6 +10,7 @@ public abstract class CourtScene : Event
     protected Testimony testimony;
     private TestimonyManager.InputState GetState() => theTM.GetState();
     private bool IsTestimony() => GetState() == TestimonyManager.InputState.testimony;
+    private bool IsInterrogating;
     [SerializeField]
     protected Dialog backToZero;
 
@@ -28,7 +29,11 @@ public abstract class CourtScene : Event
             switch (GetState())
             {
                 case TestimonyManager.InputState.interrogate:
+                    theTM.HoldTestimony();
+                    ActWait();
+                    IsInterrogating = true;
                     StartCoroutine(InterrogationCoroutine(Count));
+                    yield return new WaitUntil(() => !IsInterrogating);
                     break;
                 case TestimonyManager.InputState.objection:
                     //StartCoroutine 이의제기. 이건 코루틴보다는 조건에 맞는지 확인 후 반환하는 함수가 좋겠다.
@@ -48,6 +53,10 @@ public abstract class CourtScene : Event
 
     protected abstract IEnumerator InterrogationCoroutine(int _i);
     protected abstract IEnumerator ObjectionCoroutine(int _i, int _ID);
+    protected void ExitIterrogation()
+    {
+        IsInterrogating = false;
+    }
 
     // Start is called before the first frame update
     protected override void Start()

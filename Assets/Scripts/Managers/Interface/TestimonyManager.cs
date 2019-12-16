@@ -63,6 +63,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     public void Exit(bool _b = true) //통제권 넘김
     {
         text.text = "";
+        if (_b ==true) Dialog.SetBool("Appear", false);
         //ui.SetPlayerMove(true);
     }
     public void AssignTestimony(Testimony _testimony) //심문 내용 넣기
@@ -83,7 +84,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
         //Character.SetBool("Appear", false);
         Dialog.SetBool("Appear", false);
     }
-    private void HoldTestimony()
+    public void HoldTestimony()
     {
         text.text = "";
         //Character.SetBool("Appear", false);
@@ -148,9 +149,9 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     public void ShowText(int _c)
     {
         if (_c == -1)
-        {
             StartCoroutine(StartInterrogationCoroutine());
-        }
+        else if (_c == listSentences.Count)
+            state = InputState.back_to_zero;
         else
             StartCoroutine(StartTextCoroutine(_c));
     }
@@ -190,15 +191,4 @@ public partial class TestimonyManager : MonoBehaviour, Manager
             yield return waitTime;
         }
     }
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
 }

@@ -196,8 +196,4 @@ public class DialogManager : MonoBehaviour, Manager
         Dialog.SetBool("Appear", false);
         //ui.SetPlayerMove(true);
     }
-    public void ClearDialog()
-    {
-
-    }
 }

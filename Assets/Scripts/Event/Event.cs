@@ -77,6 +77,7 @@ public abstract class Event : MonoBehaviour
     {
         return EventHandler.GetResult();
     }
+
     protected void MoveRight(string _name, int _count = 1)
     {
         EventHandler.Move(true, _count);
@@ -84,6 +85,21 @@ public abstract class Event : MonoBehaviour
     protected void MoveLeft(string _name, int _count = 1)
     {
         EventHandler.Move(false, _count);
+    }
+    protected void ActWait()
+    {
+        //목소리는?
+        EventHandler.Action(0);
+    }
+    protected void ActObjection()
+    {
+        //목소리는?
+        EventHandler.Action(1);
+    }
+    protected void ActTakeThis()
+    {
+        //목소리는?
+        EventHandler.Action(2);
     }
 
     protected void Flash(float _speed = 0.1f)

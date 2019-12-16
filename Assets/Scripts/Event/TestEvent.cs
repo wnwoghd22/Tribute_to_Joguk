@@ -12,6 +12,8 @@ public class TestEvent : Event
 
         FadeOut();
 
+        yield return waitTime;
+
         NextEvent(nextEvent);
     }
     protected override void Start()

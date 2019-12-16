@@ -55,6 +55,13 @@ public class UI : MonoBehaviour
     private Event @event;
     private ChangeMap @map;
 
+    [SerializeField]
+    private Animator act_wait;
+    [SerializeField]
+    private Animator act_objection;
+    [SerializeField]
+    private Animator act_take_this;
+
     private Manager currentManager;
     public void ChangeManager(Manager _manager, bool _b = true)
     {
@@ -99,6 +106,23 @@ public class UI : MonoBehaviour
     public void Move(bool _dir, int _c = 1)
     {
         Player.Move(_dir, _c);
+    }
+    public void Action(int _i)
+    {
+        switch (_i)
+        {
+            case 0:
+                act_wait.SetTrigger("Act");
+                break;
+            case 1:
+                act_objection.SetTrigger("Act");
+                break;
+            case 2:
+                act_take_this.SetTrigger("Act");
+                break;
+            default:
+                break;
+        }
     }
 
     #region Event
