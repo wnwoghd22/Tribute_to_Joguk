@@ -1516,6 +1516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 850266637}
   - component: {fileID: 850266638}
+  - component: {fileID: 850266639}
   m_Layer: 0
   m_Name: Dialogue_box_text_only
   m_TagString: Untagged
@@ -1531,7 +1532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850266636}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7, y: -261.99994, z: -5.000044}
+  m_LocalPosition: {x: -7, y: -262, z: -5.000044}
   m_LocalScale: {x: 300.4167, y: 122.43245, z: 58.60798}
   m_Children:
   - {fileID: 1714158606}
@@ -1587,6 +1588,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &850266639
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850266636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae619fa4cdd99e944bb094804573c087, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &861080861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,7 +1907,7 @@ MonoBehaviour:
   text_middle: {fileID: 1714158607}
   rendererSprite: {fileID: 0}
   Character: {fileID: 0}
-  Dialog: {fileID: 248241379}
+  Dialog: {fileID: 850266639}
   typesound: 
   entersound: 
 --- !u!1001 &867248749
@@ -4689,7 +4709,8 @@ MonoBehaviour:
     testimony:
       name: "~\uC870\uAD6D\uC740 \uACF5\uC0B0\uC8FC\uC758\uC790\uC778\uAC00~"
       sentence:
-      - "~\uC870\uAD6D\uC740 \uACF5\uC0B0\uC8FC\uC758\uC790\uC778\uAC00~"
+      - "\uB9CE\uC740 \uC0AC\uB78C\uB4E4\uC774 \uC800\uB97C \uB0B4\uB85C\uB0A8\uBD88\uC774\uB77C
+        \uB9E4\uB3C4\uD558\uC9C0\uB9CC,"
       - "\uC800\uB294, \uC790\uC720\uC8FC\uC758\uC790\uC785\uB2C8\uB2E4."
       - "\uD558\uC9C0\uB9CC \uACF5\uC0B0\uC8FC\uC758\uC790\uC774\uAE30\uB3C4 \uD558\uC9C0\uC694."
       - "\uC774 \uB458\uC740 \uC591\uB9BD \uAC00\uB2A5\uD569\uB2C8\uB2E4."
@@ -4700,10 +4721,16 @@ MonoBehaviour:
     logCount: 0
     itemID: 0
   backToZero:
-    name: 
-    sentence: []
-    _name: []
-    _emotion: 
+    name: "\uCC98\uC74C\uC73C\uB85C"
+    sentence:
+    - "\uC774 \uC99D\uC5B8, \uC5B4\uB518\uAC00 \uC774\uC0C1\uD574."
+    - "\uC870\uAE08\uB9CC \uB354..."
+    - "\uBC18\uB4DC\uC2DC, \uCC3E\uC544\uB0B4\uB294 \uAC70\uB2E4!"
+    _name:
+    - "\uC774\uB2C8"
+    - "\uC774\uB2C8"
+    - "\uC774\uB2C8"
+    _emotion: 000000000000000000000000
 --- !u!61 &2103695804
 BoxCollider2D:
   m_ObjectHideFlags: 0

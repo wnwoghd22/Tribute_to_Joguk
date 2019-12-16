@@ -10,7 +10,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     public int GetCount() => count;
     public void NextCount()
     {
-        if(0 <= count || count <= listSentences.Count)
+        if(0 <= count && count < listSentences.Count)
             count++;
         else if(count == listSentences.Count)
             count = 0;
@@ -24,10 +24,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
         back_to_zero,
     }
     private InputState state;
-    public InputState GetState()
-    {
-        return state;
-    }
+    public InputState GetState() => state;
 
     [SerializeField]
     private Text text;
@@ -60,6 +57,8 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     public void Enter(UI _ui)
     {
         ui = _ui;
+        state = InputState.testimony;
+        Dialog.SetBool("Appear", true);
     }
     public void Exit() //통제권 넘김
     {
@@ -81,7 +80,13 @@ public partial class TestimonyManager : MonoBehaviour, Manager
         count = -1;
         listSentences.Clear();
         listEmotion.Clear();
-        Character.SetBool("Appear", false);
+        //Character.SetBool("Appear", false);
+        Dialog.SetBool("Appear", false);
+    }
+    private void HoldTestimony()
+    {
+        text.text = "";
+        //Character.SetBool("Appear", false);
         Dialog.SetBool("Appear", false);
     }
     public void HandleInput()
@@ -97,9 +102,9 @@ public partial class TestimonyManager : MonoBehaviour, Manager
 
                 if (count == listSentences.Count)
                 {
-                    StopAllCoroutines();
-                    //ui.SetBase(); 
                     //확인 대사 후 첫번째부터
+                    StopAllCoroutines();                   
+                    HoldTestimony();
                     state = InputState.back_to_zero; //상태전이, count를 0으로 초기화하고 다시 돌아감.
                 }
                 else
@@ -122,6 +127,8 @@ public partial class TestimonyManager : MonoBehaviour, Manager
                     {
                         count++;
                         //다음 대사
+                        StopAllCoroutines();
+                        StartCoroutine(StartTextCoroutine(count));
                     }
                 }
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -130,6 +137,8 @@ public partial class TestimonyManager : MonoBehaviour, Manager
                     {
                         count--;
                         //이전 대사
+                        StopAllCoroutines();
+                        StartCoroutine(StartTextCoroutine(count));
                     }
                 }
             }
@@ -139,12 +148,17 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     public void ShowText(int _c)
     {
         if (_c == -1)
+        {
             StartCoroutine(StartInterrogationCoroutine());
-        StartCoroutine(StartTextCoroutine(_c));
+        }
+        else
+            StartCoroutine(StartTextCoroutine(_c));
     }
     IEnumerator StartInterrogationCoroutine()
     {
         keyActivated = false;
+        text.text = "";
+        text_middle.text = "";
 
         //심문개시 글자 애니메이션 띄우기
 
@@ -157,14 +171,14 @@ public partial class TestimonyManager : MonoBehaviour, Manager
             }
             yield return waitTime;
         }
-
-        text_middle.text = "";
-
         yield return waitTime;
+        keyActivated = true;
     }
     IEnumerator StartTextCoroutine(int _c)
     {
         keyActivated = true;
+        text_middle.text = "";
+        text.text = "";
 
         for (int i = 0; i < listSentences[_c].Length; i++)
         {

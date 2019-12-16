@@ -8,14 +8,8 @@ public abstract class CourtScene : Event
     protected int Count => theTM.GetCount(); //어떤 장면인가?
     [SerializeField]
     protected Testimony testimony;
-    private TestimonyManager.InputState GetState
-    {
-        get { return theTM.GetState(); }
-    }
-    private bool isTestimony()
-    {
-        return GetState != TestimonyManager.InputState.testimony;
-    }
+    private TestimonyManager.InputState GetState() => theTM.GetState();
+    private bool IsTestimony() => GetState() == TestimonyManager.InputState.testimony;
     [SerializeField]
     protected Dialog backToZero;
 
@@ -24,14 +18,14 @@ public abstract class CourtScene : Event
         FadeIn();
 
         StartTestimony(testimony);//할당, 심문개시 글자가 전개되고 진입
-
+  
         while (flag)
         {
             ShowTestimony(Count);
 
-            yield return new WaitUntil(() => !isTestimony()); //입력이 있어 상태가 전이될 때까지 대기.
+            yield return new WaitUntil(() => !IsTestimony()); //입력이 있어 상태가 전이될 때까지 대기.
 
-            switch (GetState)
+            switch (GetState())
             {
                 case TestimonyManager.InputState.interrogate:
                     StartCoroutine(InterrogationCoroutine(Count));
@@ -41,14 +35,15 @@ public abstract class CourtScene : Event
                     break;
                 case TestimonyManager.InputState.back_to_zero:
                     StartDialogue(backToZero);
+                    yield return new WaitUntil(() => !IsExcuting());
                     break;
                 default:
                     break;
             }
-            theTM.NextCount(); //return to testimony. 스택이 필요할까 - 인벤토리(법정기록)을 열었다 닫을 때 필요.
+            theTM.NextCount(); //return to testimony
         }
-
         //다음으로 넘어가기
+        NextEvent(nextEvent);
     }
 
     protected abstract IEnumerator InterrogationCoroutine(int _i);

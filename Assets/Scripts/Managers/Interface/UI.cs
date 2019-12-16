@@ -69,7 +69,7 @@ public class UI : MonoBehaviour
         BaseManager,
         Testimony,
         MapSelect,
-    }
+    }  //스택이 필요할까 - 인벤토리(법정기록)을 열었다 닫을 때 필요.
     public StateStack stateStack { get; private set; }
     public void SetTestimony(bool _b)
     {

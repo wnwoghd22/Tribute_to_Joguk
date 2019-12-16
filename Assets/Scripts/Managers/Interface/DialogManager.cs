@@ -156,7 +156,7 @@ public class DialogManager : MonoBehaviour, Manager
     {
         if (keyActivated)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 keyActivated = false;
                 count++;
