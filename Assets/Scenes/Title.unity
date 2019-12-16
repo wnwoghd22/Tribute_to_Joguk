@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248241378}
   - component: {fileID: 248241377}
+  - component: {fileID: 248241379}
   m_Layer: 0
   m_Name: Dialogue_box
   m_TagString: Untagged
@@ -231,6 +232,25 @@ Transform:
   m_Father: {fileID: 1961720745}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &248241379
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248241376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf90ace55fd47e1458ef8b60dea63872, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &256851927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1745,7 @@ MonoBehaviour:
   rendererSprite: {fileID: 0}
   whoIs: {fileID: 1823395394}
   Character: {fileID: 0}
-  Dialog: {fileID: 0}
+  Dialog: {fileID: 248241379}
   typesound: typesound
   entersound: entersound
 --- !u!114 &861080867
@@ -1867,7 +1887,7 @@ MonoBehaviour:
   text_middle: {fileID: 1714158607}
   rendererSprite: {fileID: 0}
   Character: {fileID: 0}
-  Dialog: {fileID: 0}
+  Dialog: {fileID: 248241379}
   typesound: 
   entersound: 
 --- !u!1001 &867248749

@@ -75,8 +75,9 @@ public class DialogManager : MonoBehaviour, Manager
         {
             listSentences.Add(dialogue.sentence[i]);
             listName.Add(dialogue._name[i]);
+            listEmotion.Add(dialogue._emotion[i]);
         }
-        Character.SetBool("Appear", true);
+        //Character.SetBool("Appear", true);
         Dialog.SetBool("Appear", true);
         
         StartCoroutine(StartDialogueCoroutine());
@@ -91,25 +92,25 @@ public class DialogManager : MonoBehaviour, Manager
             {
                 whoIs.text = "";
 
-                Character.SetBool("Change", true);
+                //Character.SetBool("Change", true);
                 Dialog.SetBool("Appear", false);
                 yield return new WaitForSeconds(0.1f);
 
                 Dialog.SetBool("Appear", true);
                 whoIs.text += listName[count];
 
-                Character.SetBool("Change", false);
+                //Character.SetBool("Change", false);
             }
             else
             {
                 if (listEmotion[count] != listEmotion[count - 1])
                 {
                     whoIs.text += listName[count];
-                    Character.SetBool("Change", true);
+                    //Character.SetBool("Change", true);
                     yield return new WaitForSeconds(0.1f);
 
                     //rendererSprite.sprite = listEmotion[count];
-                    Character.SetBool("Change", false);
+                    //Character.SetBool("Change", false);
                 }
                 else
                 {
@@ -191,7 +192,7 @@ public class DialogManager : MonoBehaviour, Manager
         listSentences.Clear();
         //listSprite.Clear();
         listName.Clear();
-        Character.SetBool("Appear", false);
+        //Character.SetBool("Appear", false);
         Dialog.SetBool("Appear", false);
         //ui.SetPlayerMove(true);
     }

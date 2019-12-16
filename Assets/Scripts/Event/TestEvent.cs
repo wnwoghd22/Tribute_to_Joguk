@@ -10,8 +10,6 @@ public class TestEvent : Event
         StartDialogue(dialogs[0]);
 
         yield return new WaitUntil(() => !IsExcuting());
-
-
     }
     protected override void Start()
     {
