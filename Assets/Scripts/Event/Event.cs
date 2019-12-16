@@ -10,6 +10,8 @@ public abstract class Event : MonoBehaviour
     protected Choice[] choices;
     [SerializeField]
     protected Sprite[] cutImages;
+    [SerializeField]
+    protected Event nextEvent;
 
     private UI EventHandler;
     protected bool flag = false;
@@ -30,7 +32,7 @@ public abstract class Event : MonoBehaviour
                 EventHandler.StartEvent();
         }       
     }
-    protected virtual void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision) //커서가 벗어날 때
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -50,15 +52,20 @@ public abstract class Event : MonoBehaviour
     }
     protected abstract IEnumerator EventCoroutine();
 
-    protected void StartDialogue(Dialog _d)
+    protected void StartDialogue(Dialog _d) //대사 진입.
     {
         EventHandler.StartDialogue(_d);    
     }
-    protected void StartChoice(Choice _c)
+    protected void StartChoice(Choice _c) //선택 분기 진입.
     {
         EventHandler.StartChoice(_c);
     }
-    protected void CallTestimony(int _i)
+    protected void StartTestimony(Testimony _t) //할당 후 개시 글자가 움직이는 애니메이션.
+    {
+        EventHandler.AssignTestimony(_t);
+        //애니메이션 코드를 여기에.
+    }
+    protected void ShowTestimony(int _i)
     {
         EventHandler.CallTestimony(_i);
     }

@@ -7,10 +7,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
 {
     private bool keyActivated = false; //입력 가능 상태인가?
     private int count = -1; //증언이 몇 번째 장면인가?
-    public int GetCount()
-    {
-        return GetCount();
-    }
+    public int GetCount() => count;
     public void NextCount()
     {
         if(0 <= count || count <= listSentences.Count)
@@ -52,25 +49,24 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     
     private UI ui;
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
-
+    // Start is called before the first frame update
+    void Start()
+    {
+        count = -1;
+        text.text = "";
+        listSentences = new List<string>();
+        listEmotion = new List<Dialog.emotion>();
+    }
     public void Enter(UI _ui)
     {
         ui = _ui;
-        if (count == -1) //완전히 새로운 심문에 진입했을 때
-        {
-            //assign?
-        }
-        else //추궁, 이의 제기 후 다시 진입할 때
-        {
-
-        }
     }
     public void Exit() //통제권 넘김
     {
         text.text = "";
         //ui.SetPlayerMove(true);
     }
-    private void AssignTestimony(Testimony _testimony) //심문 내용 넣기
+    public void AssignTestimony(Testimony _testimony) //심문 내용 넣기
     {
         description = _testimony.testimony.name;
         for (int i = 0; i < _testimony.testimony.sentence.Length; i++)

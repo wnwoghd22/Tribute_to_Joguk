@@ -147,6 +147,10 @@ public class UI : MonoBehaviour
         ChangeManager(theCM);
         theCM.ShowChoice(_choice);
     }
+    public void AssignTestimony(Testimony _testimony)
+    {
+        theTM.AssignTestimony(_testimony);
+    }
     public void ChangeCut(Sprite _sprite)
     {
         theCut.ChangeCut(_sprite);

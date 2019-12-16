@@ -5,26 +5,31 @@ using UnityEngine;
 public abstract class CourtScene : Event
 {
     private TestimonyManager theTM;
-    protected int Count
-    {
-        get { return Count; }
-        private set { Count = theTM.GetCount(); }
-    } //어떤 장면인가?
+    protected int Count => theTM.GetCount(); //어떤 장면인가?
+    [SerializeField]
     protected Testimony testimony;
     private TestimonyManager.InputState GetState
     {
         get { return theTM.GetState(); }
     }
+    private bool isTestimony()
+    {
+        return GetState != TestimonyManager.InputState.testimony;
+    }
+    [SerializeField]
     protected Dialog backToZero;
 
     protected override IEnumerator EventCoroutine()
     {
-        //start testimony. 심문개시 글자가 전개되고 진입
+        FadeIn();
+
+        StartTestimony(testimony);//할당, 심문개시 글자가 전개되고 진입
+
         while (flag)
         {
-            CallTestimony(Count);
+            ShowTestimony(Count);
 
-            yield return new WaitUntil(() => GetState != TestimonyManager.InputState.testimony); //입력이 있어 상태가 전이될 때까지 대기.
+            yield return new WaitUntil(() => !isTestimony()); //입력이 있어 상태가 전이될 때까지 대기.
 
             switch (GetState)
             {

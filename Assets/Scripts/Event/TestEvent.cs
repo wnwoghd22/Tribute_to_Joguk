@@ -6,10 +6,13 @@ public class TestEvent : Event
 {
     protected override IEnumerator EventCoroutine()
     {
-        Debug.Log("asdf");
         StartDialogue(dialogs[0]);
 
         yield return new WaitUntil(() => !IsExcuting());
+
+        FadeOut();
+
+        NextEvent(nextEvent);
     }
     protected override void Start()
     {
