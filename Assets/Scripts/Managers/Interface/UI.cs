@@ -56,10 +56,10 @@ public class UI : MonoBehaviour
     private ChangeMap @map;
 
     private Manager currentManager;
-    public void ChangeManager(Manager _manager)
+    public void ChangeManager(Manager _manager, bool _b = true)
     {
         if (currentManager != null)
-            currentManager.Exit();
+            currentManager.Exit(_b);
         currentManager = _manager;
         currentManager.Enter(this);
     }
@@ -70,25 +70,10 @@ public class UI : MonoBehaviour
         Testimony,
         MapSelect,
     }  //스택이 필요할까 - 인벤토리(법정기록)을 열었다 닫을 때 필요.
-    public StateStack stateStack { get; private set; }
-    public void SetTestimony(bool _b)
-    {
-        stateStack = _b ? StateStack.Testimony : StateStack.BaseManager;
-    }
-    private void SetBase()
+    
+    public void SetBase()
     {
         ChangeManager(theB);
-    }
-    private void BackToTestimony()
-    {
-        ChangeManager(theTM);
-    }
-    public void ExitState()
-    {
-        if (stateStack == StateStack.BaseManager)
-            SetBase();
-        else if (stateStack == StateStack.Testimony)
-            BackToTestimony();
     }
 
     // Start is called before the first frame update
@@ -247,6 +232,7 @@ public class UI : MonoBehaviour
     #region Inventory
     public void GoToInventory()
     {
+
         ChangeManager(theIV);
     }
     public void ReturnItem(Item _item)
@@ -265,7 +251,6 @@ public class UI : MonoBehaviour
         ChangeManager(theTM);
         theTM.ShowText(_c);
     }
-
     #endregion
 
     #region Title

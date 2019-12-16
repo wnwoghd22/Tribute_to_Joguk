@@ -60,7 +60,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
         state = InputState.testimony;
         Dialog.SetBool("Appear", true);
     }
-    public void Exit() //통제권 넘김
+    public void Exit(bool _b = true) //통제권 넘김
     {
         text.text = "";
         //ui.SetPlayerMove(true);

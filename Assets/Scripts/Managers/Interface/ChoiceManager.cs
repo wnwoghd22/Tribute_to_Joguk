@@ -155,7 +155,7 @@ public class ChoiceManager : MonoBehaviour, Manager
             {
                 ui.PlaySound(keySound);
                 
-                ui.ExitState();
+                ui.SetBase();
                 keyInput = false;
             }
         }
@@ -164,7 +164,7 @@ public class ChoiceManager : MonoBehaviour, Manager
     {
         ui = _ui;
     }
-    public void Exit()
+    public void Exit(bool _b = true)
     {
         question_Text.text = "";
 

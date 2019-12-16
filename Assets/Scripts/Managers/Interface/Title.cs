@@ -145,7 +145,7 @@ public class Title : MonoBehaviour, Manager
                 else if (Input.GetKeyDown(KeyCode.Z))
                 {
                     ui.PlaySound(clickSound);
-                    ui.ExitState();
+                    ui.SetBase();
                     if (result)
                         StartGame();
                     else
@@ -289,7 +289,7 @@ public class Title : MonoBehaviour, Manager
         }
         Description.text = "아무 키나 누르십시오.";
     }
-    public void Exit()
+    public void Exit(bool _b = true)
     {
         
     }

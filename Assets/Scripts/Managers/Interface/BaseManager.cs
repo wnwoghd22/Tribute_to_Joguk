@@ -11,7 +11,7 @@ public class BaseManager : MonoBehaviour, Manager
         ui = _ui;
         //HUD on
     }
-    public void Exit()
+    public void Exit(bool _b = true)
     {
         //HUD off
     }

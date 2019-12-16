@@ -222,7 +222,7 @@ public class Inventory : MonoBehaviour, Manager
                 case Activated.Tab:
                     if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.X) && !preventExc)
                     {
-                        ui.ExitState();
+                        ui.SetBase();////////////////////////////////////////////////////////////
                     }
                     else if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
@@ -257,7 +257,7 @@ public class Inventory : MonoBehaviour, Manager
                 case Activated.Item:
                     if (Input.GetKeyDown(KeyCode.I))
                     {
-                        ui.ExitState();
+                        ui.SetBase();///////////////////////////////////////////////////////
                     }
                     else if (Input.GetKeyDown(KeyCode.X))
                     {
@@ -387,7 +387,7 @@ public class Inventory : MonoBehaviour, Manager
         currentActivated = Activated.Tab;
         ShowTab();
     }
-    public void Exit()
+    public void Exit(bool _b = true)
     {
         currentActivated = Activated.Tab;
         ui.PlaySound(cancel_sound);
