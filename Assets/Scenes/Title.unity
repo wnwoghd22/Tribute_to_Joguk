@@ -305,9 +305,11 @@ MonoBehaviour:
   cancel_sound: wrong
   open_sound: open
   beep_sound: beep
-  name_text: {fileID: 0}
-  tf_tab: {fileID: 0}
-  tf_item: {fileID: 0}
+  name_text: {fileID: 1248016618}
+  tf_tab: {fileID: 1858560068}
+  tf_item: {fileID: 1104103719}
+  description_Text: {fileID: 340761075}
+  go: {fileID: 1657828936}
 --- !u!1 &340761073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2617,7 @@ GameObject:
   - component: {fileID: 1248016619}
   - component: {fileID: 1248016618}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

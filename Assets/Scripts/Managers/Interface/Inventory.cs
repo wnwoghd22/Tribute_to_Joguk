@@ -35,6 +35,7 @@ public class Inventory : MonoBehaviour, Manager
     [SerializeField]
     private Text description_Text;
 
+    [SerializeField]
     private GameObject go; //인벤토리 창 활성화
     private GameObject goOOC; //선택지 활성화
     //public GameObject prefab_FloatingText;
@@ -44,7 +45,7 @@ public class Inventory : MonoBehaviour, Manager
         item,
         person,
     }
-    private SelectedTab selectedTab; //숫자로 사람과 사물을 구분. 
+    private SelectedTab selectedTab;
     private int page
     {
         get
@@ -418,9 +419,9 @@ public class Inventory : MonoBehaviour, Manager
         ui = _ui;
 
         ui.PlaySound(open_sound);
-        //go.SetActive(true);
-        selectedTab = 0;
-        currentActivated = Activated.Tab;
+        go.SetActive(true);
+        selectedTab = SelectedTab.item;
+        ActivateTab();
         ShowTab();
     }
     public void Exit(bool _b = true)
