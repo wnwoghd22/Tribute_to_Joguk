@@ -8,8 +8,8 @@ public abstract class CourtScene : Event
     protected int Count => theTM.GetCount(); //어떤 장면인가?
     [SerializeField]
     protected Testimony testimony;
-    private TestimonyManager.InputState GetState() => theTM.GetState();
-    private bool IsTestimony() => GetState() == TestimonyManager.InputState.testimony;
+    private TestimonyManager.State GetState() => theTM.GetState();
+    private bool IsTestimony() => GetState() == TestimonyManager.State.testimony;
     private bool IsInterrogating;
     [SerializeField]
     protected Dialog backToZero;
@@ -28,17 +28,17 @@ public abstract class CourtScene : Event
 
             switch (GetState())
             {
-                case TestimonyManager.InputState.interrogate:
+                case TestimonyManager.State.interrogate:
                     theTM.HoldTestimony();
                     ActWait();
                     IsInterrogating = true;
                     StartCoroutine(InterrogationCoroutine(Count));
                     yield return new WaitUntil(() => !IsInterrogating);
                     break;
-                case TestimonyManager.InputState.objection:
+                case TestimonyManager.State.objection:
                     //StartCoroutine 이의제기. 이건 코루틴보다는 조건에 맞는지 확인 후 반환하는 함수가 좋겠다.
                     break;
-                case TestimonyManager.InputState.back_to_zero:
+                case TestimonyManager.State.back_to_zero:
                     StartDialogue(backToZero);
                     yield return new WaitUntil(() => !IsExcuting());
                     break;

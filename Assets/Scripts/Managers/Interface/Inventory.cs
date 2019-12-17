@@ -27,22 +27,62 @@ public class Inventory : MonoBehaviour, Manager
     [SerializeField]
     private Transform tf_tab;
     private InventorySlot[] slots; //item slots
+    private int selectedSlot;
 
     //상세
     [SerializeField]
     private Transform tf_item;
+    [SerializeField]
     private Text description_Text;
-
 
     private GameObject go; //인벤토리 창 활성화
     private GameObject goOOC; //선택지 활성화
     //public GameObject prefab_FloatingText;
 
-    private int selectedItem;
-    private int selectedTab; //숫자로 사람과 사물을 구분. 
-
-    private int page; //페이지
-    private int page2;
+    private enum SelectedTab
+    {
+        item,
+        person,
+    }
+    private SelectedTab selectedTab; //숫자로 사람과 사물을 구분. 
+    private int page
+    {
+        get
+        {
+            if (selectedTab == SelectedTab.item)
+                return page_item;
+            else
+                return page_person;
+        }
+        set
+        {
+            if (selectedTab == SelectedTab.item)
+                page_item = value;
+            else
+                page_person = value;
+        }
+    }//페이지
+    private int page_item;
+    private int page_person;
+    private int selectedItem
+    {
+        get
+        {
+            if (selectedTab == SelectedTab.item)
+                return selectedClue;
+            else
+                return selectedPerson;
+        }
+        set
+        {
+            if (selectedTab == SelectedTab.item)
+                selectedClue = value;
+            else
+                selectedPerson = value;
+        }
+    }
+    private int selectedClue;
+    private int selectedPerson;
     private int slotCount; //활성화된 슬롯 수
     private const int MAX_SLOTS_COUNT = 8; //최대 슬롯 수
     
@@ -52,6 +92,25 @@ public class Inventory : MonoBehaviour, Manager
         Tab,
         Item,
     }
+    private void ActivateTab()
+    {
+        tf_item.gameObject.SetActive(false);
+
+        currentActivated = Activated.Tab;
+        tf_tab.gameObject.SetActive(true);
+
+        ShowTab();
+    }
+    private void ActivateItem()
+    {
+        tf_tab.gameObject.SetActive(false);
+
+        currentActivated = Activated.Item;
+        tf_item.gameObject.SetActive(true);
+
+        ShowItem();
+    }
+
     private bool stopKeyInput = false;
     private bool preventExc;
 
@@ -112,14 +171,14 @@ public class Inventory : MonoBehaviour, Manager
 
         switch (selectedTab)
         {
-            case 0:
+            case SelectedTab.item:
                 for (int i = 0; i < inventoryItemList.Count; i++)
                 {
                     if (inventoryItemList[i].type == Item.ItemType.clue)
                         inventoryTabList.Add(inventoryItemList[i]);
                 }
                 break;
-            case 1:
+            case SelectedTab.person:
                 for (int i = 0; i < inventoryItemList.Count; i++)
                 {
                     if (inventoryItemList[i].type == Item.ItemType.person)
@@ -203,20 +262,32 @@ public class Inventory : MonoBehaviour, Manager
                     }
                     else if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
-                        
+                        if (selectedItem % 4 == 3 && inventoryItemList.Count / 8 > page)
+                        {
+                            page++;
+                            selectedItem = selectedItem - 3;
+                        }
+                        if (selectedItem % 4 < 3)
+                            selectedItem++;
                     }
                     else if (Input.GetKeyDown(KeyCode.LeftArrow))
                     {
                         
                     }
+                    else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        if (selectedItem > 3)
+                            selectedItem = selectedItem + 4;
+                        else
+                            selectedItem = selectedItem - 4;
+                    }
                     else if (Input.GetKeyDown(KeyCode.Z))
                     {
                         ui.PlaySound(enter_sound);
                         
-                        currentActivated = Activated.Item;
                         preventExc = true;
 
-                        ShowItem();
+                        ActivateItem();
                     }
                     break; //탭 활성화 시
                 case Activated.Item:

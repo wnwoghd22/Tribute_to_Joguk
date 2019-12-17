@@ -16,15 +16,15 @@ public partial class TestimonyManager : MonoBehaviour, Manager
             count = 0;
     }
 
-    public enum InputState
+    public enum State
     {
         interrogate,
         objection,
         testimony,
         back_to_zero,
     }
-    private InputState state;
-    public InputState GetState() => state;
+    private State state;
+    public State GetState() => state;
 
     [SerializeField]
     private Text text;
@@ -57,7 +57,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     public void Enter(UI _ui)
     {
         ui = _ui;
-        state = InputState.testimony;
+        state = State.testimony;
         Dialog.SetBool("Appear", true);
     }
     public void Exit(bool _b = true) //통제권 넘김
@@ -106,7 +106,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
                     //확인 대사 후 첫번째부터
                     StopAllCoroutines();                   
                     HoldTestimony();
-                    state = InputState.back_to_zero; //상태전이, count를 0으로 초기화하고 다시 돌아감.
+                    state = State.back_to_zero; //상태전이, count를 0으로 초기화하고 다시 돌아감.
                 }
                 else
                 {
@@ -120,7 +120,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
                 {
                     //심문...?
                     //잠깐! 대사 띄우기
-                    state = InputState.interrogate; //상태전이, 대사를 완료하고 count++
+                    state = State.interrogate; //상태전이, 대사를 완료하고 count++
                 }
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
@@ -151,7 +151,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
         if (_c == -1)
             StartCoroutine(StartInterrogationCoroutine());
         else if (_c == listSentences.Count)
-            state = InputState.back_to_zero;
+            state = State.back_to_zero;
         else
             StartCoroutine(StartTextCoroutine(_c));
     }
