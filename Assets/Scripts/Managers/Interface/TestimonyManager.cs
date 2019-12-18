@@ -36,6 +36,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     private int ItemID; //정답 조회용
     private int answer;
     public bool Answer => ItemID == answer;
+    private bool hold_box = false;
 
     public Animator Character;
     public Animator Dialog;
@@ -58,8 +59,12 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     {
         ui = _ui;
         state = State.testimony;
-        if(Count >= 0)
+        if(Count >= 0 && !hold_box)
+        {
             Dialog.SetBool("Appear", true);
+        }
+        if (hold_box)
+            hold_box = false;
     }
     public void Exit(bool _b = true) //통제권 넘김
     {
@@ -103,6 +108,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
                 } //심문
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
+                    hold_box = true;
                     ui.GoToInventory(Inventory.ReturnType.Objection);
                 } //법정기록 열람
                 else if (Input.GetKeyDown(KeyCode.RightArrow)) 
@@ -148,7 +154,8 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     private void HoldTestimony() //심문 중단, 상태 전이
     {
         //Character.SetBool("Appear", false);
-        Dialog.SetBool("Appear", false);
+        if(!hold_box)
+            Dialog.SetBool("Appear", false);
     }
 
     public void ShowText(int _c)
