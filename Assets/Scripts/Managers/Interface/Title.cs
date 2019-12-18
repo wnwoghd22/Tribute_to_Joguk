@@ -67,7 +67,7 @@ public class Title : MonoBehaviour, Manager
         ui.PlaySound(clickSound);
         yield return new WaitForSeconds(2f);
       
-        ui.SetPlayerSceneName("Rooms");
+        ui.PlayerSceneName = "Rooms";
 
         theGM.LoadStart();
         SetPlayerOn();

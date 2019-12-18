@@ -17,21 +17,21 @@ public class Event2 : Event
     {
         StartChoice(choice);
 
-        yield return new WaitUntil(() => !IsExcuting());
+        yield return new WaitUntil(() => !IsExcuting);
 
-        switch (GetResult())
+        switch (Result)
         {
             case 0:
                 ExitEvent();
                 break;
             case 1:
                 StartDialogue(dialogue1);
-                yield return new WaitUntil(() => !IsExcuting());
+                yield return new WaitUntil(() => !IsExcuting);
                 ExitEvent();
                 break;
             case 2:
                 StartDialogue(dialogue2);
-                yield return new WaitUntil(() => !IsExcuting());
+                yield return new WaitUntil(() => !IsExcuting);
                 ExitEvent();
                 break;
         }

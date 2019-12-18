@@ -16,6 +16,10 @@ public abstract class Event : MonoBehaviour
     private UI EventHandler;
     protected bool flag = false;
     protected bool isActive = false; //false = start event automatically, 조사용 이벤트인가? 자동 이벤트인가?
+
+    protected bool IsExcuting => EventHandler.IsExcuting;
+    protected int Result => EventHandler.Result;
+
     protected WaitForSeconds waitTime = new WaitForSeconds(1f);
 
     // Start is called before the first frame update
@@ -39,6 +43,8 @@ public abstract class Event : MonoBehaviour
             EventHandler.ClearEvent();
         }
     }
+    protected abstract IEnumerator EventCoroutine();
+
     protected void SetEvent()
     {
         EventHandler.GetEvent(this);
@@ -50,11 +56,14 @@ public abstract class Event : MonoBehaviour
         flag = true;
         StartCoroutine(EventCoroutine());
     }
-    protected abstract IEnumerator EventCoroutine();
 
     protected void StartDialogue(Dialog _d) //대사 진입.
     {
         EventHandler.StartDialogue(_d);    
+    }
+    protected void StartInterrogation(Dialog _d) //심문 진입.
+    {
+        EventHandler.StartDialogue(_d, false);
     }
     protected void StartChoice(Choice _c) //선택 분기 진입.
     {
@@ -65,17 +74,21 @@ public abstract class Event : MonoBehaviour
         EventHandler.AssignTestimony(_t);
         //애니메이션 코드를 여기에.
     }
-    protected void ShowTestimony(int _i)
+    protected void ShowTestimony(int _i) //i번째 증언
     {
         EventHandler.CallTestimony(_i);
     }
-    protected bool IsExcuting()
+    protected void Adduce() //제시 장면으로 진입
     {
-        return EventHandler.IsExcuting();
+        EventHandler.GoToInventory(Inventory.ReturnType.Both);
     }
-    protected int GetResult()
+    protected void AdducePerson() //인물 제시
     {
-        return EventHandler.GetResult();
+        EventHandler.GoToInventory(Inventory.ReturnType.Person);
+    } 
+    protected void AdduceClue() //증거 제시
+    {
+        EventHandler.GoToInventory(Inventory.ReturnType.Clue);
     }
 
     protected void MoveRight(string _name, int _count = 1)
@@ -134,11 +147,12 @@ public abstract class Event : MonoBehaviour
    
     protected void ExitEvent()
     {
-
+        EventHandler.ExitEvent();
         Debug.Log("flag" + flag);
     }
     protected void NextEvent(Event _e)
     {
+        ExitEvent();
         _e.SetEvent();
     }
 }

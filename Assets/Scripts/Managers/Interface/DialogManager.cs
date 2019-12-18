@@ -150,7 +150,7 @@ public class DialogManager : MonoBehaviour, Manager
             }
             yield return new WaitForSeconds(0.01f);
         }
-    }
+    } //정크 데이터
     
     public void HandleInput()
     {

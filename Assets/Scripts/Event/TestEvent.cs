@@ -8,7 +8,7 @@ public class TestEvent : Event
     {
         StartDialogue(dialogs[0]);
 
-        yield return new WaitUntil(() => !IsExcuting());
+        yield return new WaitUntil(() => !IsExcuting);
 
         FadeOut();
 

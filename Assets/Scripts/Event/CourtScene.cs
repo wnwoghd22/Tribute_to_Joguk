@@ -5,58 +5,18 @@ using UnityEngine;
 public abstract class CourtScene : Event
 {
     private TestimonyManager theTM;
-    protected int Count => theTM.GetCount(); //어떤 장면인가?
+    protected int Count => theTM.Count; //어떤 장면인가?
+    private bool IsCorrect => testimony.logCount == Count;
     [SerializeField]
     protected Testimony testimony;
-    private TestimonyManager.State GetState() => theTM.GetState();
-    private bool IsTestimony() => GetState() == TestimonyManager.State.testimony;
-    private bool IsInterrogating;
+    private bool IsTestimony() => theTM.state == TestimonyManager.State.testimony;
+    private bool IsCoroutine;
     [SerializeField]
     protected Dialog backToZero;
 
-    protected override IEnumerator EventCoroutine()
-    {
-        FadeIn();
-
-        StartTestimony(testimony);//할당, 심문개시 글자가 전개되고 진입
-  
-        while (flag)
-        {
-            ShowTestimony(Count);
-
-            yield return new WaitUntil(() => !IsTestimony()); //입력이 있어 상태가 전이될 때까지 대기.
-
-            switch (GetState())
-            {
-                case TestimonyManager.State.interrogate:
-                    theTM.HoldTestimony();
-                    ActWait();
-                    IsInterrogating = true;
-                    StartCoroutine(InterrogationCoroutine(Count));
-                    yield return new WaitUntil(() => !IsInterrogating);
-                    break;
-                case TestimonyManager.State.objection:
-                    //StartCoroutine 이의제기. 이건 코루틴보다는 조건에 맞는지 확인 후 반환하는 함수가 좋겠다.
-                    break;
-                case TestimonyManager.State.back_to_zero:
-                    StartDialogue(backToZero);
-                    yield return new WaitUntil(() => !IsExcuting());
-                    break;
-                default:
-                    break;
-            }
-            theTM.NextCount(); //return to testimony
-        }
-        //다음으로 넘어가기
-        NextEvent(nextEvent);
-    }
-
     protected abstract IEnumerator InterrogationCoroutine(int _i);
-    protected abstract IEnumerator ObjectionCoroutine(int _i, int _ID);
-    protected void ExitIterrogation()
-    {
-        IsInterrogating = false;
-    }
+    protected abstract IEnumerator WrongAnswerCoroutine();
+    protected void ExitCoroutine() => IsCoroutine = false;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -64,10 +24,45 @@ public abstract class CourtScene : Event
         base.Start();
         theTM = FindObjectOfType<TestimonyManager>();
     }
-
-    // Update is called once per frame
-    void Update()
+    protected override IEnumerator EventCoroutine()
     {
-        
-    }
+        FadeIn();
+        StartTestimony(testimony);//할당, 심문개시 글자가 전개되고 진입
+
+        while (flag)
+        {
+            ShowTestimony(Count);
+
+            yield return new WaitUntil(() => !IsTestimony()); //입력이 있어 상태가 전이될 때까지 대기.
+
+            switch (theTM.state)
+            {
+                case TestimonyManager.State.interrogate:
+                    ActWait();
+                    IsCoroutine = true;
+                    StartCoroutine(InterrogationCoroutine(Count));
+                    yield return new WaitUntil(() => !IsCoroutine);
+                    break;
+                case TestimonyManager.State.objection:
+                    if (theTM.Answer && IsCorrect)
+                        flag = false;
+                    else
+                    {
+                        ActObjection();
+                        IsCoroutine = true;
+                        StartCoroutine(WrongAnswerCoroutine());
+                        yield return new WaitUntil(() => !IsCoroutine);
+                    }
+                    break;
+                case TestimonyManager.State.back_to_zero:
+                    StartInterrogation(backToZero);
+                    yield return new WaitUntil(() => !IsExcuting);
+                    break;
+                default:
+                    break;
+            }
+            theTM.NextCount(); //return to testimony
+        }
+        NextEvent(nextEvent);
+    } //접근 금지
 }

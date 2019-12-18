@@ -7,6 +7,6 @@ using UnityEngine.UI;
 public class Testimony
 {
     public Dialog testimony;
-    public int logCount;
+    public int logCount; //답이 없을 경우 -1을 넣는다.
     public int itemID;
 }

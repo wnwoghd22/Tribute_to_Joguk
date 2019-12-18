@@ -65,7 +65,7 @@ public class MapSelectManager : MonoBehaviour, Manager
         result = 0;
         for (int i = 0; i < mapList.Length; i++)
         {
-            if (ui.GetPlayerSceneName() == mapList[i])
+            if (ui.PlayerSceneName== mapList[i])
             {
                 result = i;
                 current = i;

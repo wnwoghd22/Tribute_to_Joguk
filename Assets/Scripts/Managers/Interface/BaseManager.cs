@@ -23,7 +23,7 @@ public class BaseManager : MonoBehaviour, Manager
         {
             if (ui.IsEvent())
                 ui.StartEvent();
-            else if (ui.IsMap())
+            else if (ui.IsMap)
                 ui.StartChangeMap();
         }
         return;
