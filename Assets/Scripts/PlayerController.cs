@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
     private Rigidbody2D myRigidbody;
     [SerializeField]
     float spd;
-
-    string currentSceneName;
+    
+    public string SceneName { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -30,13 +43,5 @@ public class PlayerController : MonoBehaviour
             yield return null;
             myRigidbody.velocity = new Vector2(dir * spd * _count, 0);
         }
-    }
-    public void SetSceneName(string _name)
-    {
-        currentSceneName = _name;
-    }
-    public string GetSceneName()
-    {
-        return currentSceneName;
     }
 }

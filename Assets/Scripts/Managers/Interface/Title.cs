@@ -11,21 +11,40 @@ public class Title : MonoBehaviour, Manager
     private string clickSound;
 
     private GameManager theGM;
-    [SerializeField]
-    private Text Description;
-    
-    [SerializeField]
-    private GameObject[] gamePanels;
 
-    private const int GAMESTART = 0, EXITGAME = 1; //추후 메뉴 추가 예정.
-    private int selectedMenu;
     [SerializeField]
-    private GameObject SelectPanel; // New Or Load?
+    private GameObject __AtFirst;
+
+    [SerializeField]
+    private GameObject __Select; //Start Or Exit?
+    [SerializeField]
+    private GameObject startGame_Panel;
+    [SerializeField]
+    private GameObject exit_Panel;
+    private const bool GAMESTART = true, EXITGAME = false;
+
+    [SerializeField]
+    private GameObject __Choice; // New Or Load?
     [SerializeField]
     private GameObject newGame_Panel;
     [SerializeField]
     private GameObject loadGame_Panel;
-    private bool result; //New game? or Load Game?
+    private const bool NEWGAME = true, LOADGAME = false;
+
+    private bool result;
+    
+    [SerializeField]
+    private GameObject __Episode;
+    [SerializeField]
+    private Text episodeText;
+    [SerializeField]
+    private Sprite[] EpisodeCut;
+    private string[] episode_description =
+    {
+        "제 1 화\n\n역전 조무사",
+        "제 2 화\n\n",
+    };
+    private int _index;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
 
@@ -33,51 +52,29 @@ public class Title : MonoBehaviour, Manager
     private enum SelectedTab
     {
         AtFirst,
-        MainMenu,
-        StartGame,
+        Select, //start or exit
+        Choice, //new or load
+        Episode,
     }
 
-    private void Awake()
+    void Awake()
     {
         ui = FindObjectOfType<UI>();
         theGM = FindObjectOfType<GameManager>();
     }
-
-    // Start is called before the first frame update
     void Start()
     {
         ui.StartAsTitle();
-        ui.PlayBGM(2);
     }
-
-    public void SetPlayerOn()
+    public void Enter(UI _ui)
+    {
+        ui = _ui;
+        SwitchTab(SelectedTab.AtFirst);
+    }
+    public void Exit(bool _b = true)
     {
 
     }
-    public void StartGame()
-    {
-        for (int i = 0; i < DatabaseManager.instance.switches.Length; i++)
-            DatabaseManager.instance.switches[i] = false;
-        StartCoroutine(GameStartCoroutine());
-    }
-    IEnumerator GameStartCoroutine()
-    {
-        Exit();
-        ui.FadeOut();
-        ui.PlaySound(clickSound);
-        yield return new WaitForSeconds(2f);
-      
-        ui.PlayerSceneName = "Rooms";
-
-        theGM.LoadStart();
-        SetPlayerOn();
-    }
-    public void ExitGame()
-    {
-        ui.PlaySound(clickSound);
-        Application.Quit();
-    }
-
     public void HandleInput()
     {
         switch (tab)
@@ -85,45 +82,26 @@ public class Title : MonoBehaviour, Manager
             case SelectedTab.AtFirst:
                 if (Input.anyKeyDown)
                 {
-                    for (int i = 0; i < gamePanels.Length; i++)
-                    {
-                        gamePanels[i].SetActive(true);
-                    }
-                    SelectPanel.SetActive(false);
-                    selectedMenu = GAMESTART;
-                    
-                    tab = SelectedTab.MainMenu;
+                    SwitchTab(SelectedTab.Select);
+                    result = GAMESTART;                    
                     SelectTab();
-                }                  
+                }
                 break;
-            case SelectedTab.MainMenu:
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+            case SelectedTab.Select:
+                if (Input.GetKeyDown(KeyCode.DownArrow) | Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    if (selectedMenu < gamePanels.Length - 1)
-                        selectedMenu++;
-                    else
-                        selectedMenu = 0;
+                    result = !result;
                     StopAllCoroutines();
                     SelectTab();
-                }
-                else if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    if (selectedMenu > 0)
-                        selectedMenu--;
-                    else
-                        selectedMenu = gamePanels.Length - 1;
-                    StopAllCoroutines();
-                    SelectTab();
-                }
+                }              
                 else if (Input.GetKeyDown(KeyCode.Z))
                 {
-                    ui.PlaySound(clickSound);
-                    switch(selectedMenu)
+                    //ui.PlaySound(clickSound);
+                    switch (result)
                     {
                         case GAMESTART:
-                            tab = SelectedTab.StartGame;
-                            SelectPanel.SetActive(true);
-                            ShowChoice();
+                            SwitchTab(SelectedTab.Choice);
+                            ChoiceTab();
                             break;
                         case EXITGAME:
                             ExitGame();
@@ -135,98 +113,164 @@ public class Title : MonoBehaviour, Manager
                     ui.PlaySound(clickSound);
                 }
                 break;
-            case SelectedTab.StartGame:
-                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+            case SelectedTab.Choice:
+                if (Input.GetKeyDown(KeyCode.DownArrow) | Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     result = !result;
                     StopAllCoroutines();
-                    Selected();
-                }                
+                    ChoiceTab();
+                }
                 else if (Input.GetKeyDown(KeyCode.Z))
                 {
                     ui.PlaySound(clickSound);
-                    ui.SetBase();
                     if (result)
-                        StartGame();
+                    {
+                        _index = 0;
+                        SwitchTab(SelectedTab.Episode);
+                        ChooseEpisode(_index);
+                    }
                     else
                     {
                         ui.Load();
                         SetPlayerOn();
-                    }                        
+                    }
                 }
                 else if (Input.GetKeyDown(KeyCode.X))
                 {
                     ui.PlaySound(clickSound);
-                    SelectPanel.SetActive(false);
-                    tab = SelectedTab.MainMenu;
+                    result = NEWGAME;
+                    SwitchTab(SelectedTab.Select);
                     SelectTab();
+                }
+                break;
+            case SelectedTab.Episode:
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    if (_index < 4)
+                    {
+                        _index++;
+                        ChooseEpisode(_index);
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    if (_index > 0)
+                    {
+                        _index--;
+                        ChooseEpisode(_index);
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    StartGame("Episode"+(_index+1));
+                }
+                else if (Input.GetKeyDown(KeyCode.X))
+                {
+                    result = NEWGAME;
+                    SwitchTab(SelectedTab.Choice);
+                    ChoiceTab();
                 }
                 break;
         }
     }
 
+    private void SwitchTab(SelectedTab _selected)
+    {
+        tab = _selected;
+        __AtFirst.SetActive(tab == SelectedTab.AtFirst);
+        __Select.SetActive(tab == SelectedTab.Select);
+        __Choice.SetActive(tab == SelectedTab.Choice);
+        __Episode.SetActive(tab == SelectedTab.Episode);
+    }
+
+    private void StartGame(string _s)
+    {
+        for (int i = 0; i < DatabaseManager.instance.switches.Length; i++)
+            DatabaseManager.instance.switches[i] = false;
+        StartCoroutine(GameStartCoroutine(_s));
+    }
+    IEnumerator GameStartCoroutine(string _map)
+    {
+        Exit();
+        ui.FadeOut();
+        ui.PlaySound(clickSound);
+        yield return new WaitForSeconds(2f);
+      
+        ui.PlayerSceneName = _map;
+
+        theGM.LoadStart();
+        SetPlayerOn();
+
+        SceneManager.LoadScene(ui.PlayerSceneName);
+    }
+    private void ExitGame()
+    {
+        ui.PlaySound(clickSound);
+        Application.Quit();
+    }
+
     private void SelectTab()
     {
-        Color color = gamePanels[0].GetComponent<Image>().color;
+        Color color = startGame_Panel.GetComponent<Image>().color;
         color.a = 0f;
-        for (int i = 0; i < gamePanels.Length; i++)
-        {
-            gamePanels[i].GetComponent<Image>().color = color;
-        }
-        switch (selectedMenu)
-        {
-            case GAMESTART:
-                Description.text = "유희를 시작합니다.(Z)";
-                break;
-            case EXITGAME:
-                Description.text = "유희를 종료합니다.";
-                break;
-        }
+        startGame_Panel.GetComponent<Image>().color = color;
+        exit_Panel.GetComponent<Image>().color = color;
         StartCoroutine(SelectedTabEffectCoroutine());
-    }
+    } //탭 선택
     IEnumerator SelectedTabEffectCoroutine()
     {
-        while (tab == SelectedTab.MainMenu)
+        while (tab == SelectedTab.Select)
         {
-            Color color = gamePanels[selectedMenu].GetComponent<Image>().color;
-            while (color.a < 0.5f)
+            while(result)
             {
-                color.a += 0.03f;
-                gamePanels[selectedMenu].GetComponent<Image>().color = color;
+                Color color = startGame_Panel.GetComponent<Image>().color;
+                while (color.a < 0.5f)
+                {
+                    color.a += 0.03f;
+                    startGame_Panel.GetComponent<Image>().color = color;
+                    yield return waitTime;
+                }
+                while (color.a > 0f)
+                {
+                    color.a -= 0.03f;
+                    startGame_Panel.GetComponent<Image>().color = color;
+                    yield return waitTime;
+                }
                 yield return waitTime;
             }
-            while (color.a > 0f)
+            while(!result)
             {
-                color.a -= 0.03f;
-                gamePanels[selectedMenu].GetComponent<Image>().color = color;
+                Color color = exit_Panel.GetComponent<Image>().color;
+                while (color.a < 0.5f)
+                {
+                    color.a += 0.03f;
+                    exit_Panel.GetComponent<Image>().color = color;
+                    yield return waitTime;
+                }
+                while (color.a > 0f)
+                {
+                    color.a -= 0.03f;
+                    exit_Panel.GetComponent<Image>().color = color;
+                    yield return waitTime;
+                }
                 yield return waitTime;
-            }
-            yield return waitTime;
+            }           
         }
+        
     }//선택된 탭 점멸효과
 
-    public void Selected()
+    private void ChoiceTab()
     {
         Color color = newGame_Panel.GetComponent<Image>().color;
         color.a = 0f;
-        if (result)
-        {
-            newGame_Panel.GetComponent<Image>().color = color;
-            loadGame_Panel.GetComponent<Image>().color = color;
-            StartCoroutine(SelectedResultEffectCoroutine());
-            Description.text = "새로운 여정을 시작합니다.";
-        }
-        else
-        {
-            newGame_Panel.GetComponent<Image>().color = color;
-            loadGame_Panel.GetComponent<Image>().color = color;
-            StartCoroutine(SelectedResultEffectCoroutine());
-            Description.text = "이전에 저장한 유희를 불러옵니다.";
-        }
+        
+        newGame_Panel.GetComponent<Image>().color = color;
+        loadGame_Panel.GetComponent<Image>().color = color;
+        StartCoroutine(SelectedResultEffectCoroutine());        
     }
-    public IEnumerator SelectedResultEffectCoroutine()
+    IEnumerator SelectedResultEffectCoroutine()
     {
-        while (tab == SelectedTab.StartGame)
+        while (tab == SelectedTab.Choice)
         {
             while(result)
             {
@@ -263,34 +307,16 @@ public class Title : MonoBehaviour, Manager
                 yield return waitTime;
             }           
         }
-    } //선택된 결과 점멸효과
-    public void ShowChoice()
+    } //선택된 탭 점멸효과
+    
+    private void ChooseEpisode(int _i)
     {
-        result = true;
-
-        Selected();
-
-        StartCoroutine(ShowChoiceCoroutine());
-
-        tab = SelectedTab.StartGame;
-    } //start question new or load?
-    IEnumerator ShowChoiceCoroutine()
-    {
-        yield return new WaitForSeconds(0.01f);
-    } 
-   
-    public void Enter(UI _ui)
-    {
-        ui = _ui;
-
-        for (int i = 0; i < gamePanels.Length; i++)
-        {
-            gamePanels[i].SetActive(false);
-        }
-        Description.text = "아무 키나 누르십시오.";
+        ui.ChangeCut(EpisodeCut[_i]);
+        episodeText.text = episode_description[_i];
     }
-    public void Exit(bool _b = true)
+
+    public void SetPlayerOn()
     {
-        
+
     }
 }

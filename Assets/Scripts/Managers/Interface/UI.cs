@@ -164,7 +164,7 @@ public class UI : MonoBehaviour
 
     }
     public void StartMapSelect() => ChangeManager(theMM);
-    public string PlayerSceneName { get => Player.GetSceneName(); set => Player.SetSceneName(value); }
+    public string PlayerSceneName { get => Player.SceneName; set => Player.SceneName = value; }
     public string GetSelection() => theMM.GetResult();
     #endregion
     #region Inventory
