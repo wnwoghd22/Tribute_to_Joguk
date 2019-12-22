@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: 780a0d933cc6d9145b1fb424604aec7c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3724063002566843396
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_0
+  - first:
+      213: -3455447310375520152
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_1
+  - first:
+      213: -1168485655980056167
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_2
+  - first:
+      213: -861261001007512723
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_3
+  - first:
+      213: -3348868744152546942
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_4
+  - first:
+      213: -8889963985896898822
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_5
+  - first:
+      213: -1827056427790909413
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_6
+  - first:
+      213: 7411884303179109834
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_7
+  - first:
+      213: 311931556308174772
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_8
+  - first:
+      213: -2812395911688589894
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_9
+  - first:
+      213: -7965761377098841640
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_10
+  - first:
+      213: 9064396525072945639
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_11
+  - first:
+      213: 6706293459823959665
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_12
+  - first:
+      213: 1251219526749428533
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_13
+  - first:
+      213: 3603136940306736852
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_14
+  - first:
+      213: -9171715036201351924
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_15
+  - first:
+      213: -9007003301203670005
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_16
+  - first:
+      213: -3065925439566288304
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_17
+  - first:
+      213: -8577409611632003879
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_18
+  - first:
+      213: 6043262936759627161
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_19
+  - first:
+      213: -2492052725728304471
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_20
+  - first:
+      213: -6394482213711505035
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_21
+  - first:
+      213: 2438250031603449875
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_22
+  - first:
+      213: 8932580852636666253
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 453
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f37f2642568b64596ceaa842a66b09
+      internalID: -3724063002566843396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 453
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c6b2601fbceda44bc05f74f91d51c3
+      internalID: -3455447310375520152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_2
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 453
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf7d37e823acd34f9a55b55a672e3d0
+      internalID: -1168485655980056167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_3
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 453
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426572f021617f740b3df714f3ceb124
+      internalID: -861261001007512723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_4
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 453
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e885001aa891c49a842a79b1b11188
+      internalID: -3348868744152546942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_5
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 453
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729f8b86f8745094489e55a1b490d40d
+      internalID: -8889963985896898822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 302
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7f66783a005c64fba80eedf7207560
+      internalID: -1827056427790909413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_7
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 302
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b722045660e73224da89bc0eba2a8cd4
+      internalID: 7411884303179109834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_8
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 302
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8da080c4af631448f6810c72c424f0
+      internalID: 311931556308174772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_9
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 302
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811c556657b74c04e8f42543ff0d73de
+      internalID: -2812395911688589894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_10
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 302
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77e09554bd502549856efebb371aad3
+      internalID: -7965761377098841640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_11
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 302
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745175f4b34f2ba4ba9492799904bb6f
+      internalID: 9064396525072945639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 151
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c3319075028fb4d86c159b7bcbc25b
+      internalID: 6706293459823959665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_13
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 151
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494091cd0334d1447987381c9cd07a76
+      internalID: 1251219526749428533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_14
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 151
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d5b694b9f45cd4cbc0c8f9ba3a7c70
+      internalID: 3603136940306736852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_15
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 151
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a731185ae78f748af628bf4e3f6f24
+      internalID: -9171715036201351924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_16
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 151
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885aba27735ba694587e6acc57635231
+      internalID: -9007003301203670005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_17
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 151
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7448eb35f6c286740a8aa6b67df7c986
+      internalID: -3065925439566288304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00789729d58409d46874bcb6fe8c3ecb
+      internalID: -8577409611632003879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_19
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156a6abcaf4a4554588b2c912ed4757e
+      internalID: 6043262936759627161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_20
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303ac10b6372f8747a2505185928147c
+      internalID: -2492052725728304471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_21
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 0
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9a452208cd76d4eb0bc7b895356d8d
+      internalID: -6394482213711505035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_22
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 0
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab770cb7ac8c824eb4efb3996620d2d
+      internalID: 2438250031603449875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Judge_23
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 0
+        width: 174
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b260c42d2bfce6e468773473166f7b72
+      internalID: 8932580852636666253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7d024654616981843b67d8e59075000d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,8 +10,6 @@ public class Title : MonoBehaviour, Manager
 
     private string clickSound;
 
-    private GameManager theGM;
-
     [SerializeField]
     private GameObject __AtFirst;
 
@@ -42,7 +40,9 @@ public class Title : MonoBehaviour, Manager
     private string[] episode_description =
     {
         "제 1 화\n\n역전 조무사",
-        "제 2 화\n\n",
+        "제 2 화\n\n상처뿐인 역전",
+        "제 3 화\n\n역전 주식회사",
+
     };
     private int _index;
 
@@ -60,7 +60,6 @@ public class Title : MonoBehaviour, Manager
     void Awake()
     {
         ui = FindObjectOfType<UI>();
-        theGM = FindObjectOfType<GameManager>();
     }
     void Start()
     {
@@ -127,6 +126,7 @@ public class Title : MonoBehaviour, Manager
                     {
                         _index = 0;
                         SwitchTab(SelectedTab.Episode);
+                        ui.SetCutActive(true);
                         ChooseEpisode(_index);
                     }
                     else
@@ -167,6 +167,7 @@ public class Title : MonoBehaviour, Manager
                 else if (Input.GetKeyDown(KeyCode.X))
                 {
                     result = NEWGAME;
+                    ui.SetCutActive(false);
                     SwitchTab(SelectedTab.Choice);
                     ChoiceTab();
                 }
@@ -192,16 +193,10 @@ public class Title : MonoBehaviour, Manager
     IEnumerator GameStartCoroutine(string _map)
     {
         Exit();
-        ui.FadeOut();
         ui.PlaySound(clickSound);
+        ui.FadeOut();
         yield return new WaitForSeconds(2f);
-      
-        ui.PlayerSceneName = _map;
-
-        theGM.LoadStart();
-        SetPlayerOn();
-
-        SceneManager.LoadScene(ui.PlayerSceneName);
+        ui.ChangeMap(_map);
     }
     private void ExitGame()
     {

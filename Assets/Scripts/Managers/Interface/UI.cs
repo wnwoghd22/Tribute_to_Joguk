@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class UI : MonoBehaviour
         theMM = FindObjectOfType<MapSelectManager>();
         theBGM = FindObjectOfType<BGMManager>();
         theCut = FindObjectOfType<ImageCutManager>();
+        theGM = FindObjectOfType<GameManager>();
         title = FindObjectOfType<Title>();
 
         if (instance == null)
@@ -49,6 +51,7 @@ public class UI : MonoBehaviour
     private AudioManager theAM;
     private BGMManager theBGM;  
     private ImageCutManager theCut;
+    private GameManager theGM;
     #endregion
     private PlayerController Player;
     private Event @event;
@@ -118,6 +121,14 @@ public class UI : MonoBehaviour
                 break;
         }
     }
+    public void SetCharacter(who _c = who.None)
+    {
+        Player.SetCharacterActive(_c);
+    }
+    public void SetEmotionTrigger(emotion _e = emotion.normal)
+    {
+        Player.SetEmotionTrigger(_e);
+    }
 
     #region Event
     public bool IsEvent() => @event != null;
@@ -159,12 +170,21 @@ public class UI : MonoBehaviour
     public void GetMap(ChangeMap _map) => @map = _map;
     public void ClearMap() => @map = null;
     public void StartChangeMap() => @map.Excute(); //player stop, start event
+    public void ChangeMap(string _name)
+    {
+        FadeOut();
+        PlayerSceneName = _name;
+
+        theGM.LoadStart();
+
+        SceneManager.LoadScene(PlayerSceneName);
+    }
     public void ExitChangeMap()
     {
 
     }
     public void StartMapSelect() => ChangeManager(theMM);
-    public string PlayerSceneName { get => Player.SceneName; set => Player.SceneName = value; }
+    public string PlayerSceneName { get => Player.SceneName; private set => Player.SceneName = value; }
     public string GetSelection() => theMM.GetResult();
     #endregion
     #region Inventory

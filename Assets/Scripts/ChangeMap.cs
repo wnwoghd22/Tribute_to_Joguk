@@ -60,7 +60,7 @@ public abstract class ChangeMap : MonoBehaviour
             doorAnim.SetBool("Open", false);           
         }
         yield return new WaitForSeconds(.5f);
-        ChangeHandler.PlayerSceneName = transferSceneName;
+        //ChangeHandler.PlayerSceneName = transferSceneName;
         SceneManager.LoadScene(transferSceneName);
         ChangeHandler.FadeIn();
         yield return new WaitForSeconds(0.5f);               

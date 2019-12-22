@@ -1,0 +1,544 @@
+fileFormatVersion: 2
+guid: bea67b545f76d0a42bda8fa2dd1b25df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2954116329112359060
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_0
+  - first:
+      213: 415309843921898898
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_1
+  - first:
+      213: -7669129440636228663
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_2
+  - first:
+      213: 6013957326102190949
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_3
+  - first:
+      213: 5177393336342356221
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_4
+  - first:
+      213: 2237336422463838226
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_5
+  - first:
+      213: -4694022769086312331
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_6
+  - first:
+      213: -8089895773803538145
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_7
+  - first:
+      213: 1247162867471492356
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_8
+  - first:
+      213: -442318691181163931
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_9
+  - first:
+      213: 5036013820269594723
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_10
+  - first:
+      213: 7822923944011294127
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_11
+  - first:
+      213: 7262053270769296176
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_12
+  - first:
+      213: 7179304500347738874
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_13
+  - first:
+      213: 4553717819015456559
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_14
+  - first:
+      213: -20823129122851893
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_15
+  - first:
+      213: 593742630554159557
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_16
+  - first:
+      213: -6146025087721453408
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_17
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 431
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6670cad6264a3e34ba39c5b97a95858a
+      internalID: -2954116329112359060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 431
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f49b47ba39e2194c9ebd2baec4e7d54
+      internalID: 415309843921898898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_2
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 431
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a61c6795e26b247b589c77c4fe275b
+      internalID: -7669129440636228663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_3
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 431
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8699b2bf88d7d2b42b1fe9ee2022bd90
+      internalID: 6013957326102190949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_4
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 431
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c8efd72c7afb345b99984c6859eb2f
+      internalID: 5177393336342356221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_5
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 431
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c5668b34b8aca48a8543af7aa8a9a5
+      internalID: 2237336422463838226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 216
+        width: 184
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4ebe91a19908346b4aa5f65edbb562
+      internalID: -4694022769086312331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_7
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 216
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d86fee320e91d843afbb3c8cbb720af
+      internalID: -8089895773803538145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_8
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 216
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d0fd77698cfc24e88babcafe80f8dc
+      internalID: 1247162867471492356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_9
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 216
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70459301dab1424da628c34019f989b
+      internalID: -442318691181163931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_10
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 216
+        width: 185
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8310fc8fb3100ce46bca813f9bf7b499
+      internalID: 5036013820269594723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_11
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 216
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aac148391b34d648b2e15d650a661c0
+      internalID: 7822923944011294127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c866b3aa6933149879418c7cffe810
+      internalID: 7262053270769296176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_13
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e196f62baeb0aa43b993001ed5980a2
+      internalID: 7179304500347738874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_14
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e4f374b8446bc4985e847f113a83e8
+      internalID: 4553717819015456559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_15
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791fd83fe05972a42bc50e371cc9609b
+      internalID: -20823129122851893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_16
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469788d7efb7be54ab9b984aeb07a728
+      internalID: 593742630554159557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Phoenix Wright_17
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1
+        width: 185
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f07ea833d3d4d46b65dba7bb8b7104
+      internalID: -6146025087721453408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2cf48217ac092794e9827fa8510fd177
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -97,7 +97,7 @@ public class SaveLoad : MonoBehaviour
 
             ui.FadeOut();
             
-            ui.PlayerSceneName = data.sceneName;
+            //ui.PlayerSceneName = data.sceneName;
 
 
             theDB.var = data.varNumberList.ToArray();

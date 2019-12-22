@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class Event : MonoBehaviour
 {
@@ -154,5 +155,10 @@ public abstract class Event : MonoBehaviour
     {
         ExitEvent();
         _e.SetEvent();
+    }
+    protected void NextEvent(string _s)
+    {
+        ExitEvent();
+
     }
 }

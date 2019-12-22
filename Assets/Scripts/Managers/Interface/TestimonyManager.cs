@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public partial class TestimonyManager : MonoBehaviour, Manager
+public class TestimonyManager : MonoBehaviour, Manager
 {
     private bool keyActivated = false; //입력 가능 상태인가?
     public int Count { get; private set; }
@@ -32,7 +32,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
     
     private string description; //진입 시, ~증언 내용~
     private List<string> listSentences; //증언 내용
-    private List<Dialog.emotion> listEmotion;
+    private List<emotion> listEmotion;
     private int ItemID; //정답 조회용
     private int answer;
     public bool Answer => ItemID == answer;
@@ -53,7 +53,7 @@ public partial class TestimonyManager : MonoBehaviour, Manager
         Count = -1;
         text.text = "";
         listSentences = new List<string>();
-        listEmotion = new List<Dialog.emotion>();
+        listEmotion = new List<emotion>();
     }
     public void Enter(UI _ui)
     {

@@ -1,0 +1,448 @@
+fileFormatVersion: 2
+guid: 2b0ced92ff0c0354097bef16149771f6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4917703133210475433
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_0
+  - first:
+      213: 2428404757555364315
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_1
+  - first:
+      213: 1641405619340677726
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_2
+  - first:
+      213: -3801329019365049040
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_3
+  - first:
+      213: -8715586150136768802
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_4
+  - first:
+      213: 3031799972038429731
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_5
+  - first:
+      213: -1543239002719147592
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_6
+  - first:
+      213: -128876825707779789
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_7
+  - first:
+      213: -748345471975098530
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_8
+  - first:
+      213: -3138474996301573544
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_9
+  - first:
+      213: 5439343834314575346
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_10
+  - first:
+      213: -5766415978951221779
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_11
+  - first:
+      213: -3559572700732369327
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_12
+  - first:
+      213: 3158346499325556128
+    second: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_13
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 409
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ff4f43b234c704294ddb683b380fe0
+      internalID: -4917703133210475433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 409
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e78a5790b3300f4794031fde5c156e8
+      internalID: 2428404757555364315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 409
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da25cc925173214a977c6fe130292c7
+      internalID: 1641405619340677726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_3
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 409
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01dab7ff729b754182a65e93784e6f9
+      internalID: -3801329019365049040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_4
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 409
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447754b1285307645b9d97b5a856874b
+      internalID: -8715586150136768802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_5
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 409
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032bc5203d5d00e4089bb3d401822bdf
+      internalID: 3031799972038429731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 204
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec16cc2d7e3f48e4385a503baf1088cc
+      internalID: -1543239002719147592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_7
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 204
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3dd4ff07e0f1fa49a7828f5895cc86e
+      internalID: -128876825707779789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_8
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 204
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9ca74f592e3dc40b2d364d1278c5dc
+      internalID: -748345471975098530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_9
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 204
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a6c22ad9570ec44a3ffbbc32746ecb
+      internalID: -3138474996301573544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_10
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 204
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ffbe29ca614314db83dda2da2f2a68
+      internalID: 5439343834314575346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_11
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 204
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf13d8444d3ab1e4eae0f9d4e3b7acdf
+      internalID: -5766415978951221779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 177
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c081a5fc554c4a4fa1bf0860d870b37
+      internalID: -3559572700732369327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Phoenix Wright Ace Attorney Trilogy - Winston Payne_13
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 0
+        width: 177
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323d813373725de46a2566c893420253
+      internalID: 3158346499325556128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 77c6684515eb3284d8e72f491353d4ee
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

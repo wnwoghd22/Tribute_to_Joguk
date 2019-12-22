@@ -28,8 +28,9 @@ public class DialogManager : MonoBehaviour, Manager
     public Text whoIs;
 
     private List<string> listSentences;
-    private List<Dialog.emotion> listEmotion;
+    private List<emotion> listEmotion;
     private List<string> listName;
+    private List<who> listWho;
 
     private int count; //대화의 길이, 진행상황
 
@@ -52,7 +53,8 @@ public class DialogManager : MonoBehaviour, Manager
         text.text = "";
         whoIs.text = "";
         listSentences = new List<string>();
-        listEmotion = new List<Dialog.emotion>();
+        listEmotion = new List<emotion>();
+        listWho = new List<who>();
         listName = new List<string>();
     }
 
@@ -81,7 +83,6 @@ public class DialogManager : MonoBehaviour, Manager
         Dialog.SetBool("Appear", true);
         
         StartCoroutine(StartDialogueCoroutine());
-
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -95,7 +96,8 @@ public class DialogManager : MonoBehaviour, Manager
                 //Character.SetBool("Change", true);
                 Dialog.SetBool("Appear", false);
                 yield return new WaitForSeconds(0.1f);
-
+                ui.SetCharacter(listWho[count]);
+                ui.SetEmotionTrigger(listEmotion[count]);
                 Dialog.SetBool("Appear", true);
                 whoIs.text += listName[count];
 
@@ -121,6 +123,8 @@ public class DialogManager : MonoBehaviour, Manager
         }
         else
         {
+            ui.SetCharacter(listWho[count]);
+            ui.SetEmotionTrigger(listEmotion[count]);
             whoIs.text += listName[count];
             //rendererSprite.sprite = listSprite[count];
         }
@@ -196,7 +200,6 @@ public class DialogManager : MonoBehaviour, Manager
             whoIs.text = "";
             count = 0;
             listSentences.Clear();
-            //listSprite.Clear();
             listName.Clear();
             //Character.SetBool("Appear", false);
             Dialog.SetBool("Appear", false);
