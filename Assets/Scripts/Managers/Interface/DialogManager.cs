@@ -23,20 +23,37 @@ public class DialogManager : MonoBehaviour, Manager
     }
     #endregion Singleton
 
-    public Text text;
-    public SpriteRenderer rendererSprite;
-    public Text whoIs;
+    [SerializeField]
+    private Text text;
+    [SerializeField]
+    private Text whoIs;
+
+    [SerializeField]
+    private Text text_only;
 
     private List<string> listSentences;
     private List<emotion> listEmotion;
     private List<string> listName;
     private List<who> listWho;
+    private Dictionary<who, string> WhoDict
+        = new Dictionary<who, string>
+        {
+            { who.None, "Off" },
+            { who.Attorney, "Attorney" },
+            { who.Prosecutor, "Prosecutor" },
+            { who.Judge, "Judge" },
+            { who.Witness, "Witness" },
+            { who.Company, "Company" },
+            { who.Talk, "Talk" }
+        };
 
     private int count; //대화의 길이, 진행상황
 
-    public Animator Character;
-    public Animator Dialog;
-
+    [SerializeField]
+    private Animator Dialog;
+    [SerializeField]
+    private Animator Text_only;
+    
     public string typesound;
     public string entersound;
 
@@ -51,6 +68,7 @@ public class DialogManager : MonoBehaviour, Manager
     {
         count = 0;
         text.text = "";
+        text_only.text = "";
         whoIs.text = "";
         listSentences = new List<string>();
         listEmotion = new List<emotion>();
@@ -58,15 +76,11 @@ public class DialogManager : MonoBehaviour, Manager
         listName = new List<string>();
     }
 
-    public void ShowText(string[] _sentences)
+    public void ShowText(string _sentence)
     {
         onlyText = true;
-
-        for (int i = 0; i < _sentences.Length; i++)
-        {
-            listSentences.Add(_sentences[i]);
-        }
-
+        listSentences.Add(_sentence);
+        Text_only.SetBool("Appear", true);
         StartCoroutine(StartTextCoroutine());
     }
     public void ShowDialogue(Dialog dialogue)
@@ -78,15 +92,15 @@ public class DialogManager : MonoBehaviour, Manager
             listSentences.Add(dialogue.sentence[i]);
             listName.Add(dialogue._name[i]);
             listEmotion.Add(dialogue._emotion[i]);
+            listWho.Add(dialogue._who[i]);
         }
-        //Character.SetBool("Appear", true);
-        Dialog.SetBool("Appear", true);
-        
+        Dialog.SetBool("Appear", true);        
         StartCoroutine(StartDialogueCoroutine());
     }
 
     IEnumerator StartDialogueCoroutine()
     {
+        /*
         if (count > 0)
         {
             if (listName[count] != listName[count - 1])
@@ -96,6 +110,7 @@ public class DialogManager : MonoBehaviour, Manager
                 //Character.SetBool("Change", true);
                 Dialog.SetBool("Appear", false);
                 yield return new WaitForSeconds(0.1f);
+                ui.SetCutTrigger(WhoDict[listWho[count]]);
                 ui.SetCharacter(listWho[count]);
                 ui.SetEmotionTrigger(listEmotion[count]);
                 Dialog.SetBool("Appear", true);
@@ -112,6 +127,7 @@ public class DialogManager : MonoBehaviour, Manager
                     yield return new WaitForSeconds(0.1f);
 
                     //rendererSprite.sprite = listEmotion[count];
+                    ui.SetEmotionTrigger(listEmotion[count]);
                     //Character.SetBool("Change", false);
                 }
                 else
@@ -123,14 +139,20 @@ public class DialogManager : MonoBehaviour, Manager
         }
         else
         {
+
+            ui.SetCutTrigger(WhoDict[listWho[count]]);
             ui.SetCharacter(listWho[count]);
             ui.SetEmotionTrigger(listEmotion[count]);
             whoIs.text += listName[count];
             //rendererSprite.sprite = listSprite[count];
-        }
-
+        }*/
+        ui.SetCutTrigger(WhoDict[listWho[count]]);
+        ui.SetCharacter(listWho[count]);
+        ui.SetEmotionTrigger(listEmotion[count]);
+        whoIs.text += listName[count];
         keyActivated = true;
 
+        //effect 추가...enum effect 정의 후 만들기. 흔들리는 효과 등등
         for (int i=0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];
@@ -147,14 +169,14 @@ public class DialogManager : MonoBehaviour, Manager
 
         for (int i = 0; i < listSentences[count].Length; i++)
         {
-            text.text += listSentences[count][i];
+            text_only.text += listSentences[count][i];
             if (i % 7 == 1)
             {
                 ui.PlaySound(entersound);
             }
             yield return new WaitForSeconds(0.01f);
         }
-    } //정크 데이터
+    }
     
     public void HandleInput()
     {
@@ -201,8 +223,10 @@ public class DialogManager : MonoBehaviour, Manager
             count = 0;
             listSentences.Clear();
             listName.Clear();
-            //Character.SetBool("Appear", false);
+            listWho.Clear();
+            listEmotion.Clear();
             Dialog.SetBool("Appear", false);
+            Text_only.SetBool("Appear", false);
             //ui.SetPlayerMove(true);
         }
     }

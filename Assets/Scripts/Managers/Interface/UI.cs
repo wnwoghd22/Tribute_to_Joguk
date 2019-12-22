@@ -103,13 +103,13 @@ public class UI : MonoBehaviour
     {
         Player.Move(_dir, _c);
     }
-    public void Action(int _i)
+    public void Action(int _i) //패러미터를 두 개 받는 걸로 할까
     {
         switch (_i)
         {
             case 0:
                 act_wait.SetTrigger("Act");
-                //bgm 출력
+                //bgm 출력 - 애니메이터에 넣자! - 누구의 목소리를 출력할 건지 패러미터를 받는다?
                 break;
             case 1:
                 act_objection.SetTrigger("Act");
@@ -145,6 +145,11 @@ public class UI : MonoBehaviour
         ChangeManager(theDM, exit);
         theDM.ShowDialogue(_log);
     }
+    public void StartText(string _log, bool exit = true)
+    {
+        ChangeManager(theDM, exit);
+        theDM.ShowText(_log);
+    }
     public void StartChoice(Choice _choice, bool exit = true)
     {
         ChangeManager(theCM, exit);
@@ -153,6 +158,11 @@ public class UI : MonoBehaviour
     public void AssignTestimony(Testimony _testimony)
     {
         theTM.AssignTestimony(_testimony);
+    }
+    public void SetCutTrigger(string _s)
+    {
+        theCut.ResetTrigger();
+        theCut.SetTrigger(_s);
     }
     public void ChangeCut(Sprite _sprite)
     {

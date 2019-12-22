@@ -6,6 +6,7 @@ using UnityEngine;
 public class Dialog
 {
     public string name;
+    [TextArea(1,2)]
     public string[] sentence;
     public string[] _name;
     public emotion[] _emotion;

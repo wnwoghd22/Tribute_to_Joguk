@@ -23,11 +23,17 @@ public class PlayerController : MonoBehaviour
     public string SceneName { get; set; }
 
     private Animator EmotionTrigger;
+    [SerializeField]
     private GameObject Attorney;
+    [SerializeField]
     private GameObject Prosecutor;
+    [SerializeField]
     private GameObject Judge;
+    [SerializeField]
     private GameObject Witness;
+    [SerializeField]
     private GameObject Company;
+    [SerializeField]
     private GameObject Talk;
     private Dictionary<emotion, string> EmoDict
         = new Dictionary<emotion, string>
@@ -78,7 +84,8 @@ public class PlayerController : MonoBehaviour
     }
     public void SetEmotionTrigger(emotion _e)
     {
-        EmotionTrigger.SetTrigger(EmoDict[_e]);
+        if(EmotionTrigger != null)
+            EmotionTrigger.SetTrigger(EmoDict[_e]);
     }
 
     public IEnumerator Move(bool _direction, int _count = 1)

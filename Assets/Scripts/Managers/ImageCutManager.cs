@@ -25,11 +25,16 @@ public class ImageCutManager : MonoBehaviour
     private UI ui;
     [SerializeField]
     private GameObject go;
+    private Animator myAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         ui = FindObjectOfType<UI>();
+        myAnimator = GetComponent<Animator>();
+        Debug.Log("test");
+        myAnimator.ResetTrigger("Off");
+        myAnimator.ResetTrigger("Judge");
     }
     
     public void SetCutActive(bool _bool)
@@ -39,5 +44,17 @@ public class ImageCutManager : MonoBehaviour
     public void ChangeCut(Sprite _sprite)
     {
         go.GetComponent<Image>().sprite = _sprite;
+    }
+    public void SetTrigger(string _s)
+    {
+        myAnimator.SetTrigger(_s);
+    }
+    public void ResetTrigger()
+    {
+        myAnimator.ResetTrigger("Off");
+        myAnimator.ResetTrigger("Attorney");
+        myAnimator.ResetTrigger("Prosecutor");
+        myAnimator.ResetTrigger("Judge");
+        myAnimator.ResetTrigger("Court");
     }
 }

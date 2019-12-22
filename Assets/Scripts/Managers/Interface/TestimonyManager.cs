@@ -28,8 +28,9 @@ public class TestimonyManager : MonoBehaviour, Manager
     private Text text;
     [SerializeField]
     private Text text_middle;
-    public SpriteRenderer rendererSprite;
-    
+    [SerializeField]
+    private Animator Dialog;
+
     private string description; //진입 시, ~증언 내용~
     private List<string> listSentences; //증언 내용
     private List<emotion> listEmotion;
@@ -38,8 +39,6 @@ public class TestimonyManager : MonoBehaviour, Manager
     public bool Answer => ItemID == answer;
     private bool hold_box = false;
 
-    public Animator Character;
-    public Animator Dialog;
 
     public string typesound;
     public string entersound;
@@ -188,7 +187,7 @@ public class TestimonyManager : MonoBehaviour, Manager
         }
         yield return waitTime;
         keyActivated = true;
-    } //심문개시 글자 띄우기
+    } //심문개시 글자 띄우기, 
     IEnumerator StartTextCoroutine(int _c)
     {
         keyActivated = true;

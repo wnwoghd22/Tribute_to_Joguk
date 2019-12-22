@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a36657c62b80f45a557fe7e1de6dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texts: []
   dialogs:
   - name: "\uCD94\uAD811"
     sentence:
@@ -181,6 +182,7 @@ MonoBehaviour:
     - "\uC11D\uC5F4\uC774"
     - "\uAD6C\uAE30"
     _emotion: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _who: 
   - name: "\uCD94\uAD812"
     sentence:
     - "\uC84D\uB9D0 \uC7C8\uC720\uC96C\uC758\uC7C8\uAC00 \uB9DE\uC229\uB2C8\uAF48?"
@@ -199,18 +201,22 @@ MonoBehaviour:
     - "\uC11D\uC5F4\uC774"
     - "\uAD6C\uAE30"
     _emotion: 000000000000000000000000000000000000000000000000
+    _who: 
   - name: 
     sentence: []
     _name: []
     _emotion: 
+    _who: 
   - name: 
     sentence: []
     _name: []
     _emotion: 
+    _who: 
   - name: 
     sentence: []
     _name: []
     _emotion: 
+    _who: 
   choices: []
   cutImages: []
   nextEvent: {fileID: 0}
@@ -227,6 +233,7 @@ MonoBehaviour:
         \uBC14\uB85C \uC591\uB9BD\uC774\uC8E0."
       _name: []
       _emotion: 0000000000000000000000000000000000000000
+      _who: 
     logCount: 0
     itemID: 0
   backToZero:
@@ -240,6 +247,7 @@ MonoBehaviour:
     - "\uC774\uB2C8"
     - "\uC774\uB2C8"
     _emotion: 000000000000000000000000
+    _who: 
 --- !u!61 &979360235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -336,17 +344,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685df5fd0fc926b41a37f7903c4e31b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texts:
+  - "\uBAA8 \uC6D4 \uBAA8 \uC2DC\n\uBC95\uC815 \uB300\uAE30\uC2E4"
   dialogs:
-  - name: "\uC774\uAC83\uC740 \uC2DC\uD5D8\uC6A9\uC785\uB2C8\uB2E4"
+  - name: "\uBC95\uC815\uB300\uAE30\uC2E4"
     sentence:
-    - "\uC774\uAC83\uC740 \uC2DC\uD5D8\uC6A9 \uC7AC\uD310...!"
-    - "\uC598\uB4E4\uC544 \uBBF8\uC548\uD558\uB3E0"
+    - "\uD6C4\uC6B0...\uB610 \uC7AC\uD310\uC778\uAC00."
+    - "\uC774\uBC88 \uC758\uB8B0\uC778\uC740 \u3148\u3131\uC774\uAD70."
     - "\uACE0\uB9D9\uB3E0...!"
     _name:
     - "\uC774\uB2C8"
     - "\uC774\uB2C8"
     - "\uC774\uB2C8"
     _emotion: 040000000500000006000000
+    _who: 000000000000000000000000
+  - name: "\uCD08\uB450"
+    sentence:
+    - "\uC7AC\uD310\uC744 \uAC1C\uC2DC\uD569\uB2C8\uB2E4."
+    - "\uAC80\uC0AC\uCE21, \uCC38\uC11D\uD588\uC2B5\uB2C8\uAE4C?"
+    - "\uB124."
+    - "\uBCC0\uD638\uCE21, \uCC38\uC11D\uD588\uC2B5\uB2C8\uAE4C?"
+    - "\uCC70\uC155 \uD5C0\uC299\uB2C8\uB3E0."
+    _name:
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uB808\uB4DC\uC900\uD45C"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC774\uB2C8"
+    _emotion: 0000000000000000000000000000000000000000
+    _who: 0300000003000000020000000300000001000000
   choices:
   - question: 
     answers:

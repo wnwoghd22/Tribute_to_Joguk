@@ -42,7 +42,8 @@ public class Title : MonoBehaviour, Manager
         "제 1 화\n\n역전 조무사",
         "제 2 화\n\n상처뿐인 역전",
         "제 3 화\n\n역전 주식회사",
-
+        "제 4 화\n\n역전의 보호구역",
+        "제 5 화\n\n두 얼굴의 역전"
     };
     private int _index;
 
@@ -127,6 +128,7 @@ public class Title : MonoBehaviour, Manager
                         _index = 0;
                         SwitchTab(SelectedTab.Episode);
                         ui.SetCutActive(true);
+                        //ui.SetCutTrigger("episode");
                         ChooseEpisode(_index);
                     }
                     else
@@ -168,6 +170,7 @@ public class Title : MonoBehaviour, Manager
                 {
                     result = NEWGAME;
                     ui.SetCutActive(false);
+                    //ui.SetCutTrigger("episode");
                     SwitchTab(SelectedTab.Choice);
                     ChoiceTab();
                 }
@@ -196,6 +199,7 @@ public class Title : MonoBehaviour, Manager
         ui.PlaySound(clickSound);
         ui.FadeOut();
         yield return new WaitForSeconds(2f);
+        ui.SetCutActive(false);
         ui.ChangeMap(_map);
     }
     private void ExitGame()

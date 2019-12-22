@@ -17,11 +17,12 @@ public class Item
         clue, //증거품
     }
 
-    public Item(int _ID, string _name, string _Des)
+    public Item(int _ID, string _name, string _Des, ItemType _type = ItemType.clue)
     {
         itemID = _ID;
         itemName = _name;
         itemDescription = _Des;
+        type = _type;
 
         itemIcon = Resources.Load("ItemIcon/" + _ID.ToString(), typeof(Sprite)) as Sprite;
     }

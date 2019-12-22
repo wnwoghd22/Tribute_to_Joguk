@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class Event : MonoBehaviour
 {
+    [SerializeField][TextArea(1,2)]
+    protected string[] texts;
     [SerializeField]
     protected Dialog[] dialogs;
     [SerializeField]
@@ -20,13 +22,15 @@ public abstract class Event : MonoBehaviour
 
     protected bool IsExcuting => EventHandler.IsExcuting;
     protected int Result => EventHandler.Result;
-
+    
     protected WaitForSeconds waitTime = new WaitForSeconds(1f);
+    protected WaitUntil waitExit;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         EventHandler = FindObjectOfType<UI>();
+        waitExit = new WaitUntil(() => !EventHandler.IsExcuting);
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision) //조사화면에서 커서를 맞출 때.
     {
@@ -66,6 +70,10 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler.StartDialogue(_d, false);
     }
+    protected void StartText(string _s) //단순 텍스트
+    {
+        EventHandler.StartText(_s);
+    }
     protected void StartChoice(Choice _c) //선택 분기 진입.
     {
         EventHandler.StartChoice(_c);
@@ -102,7 +110,7 @@ public abstract class Event : MonoBehaviour
     }
     protected void ActWait()
     {
-        //목소리는?
+        //목소리는? - 애니메이터에 넣어버리자!
         EventHandler.Action(0);
     }
     protected void ActObjection()
@@ -132,6 +140,10 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler.ChangeCut(cutImages[num]);
     }
+    protected void ChangeCut(string _s)
+    {
+        EventHandler.SetCutTrigger(_s);
+    }
     protected void SetCutActive(bool _b)
     {
         EventHandler.SetCutActive(_b);
@@ -149,16 +161,15 @@ public abstract class Event : MonoBehaviour
     protected void ExitEvent()
     {
         EventHandler.ExitEvent();
-        Debug.Log("flag" + flag);
-    }
-    protected void NextEvent(Event _e)
+    } //단순 이벤트 종료. 증거 수집 등
+    protected void NextEvent(Event _e) //다음 이벤트로
     {
         ExitEvent();
         _e.SetEvent();
     }
-    protected void NextEvent(string _s)
+    protected void NextEvent(string _s) //다른 맵으로
     {
         ExitEvent();
-
+        EventHandler.ChangeMap(_s);
     }
 }
