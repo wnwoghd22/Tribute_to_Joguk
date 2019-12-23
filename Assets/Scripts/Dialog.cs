@@ -11,16 +11,21 @@ public class Dialog
     public string[] _name;
     public emotion[] _emotion;
     public who[] _who;
+    public effect[] _effect;
 }
 public enum emotion
 {
-    normal,
-    point,
-    bang,
-    embarrassed,
-    doubt,
-    interrogate,
-    check,
+    None,
+    normal, //평정
+    point, //손가락질
+    bang, //책상치기
+    shocked, //충격
+    embarrassed, //당황
+    doubt, //의문
+    interrogate, //추궁
+    check, //확인
+    agree, //끄덕이기
+    deny, //가로젓기
 }
 public enum who
 {
@@ -32,3 +37,12 @@ public enum who
     Company,
     Talk,
 }
+public enum effect
+{
+    None,
+    HoldIt,
+    Objection,
+    TakeThat,
+    Quake,
+}
+

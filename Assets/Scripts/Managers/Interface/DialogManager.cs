@@ -31,14 +31,14 @@ public class DialogManager : MonoBehaviour, Manager
     [SerializeField]
     private Text text_only;
 
+    private List<string> listName;
     private List<string> listSentences;
     private List<emotion> listEmotion;
-    private List<string> listName;
     private List<who> listWho;
     private Dictionary<who, string> WhoDict
         = new Dictionary<who, string>
         {
-            { who.None, "Off" },
+            { who.None, "Off" }, //Off는 외부에서만 호출 가능하게 한다.
             { who.Attorney, "Attorney" },
             { who.Prosecutor, "Prosecutor" },
             { who.Judge, "Judge" },
@@ -46,6 +46,9 @@ public class DialogManager : MonoBehaviour, Manager
             { who.Company, "Company" },
             { who.Talk, "Talk" }
         };
+    private List<effect> listEffect;
+
+    private List<Dialog> listLog;
 
     private int count; //대화의 길이, 진행상황
 
@@ -53,6 +56,9 @@ public class DialogManager : MonoBehaviour, Manager
     private Animator Dialog;
     [SerializeField]
     private Animator Text_only;
+    private WaitForSeconds waitLog = new WaitForSeconds(0.01f);
+    private WaitForSeconds waitType = new WaitForSeconds(.1f);
+    private WaitForSeconds waitEffect = new WaitForSeconds(0.5f);
     
     public string typesound;
     public string entersound;
@@ -73,7 +79,10 @@ public class DialogManager : MonoBehaviour, Manager
         listSentences = new List<string>();
         listEmotion = new List<emotion>();
         listWho = new List<who>();
+        listEffect = new List<effect>();
         listName = new List<string>();
+
+        listLog = new List<Dialog>();
     }
 
     public void ShowText(string _sentence)
@@ -86,6 +95,7 @@ public class DialogManager : MonoBehaviour, Manager
     public void ShowDialogue(Dialog dialogue)
     {
         onlyText = false;
+        count = 0;
 
         for ( int i=0; i < dialogue.sentence.Length; i++)
         {
@@ -93,6 +103,7 @@ public class DialogManager : MonoBehaviour, Manager
             listName.Add(dialogue._name[i]);
             listEmotion.Add(dialogue._emotion[i]);
             listWho.Add(dialogue._who[i]);
+            listEffect.Add(dialogue._effect[i]);
         }
         Dialog.SetBool("Appear", true);        
         StartCoroutine(StartDialogueCoroutine());
@@ -100,59 +111,18 @@ public class DialogManager : MonoBehaviour, Manager
 
     IEnumerator StartDialogueCoroutine()
     {
-        /*
-        if (count > 0)
+        if(listEffect[count] != effect.None) 
         {
-            if (listName[count] != listName[count - 1])
-            {
-                whoIs.text = "";
-
-                //Character.SetBool("Change", true);
-                Dialog.SetBool("Appear", false);
-                yield return new WaitForSeconds(0.1f);
-                ui.SetCutTrigger(WhoDict[listWho[count]]);
-                ui.SetCharacter(listWho[count]);
-                ui.SetEmotionTrigger(listEmotion[count]);
-                Dialog.SetBool("Appear", true);
-                whoIs.text += listName[count];
-
-                //Character.SetBool("Change", false);
-            }
-            else
-            {
-                if (listEmotion[count] != listEmotion[count - 1])
-                {
-                    whoIs.text += listName[count];
-                    //Character.SetBool("Change", true);
-                    yield return new WaitForSeconds(0.1f);
-
-                    //rendererSprite.sprite = listEmotion[count];
-                    ui.SetEmotionTrigger(listEmotion[count]);
-                    //Character.SetBool("Change", false);
-                }
-                else
-                {
-                    whoIs.text += listName[count];
-                    yield return new WaitForSeconds(0.05f);
-                }
-            }
-        }
-        else
-        {
-
+            ui.Effect(listEffect[count]);
+            yield return waitEffect;
+        }       //effect 추가...enum effect 정의 후 만들기. 흔들리는 효과 등등
+        if(listWho[count] != who.None)
             ui.SetCutTrigger(WhoDict[listWho[count]]);
-            ui.SetCharacter(listWho[count]);
-            ui.SetEmotionTrigger(listEmotion[count]);
-            whoIs.text += listName[count];
-            //rendererSprite.sprite = listSprite[count];
-        }*/
-        ui.SetCutTrigger(WhoDict[listWho[count]]);
         ui.SetCharacter(listWho[count]);
         ui.SetEmotionTrigger(listEmotion[count]);
         whoIs.text += listName[count];
         keyActivated = true;
 
-        //effect 추가...enum effect 정의 후 만들기. 흔들리는 효과 등등
         for (int i=0; i < listSentences[count].Length; i++)
         {
             text.text += listSentences[count][i];
@@ -160,7 +130,7 @@ public class DialogManager : MonoBehaviour, Manager
             {
                 ui.PlaySound(entersound);
             }
-            yield return new WaitForSeconds(0.01f);
+            yield return waitLog;
         }
     }
     IEnumerator StartTextCoroutine()
@@ -169,12 +139,9 @@ public class DialogManager : MonoBehaviour, Manager
 
         for (int i = 0; i < listSentences[count].Length; i++)
         {
-            text_only.text += listSentences[count][i];
-            if (i % 7 == 1)
-            {
-                ui.PlaySound(entersound);
-            }
-            yield return new WaitForSeconds(0.01f);
+            text_only.text += listSentences[count][i];          
+            ui.PlaySound(typesound);           
+            yield return waitType;
         }
     }
     
@@ -225,6 +192,7 @@ public class DialogManager : MonoBehaviour, Manager
             listName.Clear();
             listWho.Clear();
             listEmotion.Clear();
+            listEffect.Clear();
             Dialog.SetBool("Appear", false);
             Text_only.SetBool("Appear", false);
             //ui.SetPlayerMove(true);

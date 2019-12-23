@@ -183,6 +183,7 @@ MonoBehaviour:
     - "\uAD6C\uAE30"
     _emotion: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
     _who: 
+    _effect: 
   - name: "\uCD94\uAD812"
     sentence:
     - "\uC84D\uB9D0 \uC7C8\uC720\uC96C\uC758\uC7C8\uAC00 \uB9DE\uC229\uB2C8\uAF48?"
@@ -202,21 +203,25 @@ MonoBehaviour:
     - "\uAD6C\uAE30"
     _emotion: 000000000000000000000000000000000000000000000000
     _who: 
+    _effect: 
   - name: 
     sentence: []
     _name: []
     _emotion: 
     _who: 
+    _effect: 
   - name: 
     sentence: []
     _name: []
     _emotion: 
     _who: 
+    _effect: 
   - name: 
     sentence: []
     _name: []
     _emotion: 
     _who: 
+    _effect: 
   choices: []
   cutImages: []
   nextEvent: {fileID: 0}
@@ -234,6 +239,7 @@ MonoBehaviour:
       _name: []
       _emotion: 0000000000000000000000000000000000000000
       _who: 
+      _effect: 
     logCount: 0
     itemID: 0
   backToZero:
@@ -248,6 +254,7 @@ MonoBehaviour:
     - "\uC774\uB2C8"
     _emotion: 000000000000000000000000
     _who: 
+    _effect: 
 --- !u!61 &979360235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -345,42 +352,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - "\uBAA8 \uC6D4 \uBAA8 \uC2DC\n\uBC95\uC815 \uB300\uAE30\uC2E4"
+  - "\uBAA8 \uC6D4 \uBAA8 \uC77C\n\uBC95\uC815 \uB300\uAE30\uC2E4"
   dialogs:
+  - name: "\uC11C\uC2A4\uD39C\uC2A41"
+    sentence:
+    - "\uD558\uC544...\uD558\uC544..."
+    - "\uC8FD...\uC8FD\uC5EC\uBC84\uB9B0 \uAC74\uAC00?!"
+    _name:
+    - ???
+    - ???
+    _emotion: 0000000000000000
+    _who: 0000000000000000
+    _effect: 0000000000000000
+  - name: "\uC11C\uC2A4\uD39C\uC2A42"
+    sentence:
+    - "\uC5B4\uB5A1\uD558\uC9C0..."
+    - "\uC544, \uC544\uB0D0! \uC774\uAC74..."
+    _name:
+    - ???
+    - ???
+    _emotion: 0000000000000000
+    _who: 0000000000000000
+    _effect: 0000000000000000
+  - name: "\uC11C\uC2A4\uD39C\uC2A43"
+    sentence:
+    - "\uC774\uAC74, \uB140\uC11D\uC774 \uC798\uBABB\uD55C \uAC70\uC57C!"
+    _name:
+    - ???
+    _emotion: 00000000
+    _who: 00000000
+    _effect: 00000000
   - name: "\uBC95\uC815\uB300\uAE30\uC2E4"
     sentence:
-    - "\uD6C4\uC6B0...\uB610 \uC7AC\uD310\uC778\uAC00."
-    - "\uC774\uBC88 \uC758\uB8B0\uC778\uC740 \u3148\u3131\uC774\uAD70."
-    - "\uACE0\uB9D9\uB3E0...!"
+    - '...?'
+    - "\uC5EC\uAE34 \uC5B4\uB514\uC950?"
+    - "(A4\uC6A9\uC9C0\uAC00 \uC5C6\uC5B4\uC11C \uC54C \uC218\uAC00 \uC5C6\uC5B4...)"
+    - "(...\uC544\uB2C8, \uB300\uAC00\uB9AC\uAC00 \uAE68\uC838\uC11C\uC778\uAC00?)"
+    - "\uC800\uAE30..."
+    - "\uC608, \uC608!"
+    - "\uBCC0\uD638\uC0AC\uB2D8, \uAD1C\uCC2E\uC73C\uC138\uC694?"
+    - "\uC838 \uB9D0\uC785\uB2C8\uAF48?\n\uC83C \uC5B8\uC854\uB098 \uAD1C\uCD2A\uC299\uB2C8\uB3E0."
+    - "\uADF8, \uADF8\uB7FC \uBBFF\uACE0 \uB9CF\uACA8\uB3C4 \uB418\uB294 \uAC70\uC8E0?\n\uC774\uBC88
+      \uACA8\uC6B8 \uB05D\uB0A0 \uB54C\uAE4C\uC9C4 \uC5B4\uB5BB\uAC8C\uB4E0 \uD574\uACB0\uD558\uACE0
+      \uC2F6\uC5B4\uC694."
+    - "\uC838\uB9CC \uBBFF\uC73C\uC27D\uC1FC, \uD6E0\uD6E0."
+    - "(\uB9D0\uC774\uC57C \uC27D\uC9C0\uB9CC...\uC774 \uC0AC\uB78C\uC774 \uB0B4 \uC758\uB8B0\uC778\uC778\uAC00?
+      \uAE30\uC5B5\uC774 \uB098\uC9C8 \uC54A\uC544...)"
+    - "(\uC774, \uC77C\uB2E8 \uC2DC\uC791\uD558\uBA74 \uC5B4\uB5BB\uAC8C\uB4E0 \uB418\uACA0\uC9C0!)"
+    - "\uBCC0\uD638\uC778, \uACE7 \uC7AC\uD310 \uC2DC\uC791\uD569\uB2C8\uB2E4."
+    - "\uC608, \uB4E4\uC5B4\uAC38\uACD8\uC299\uB2C8\uB3E0."
+    - "\uC800, \uC815\uB9D0 \uD560 \uC218 \uC788\uC744\uAE4C\uC694?"
+    - "\uC0E4\uB78C\uC774 \uBA3C\uC838 \uC544\uB2C8\uACD8\uC299\uB2C8\uAF48.\n\uC5B4\uB5BB\uAC8C\uB4E0
+      \uB420\uAC81\uB2C8\uB3E0, \uD6E0\uD6E0."
     _name:
     - "\uC774\uB2C8"
     - "\uC774\uB2C8"
     - "\uC774\uB2C8"
-    _emotion: 040000000500000006000000
-    _who: 000000000000000000000000
-  - name: "\uCD08\uB450"
-    sentence:
-    - "\uC7AC\uD310\uC744 \uAC1C\uC2DC\uD569\uB2C8\uB2E4."
-    - "\uAC80\uC0AC\uCE21, \uCC38\uC11D\uD588\uC2B5\uB2C8\uAE4C?"
-    - "\uB124."
-    - "\uBCC0\uD638\uCE21, \uCC38\uC11D\uD588\uC2B5\uB2C8\uAE4C?"
-    - "\uCC70\uC155 \uD5C0\uC299\uB2C8\uB3E0."
-    _name:
-    - "\uC7AC\uD310\uC7A5"
-    - "\uC7AC\uD310\uC7A5"
-    - "\uB808\uB4DC\uC900\uD45C"
-    - "\uC7AC\uD310\uC7A5"
     - "\uC774\uB2C8"
-    _emotion: 0000000000000000000000000000000000000000
-    _who: 0300000003000000020000000300000001000000
-  choices:
-  - question: 
-    answers:
-    - 
-    - 
-    - 
-  cutImages: []
-  nextEvent: {fileID: 979360234}
+    - ???
+    - "\uC774\uB2C8"
+    - "\uC624\uD1A0\uCF00"
+    - "\uC774\uB2C8"
+    - "\uC624\uD1A0\uCF00"
+    - "\uC774\uB2C8"
+    - "\uC774\uB2C8"
+    - "\uC774\uB2C8"
+    - "\uACBD\uBE44\uC6D0"
+    - "\uC774\uB2C8"
+    - "\uC624\uD1A0\uCF00"
+    - "\uC774\uB2C8"
+    _emotion: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _who: 00000000000000000000000000000000000000000000000006000000060000000600000006000000060000000600000000000000000000000600000006000000
+    _effect: 00000000000000000000000000000000000000000400000000000000000000000000000000000000000000000400000000000000000000000000000000000000
+  choices: []
+  cutImages:
+  - {fileID: 21300000, guid: a814a72d0ae3a54439a900aac99ac4de, type: 3}
+  - {fileID: 21300000, guid: 0f20bd689ad3cbb45b1997dc1b5bd862, type: 3}
+  nextEvent: {fileID: 0}
 --- !u!4 &1717489133
 Transform:
   m_ObjectHideFlags: 0

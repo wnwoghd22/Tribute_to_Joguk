@@ -32,9 +32,6 @@ public class ImageCutManager : MonoBehaviour
     {
         ui = FindObjectOfType<UI>();
         myAnimator = GetComponent<Animator>();
-        Debug.Log("test");
-        myAnimator.ResetTrigger("Off");
-        myAnimator.ResetTrigger("Judge");
     }
     
     public void SetCutActive(bool _bool)

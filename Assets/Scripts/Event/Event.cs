@@ -108,20 +108,20 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler.Move(false, _count);
     }
-    protected void ActWait()
+    protected void HoldIt()
     {
         //목소리는? - 애니메이터에 넣어버리자!
-        EventHandler.Action(0);
+        EventHandler.Effect(effect.HoldIt);
     }
-    protected void ActObjection()
+    protected void Objection()
     {
         //목소리는?
-        EventHandler.Action(1);
+        EventHandler.Effect(effect.Objection);
     }
-    protected void ActTakeThis()
+    protected void TakeThat()
     {
         //목소리는?
-        EventHandler.Action(2);
+        EventHandler.Effect(effect.TakeThat);
     }
 
     protected void Flash(float _speed = 0.1f)

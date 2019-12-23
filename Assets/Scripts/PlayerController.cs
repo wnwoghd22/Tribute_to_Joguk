@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     float spd;  
     public string SceneName { get; set; }
 
+    [SerializeField]
+    private Animator EffectTrigger;
     private Animator EmotionTrigger;
     [SerializeField]
     private GameObject Attorney;
@@ -44,7 +46,8 @@ public class PlayerController : MonoBehaviour
         { emotion.embarrassed, "embarrassed" },
         { emotion.doubt, "doubt" },
         { emotion.check, "check" },
-        { emotion.bang, "bang" }
+        { emotion.bang, "bang" },
+        {emotion.agree, "agree" },
     };
 
     public void SetCharacterActive(who _character)
@@ -84,8 +87,21 @@ public class PlayerController : MonoBehaviour
     }
     public void SetEmotionTrigger(emotion _e)
     {
-        if(EmotionTrigger != null)
+        if(EmotionTrigger != null & _e != emotion.None)
+        {
+            ResetEmotionTrigger();
             EmotionTrigger.SetTrigger(EmoDict[_e]);
+        }          
+    }
+    public void SetEffectTrigger(string _s)
+    {
+        EffectTrigger.SetTrigger(_s);
+    }
+    public void ResetEmotionTrigger()
+    {
+        EmotionTrigger.ResetTrigger("normal");
+        EmotionTrigger.ResetTrigger("doubt");
+        EmotionTrigger.ResetTrigger("talk");
     }
 
     public IEnumerator Move(bool _direction, int _count = 1)

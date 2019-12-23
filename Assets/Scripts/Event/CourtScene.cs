@@ -38,7 +38,7 @@ public abstract class CourtScene : Event
             switch (theTM.state)
             {
                 case TestimonyManager.State.interrogate:
-                    ActWait();
+                    HoldIt();
                     IsCoroutine = true;
                     StartCoroutine(InterrogationCoroutine(Count));
                     yield return new WaitUntil(() => !IsCoroutine);
@@ -48,7 +48,7 @@ public abstract class CourtScene : Event
                         flag = false;
                     else
                     {
-                        ActObjection();
+                        Objection();
                         IsCoroutine = true;
                         StartCoroutine(WrongAnswerCoroutine());
                         yield return new WaitUntil(() => !IsCoroutine);

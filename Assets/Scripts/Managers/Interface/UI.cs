@@ -57,13 +57,6 @@ public class UI : MonoBehaviour
     private Event @event;
     private ChangeMap @map;
 
-    [SerializeField]
-    private Animator act_wait;
-    [SerializeField]
-    private Animator act_objection;
-    [SerializeField]
-    private Animator act_take_this;
-
     private Manager currentManager;
     private void ChangeManager(Manager _manager, bool _b = true) //true - 이벤트를 완전히 종료, false - 상태만 전이
     {
@@ -103,19 +96,21 @@ public class UI : MonoBehaviour
     {
         Player.Move(_dir, _c);
     }
-    public void Action(int _i) //패러미터를 두 개 받는 걸로 할까
+    public void Effect(effect _e = effect.None) //패러미터를 두 개 받는 걸로 할까
     {
-        switch (_i)
+        switch (_e)
         {
-            case 0:
-                act_wait.SetTrigger("Act");
-                //bgm 출력 - 애니메이터에 넣자! - 누구의 목소리를 출력할 건지 패러미터를 받는다?
+            case effect.HoldIt:
+                Player.SetEffectTrigger("HoldIt!");
                 break;
-            case 1:
-                act_objection.SetTrigger("Act");
+            case effect.Objection:
+                Player.SetEffectTrigger("Objection!");
                 break;
-            case 2:
-                act_take_this.SetTrigger("Act");
+            case effect.TakeThat:
+                Player.SetEffectTrigger("TakeThat!");
+                break;
+            case effect.Quake:
+                theCut.SetTrigger("Quake");
                 break;
             default:
                 break;
