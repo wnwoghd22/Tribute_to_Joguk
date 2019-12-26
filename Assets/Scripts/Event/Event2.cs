@@ -17,7 +17,7 @@ public class Event2 : Event
     {
         StartChoice(choice);
 
-        yield return new WaitUntil(() => !IsExcuting);
+        yield return waitExit;
 
         switch (Result)
         {
@@ -26,12 +26,12 @@ public class Event2 : Event
                 break;
             case 1:
                 StartDialogue(dialogue1);
-                yield return new WaitUntil(() => !IsExcuting);
+                yield return waitExit;
                 ExitEvent();
                 break;
             case 2:
                 StartDialogue(dialogue2);
-                yield return new WaitUntil(() => !IsExcuting);
+                yield return waitExit;
                 ExitEvent();
                 break;
         }

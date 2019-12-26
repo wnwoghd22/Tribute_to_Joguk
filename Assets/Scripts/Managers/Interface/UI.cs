@@ -57,6 +57,18 @@ public class UI : MonoBehaviour
     private Event @event;
     private ChangeMap @map;
 
+    private Dictionary<who, string> WhoDict
+        = new Dictionary<who, string>
+        {
+            { who.None, "Off" }, //Off는 외부에서만 호출 가능하게 한다.
+            { who.Attorney, "Attorney" },
+            { who.Prosecutor, "Prosecutor" },
+            { who.Judge, "Judge" },
+            { who.Witness, "Witness" },
+            { who.Company, "Company" },
+            { who.Talk, "Talk" }
+        };
+
     private Manager currentManager;
     private void ChangeManager(Manager _manager, bool _b = true) //true - 이벤트를 완전히 종료, false - 상태만 전이
     {
@@ -129,7 +141,11 @@ public class UI : MonoBehaviour
     public bool IsEvent() => @event != null;
     public void GetEvent(Event _event) => @event = _event;
     public void ClearEvent() => @event = null;
-    public void StartEvent() => @event.Excute(); //player stop, start event
+    public void StartEvent()
+    {
+        SetCharacter();
+        @event.Excute();
+    }//player stop, start event
     public void ExitEvent()
     {
         ClearEvent();
@@ -159,16 +175,23 @@ public class UI : MonoBehaviour
         theCut.ResetTrigger();
         theCut.SetTrigger(_s);
     }
+    public void SetCutTrigger(who _who)
+    {
+        theCut.ResetTrigger();
+        if (_who != who.None)
+            theCut.SetTrigger(WhoDict[_who]);
+    }
     public void ChangeCut(Sprite _sprite)
     {
         theCut.ChangeCut(_sprite);
     }
+    
     public void SetCutActive(bool _b)
     {
         theCut.SetCutActive(_b);
     }
     public bool IsExcuting => (object)currentManager != theB;
-    public int Result => theCM.GetResult();
+    public int Result => theCM.Result;
     #endregion
     #region Map
     public bool IsMap => @map != null;

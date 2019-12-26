@@ -20,7 +20,7 @@ public abstract class Event : MonoBehaviour
     protected bool flag = false;
     protected bool isActive = false; //false = start event automatically, 조사용 이벤트인가? 자동 이벤트인가?
 
-    protected bool IsExcuting => EventHandler.IsExcuting;
+    private bool IsExcuting => EventHandler.IsExcuting;
     protected int Result => EventHandler.Result;
     
     protected WaitForSeconds waitTime = new WaitForSeconds(1f);
@@ -74,10 +74,6 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler.StartText(_s);
     }
-    protected void StartChoice(Choice _c) //선택 분기 진입.
-    {
-        EventHandler.StartChoice(_c);
-    }
     protected void StartTestimony(Testimony _t) //할당 후 개시 글자가 움직이는 애니메이션.
     {
         EventHandler.AssignTestimony(_t);
@@ -86,6 +82,11 @@ public abstract class Event : MonoBehaviour
     protected void ShowTestimony(int _i) //i번째 증언
     {
         EventHandler.CallTestimony(_i);
+    }
+
+    protected void StartChoice(Choice _c) //선택 분기 진입.
+    {
+        EventHandler.StartChoice(_c);
     }
     protected void Adduce() //제시 장면으로 진입
     {

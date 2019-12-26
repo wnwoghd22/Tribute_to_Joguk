@@ -16,7 +16,7 @@ public class Event1 : Event
     {       
         StartDialogue(dialogue1);
 
-        yield return new WaitUntil(() => !IsExcuting);
+        yield return waitTime;
 
         MoveRight("Player");
         
@@ -26,7 +26,7 @@ public class Event1 : Event
 
         StartDialogue(dialogue2);
 
-        yield return new WaitUntil(() => !IsExcuting);
+        yield return waitTime;
 
         ExitEvent();
     }

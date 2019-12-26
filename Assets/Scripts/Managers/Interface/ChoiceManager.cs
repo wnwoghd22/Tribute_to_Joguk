@@ -29,25 +29,24 @@ public class ChoiceManager : MonoBehaviour, Manager
     //private AudioManager theAM;
     private string question;
     private List<string> answerList;
+    //[SerializeField]
+    //private GameObject go; //for GUI control
+    [SerializeField]
+    private Text question_Text;
+    [SerializeField]
+    private Text[] answer_Text;
+    [SerializeField]
+    private GameObject[] answerPanel;
 
-    public GameObject go;
-
-    public Text question_Text;
-
-    public Text[] answer_Text;
-    public GameObject[] answerPanel;
-
-    public Animator anim;
+    private Animator anim;
 
     public string keySound;
     public string enterSound;
 
     //public bool choicing;
     private bool keyInput; //키 처리 활성화
-
     private int count;
-
-    private int result; //선택한 선지 번호. 결과
+    public int Result { get; private set; } //선택 결과
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
     #endregion
@@ -56,6 +55,7 @@ public class ChoiceManager : MonoBehaviour, Manager
     void Start()
     {
         //theAM = FindObjectOfType<AudioManager>();
+        anim = GetComponent<Animator>();
         answerList = new List<string>();
         for (int i = 0; i <= 3; i++)
         {
@@ -67,9 +67,13 @@ public class ChoiceManager : MonoBehaviour, Manager
 
     public void ShowChoice(Choice _choice)
     {
-        result = 0;
-        question = _choice.question;
-        for(int i = 0; i<_choice.answers.Length; i++)
+        ui.SetCutTrigger(_choice.question._who[0]);
+        ui.SetCharacter(_choice.question._who[0]);
+        ui.SetEmotionTrigger(_choice.question._emotion[0]);       
+        question = _choice.question.sentence[0];
+
+        Result = 0;
+        for (int i = 0; i<_choice.answers.Length; i++)
         {
             answerList.Add(_choice.answers[i]);
             answerPanel[i].SetActive(true);
@@ -80,10 +84,6 @@ public class ChoiceManager : MonoBehaviour, Manager
         Selection();
     }
 
-    public int GetResult()
-    {
-        return result;
-    }
 
     IEnumerator ChoiceCoroutine()
     {
@@ -126,7 +126,7 @@ public class ChoiceManager : MonoBehaviour, Manager
             answerPanel[i].GetComponent<Image>().color = color;
         }
         color.a = .5f;
-        answerPanel[result].GetComponent<Image>().color = color;
+        answerPanel[Result].GetComponent<Image>().color = color;
     }
 
     public void HandleInput()
@@ -136,19 +136,19 @@ public class ChoiceManager : MonoBehaviour, Manager
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 ui.PlaySound(keySound);
-                if (result > 0)
-                    result--;
+                if (Result > 0)
+                    Result--;
                 else
-                    result = count;
+                    Result = count;
                 Selection();
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 ui.PlaySound(keySound);
-                if (result < count)
-                    result++;
+                if (Result < count)
+                    Result++;
                 else
-                    result = 0;
+                    Result = 0;
                 Selection();
             }
             else if (Input.GetKeyDown(KeyCode.Z))

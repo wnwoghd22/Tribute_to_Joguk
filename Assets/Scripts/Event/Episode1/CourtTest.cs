@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CourtTest : CourtScene
+public class CourtTest : TestimonyScene
 {
     protected override void Start()
     {
@@ -17,27 +17,27 @@ public class CourtTest : CourtScene
             case 0:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[0]);
-                yield return new WaitUntil(() => !IsExcuting);
+                yield return waitTime;
                 break;
             case 1:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[1]);
-                yield return new WaitUntil(() => !IsExcuting);
+                yield return waitTime;
                 break;
             case 2:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[2]);
-                yield return new WaitUntil(() => !IsExcuting);
+                yield return waitTime;
                 break;
             case 3:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[3]);
-                yield return new WaitUntil(() => !IsExcuting);
+                yield return waitTime;
                 break;
             case 4:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[4]);
-                yield return new WaitUntil(() => !IsExcuting);
+                yield return waitTime;
                 break;
             default:
                 break;

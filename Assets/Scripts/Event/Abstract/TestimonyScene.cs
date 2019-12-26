@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CourtScene : Event
+public abstract class TestimonyScene : Event
 {
     private TestimonyManager theTM;
     protected int Count => theTM.Count; //어떤 장면인가?
@@ -56,7 +56,7 @@ public abstract class CourtScene : Event
                     break;
                 case TestimonyManager.State.back_to_zero:
                     StartInterrogation(backToZero);
-                    yield return new WaitUntil(() => !IsExcuting);
+                    yield return waitTime;
                     break;
                 default:
                     break;

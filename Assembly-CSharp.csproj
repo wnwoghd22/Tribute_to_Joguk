@@ -62,17 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ChangeMap.cs" />
-    <Compile Include="Assets\Scripts\Choice.cs" />
-    <Compile Include="Assets\Scripts\Dialog.cs" />
-    <Compile Include="Assets\Scripts\Event\CourtScene.cs" />
-    <Compile Include="Assets\Scripts\Event\CourtTest.cs" />
-    <Compile Include="Assets\Scripts\Event\Event.cs" />
+    <Compile Include="Assets\Scripts\Event\Abstract\Event.cs" />
+    <Compile Include="Assets\Scripts\Event\Abstract\TestimonyScene.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\CourtStart.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\CourtTest.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\TestEvent.cs" />
     <Compile Include="Assets\Scripts\Event\Event1.cs" />
     <Compile Include="Assets\Scripts\Event\Event2.cs" />
-    <Compile Include="Assets\Scripts\Event\TestEvent.cs" />
-    <Compile Include="Assets\Scripts\InventorySlot.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\BGMManager.cs" />
@@ -92,7 +88,12 @@
     <Compile Include="Assets\Scripts\Managers\Interface\UI.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Testimony.cs" />
+    <Compile Include="Assets\Scripts\Structure\ChangeMap.cs" />
+    <Compile Include="Assets\Scripts\Structure\Choice.cs" />
+    <Compile Include="Assets\Scripts\Structure\Dialog.cs" />
+    <Compile Include="Assets\Scripts\Structure\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Structure\Item.cs" />
+    <Compile Include="Assets\Scripts\Structure\Testimony.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unji_saiban/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -34,18 +34,7 @@ public class DialogManager : MonoBehaviour, Manager
     private List<string> listName;
     private List<string> listSentences;
     private List<emotion> listEmotion;
-    private List<who> listWho;
-    private Dictionary<who, string> WhoDict
-        = new Dictionary<who, string>
-        {
-            { who.None, "Off" }, //Off는 외부에서만 호출 가능하게 한다.
-            { who.Attorney, "Attorney" },
-            { who.Prosecutor, "Prosecutor" },
-            { who.Judge, "Judge" },
-            { who.Witness, "Witness" },
-            { who.Company, "Company" },
-            { who.Talk, "Talk" }
-        };
+    private List<who> listWho;   
     private List<effect> listEffect;
 
     private List<Dialog> listLog;
@@ -80,9 +69,7 @@ public class DialogManager : MonoBehaviour, Manager
         listEmotion = new List<emotion>();
         listWho = new List<who>();
         listEffect = new List<effect>();
-        listName = new List<string>();
-
-        listLog = new List<Dialog>();
+        listName = new List<string>();        
     }
 
     public void ShowText(string _sentence)
@@ -116,8 +103,7 @@ public class DialogManager : MonoBehaviour, Manager
             ui.Effect(listEffect[count]);
             yield return waitEffect;
         }       //effect 추가...enum effect 정의 후 만들기. 흔들리는 효과 등등
-        if(listWho[count] != who.None)
-            ui.SetCutTrigger(WhoDict[listWho[count]]);
+        ui.SetCutTrigger(listWho[count]);
         ui.SetCharacter(listWho[count]);
         ui.SetEmotionTrigger(listEmotion[count]);
         whoIs.text += listName[count];

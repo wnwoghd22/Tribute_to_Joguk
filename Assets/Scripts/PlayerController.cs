@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         { emotion.point, "point" },
         { emotion.interrogate, "interrogate" },
         { emotion.embarrassed, "embarrassed" },
+        { emotion.shocked, "shocked" },
         { emotion.doubt, "doubt" },
         { emotion.check, "check" },
         { emotion.bang, "bang" },

@@ -120,6 +120,168 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &817818040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 817818041}
+  - component: {fileID: 817818043}
+  - component: {fileID: 817818042}
+  m_Layer: 0
+  m_Name: CourtStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &817818041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817818040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &817818042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817818040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724e9d7f500560c4f9c5ff0efeff2535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts: []
+  dialogs:
+  - name: "\uCD9C\uC11D\uD655\uC778"
+    sentence:
+    - "\uADF8\uB7FC \uACF5\uD310\uC744 \uAC1C\uC2DC\uD569\uB2C8\uB2E4."
+    - "\uAC80\uC0AC\uCE21, \uCD9C\uC11D\uD588\uC2B5\uB2C8\uAE4C?"
+    - "\uB124."
+    - "\uBCC0\uD638\uC778, \uCD9C\uC11D\uD588\uC2B5\uB2C8\uAE4C?"
+    - "\uB124."
+    - "(\uC77C\uB2E8 \uB098\uC624\uAE34 \uD588\uB294\uB370...)"
+    - "\uC5BC\uAD74\uC774 \uC548 \uC88B\uC2B5\uB2C8\uB2E4, \uBCC0\uD638\uC778.\n\uB625
+      \uC30C\uC2B5\uB2C8\uAE4C?"
+    - "\uC544, \uC544\uB2D9\uB2C8\uB2E4. \uADF8, A4\uC6A9\uC9C0 \uAC19\uC740 \uAC70\uB77C\uB3C4
+      \uC788\uC73C\uBA74\n\uBB54\uAC00 \uAE30\uC5B5\uC774 \uB0A0 \uC9C0\uB3C4..."
+    - "\uAE30\uC5B5\uC774 \uB098\uC9C0 \uC54A\uB294\uB2E4\uB294 \uAC81\uB2C8\uAE4C?"
+    - "\uB124, \uBB50..."
+    _name:
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uB808\uB4DC\uC900\uD45C"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC774\uB2C8"
+    - "\uC774\uB2C8"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC774\uB2C8"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC774\uB2C8"
+    _emotion: 01000000010000000100000001000000010000000500000004000000010000000100000005000000
+    _who: 03000000030000000200000003000000010000000100000003000000010000000300000001000000
+    _effect: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  - name: "\uC870\uC791\uC124\uBA85"
+    sentence:
+    - "\uADF8\uB7FC \uAC00\uBCCD\uAC8C \uC124\uBA85 \uC880 \uB4E4\uC744 \uC218 \uC788\uACA0\uC229\uB2C8\uAF48?"
+    - "\uB124, \uBCC0\uD638\uC778\uC774 \uC624\uB77D\uAC00\uB77D \uD558\uB294 \uAC83
+      \uAC19\uC73C\uB2C8 \uC124\uBA85\uC744."
+    - "Z\uB97C \uB204\uB974\uBA74 \uB2E4\uC74C\uC73C\uB85C \uB118\uC5B4\uAC11\uB2C8\uB2E4."
+    - "W\uB97C \uB204\uB974\uBA74 \uBC95\uC815\uAE30\uB85D\uC744 \uC870\uD68C\uD569\uB2C8\uB2E4."
+    - "\uC774 \uC0C1\uD0DC\uC5D0\uC11C W\uB97C \uB354 \uB204\uB974\uBA74 \uC778\uBB3C\uC815\uBCF4\uC640
+      \uC99D\uAC70\uBAA9\uB85D \uC0AC\uC774\uB97C \uC624\uAC08 \uC218 \uC788\uACE0,"
+    - "X\uB97C \uB204\uB974\uBA74 \uB2E4\uC2DC \uBE60\uC838\uB098\uC635\uB2C8\uB2E4."
+    - "\uBB34\uC5B8\uAC00 \uC81C\uC2DC\uD574\uC57C \uD558\uB294 \uC0C1\uD669\uC5D0\uC11C\uB294
+      S\uB97C \uB204\uB974\uBA74 \uB429\uB2C8\uB2E4."
+    - "\uC99D\uC5B8 \uC911\uC5D0 Q\uB97C \uB204\uB974\uBA74 \uCD94\uAD81\uD558\uC5EC
+      \uAE4A\uAC8C \uD30C\uACE0\uB4E4 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+    - "\uB354 \uC124\uBA85\uC774 \uD544\uC694\uD569\uB2C8\uAE4C?"
+    _name:
+    - "\uC774\uB2C8"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    _emotion: 010000000100000001000000010000000100000001000000010000000100000001000000
+    _who: 010000000300000003000000030000000300000003000000030000000300000003000000
+    _effect: 000000000000000000000000000000000000000000000000000000000000000000000000
+  - name: "\uC778\uBB3C\uC81C\uC2DC"
+    sentence:
+    - "(\uB354 \uC774\uC0C1 \uC124\uBA85\uC740 \uD544\uC694 \uC5C6\uC744 \uAC83 \uAC19\uB2E4...)"
+    - "\uCDA9\uBD84\uD569\uB2C8\uB3E0."
+    - "\uADF8\uB7FC, \uBCF8\uACA9\uC801\uC778 \uC7AC\uD310\uC73C\uB85C \uB118\uC5B4\uAC00\uAE30
+      \uC804\uC5D0..."
+    - "\uBCC0\uD638\uC778\uC774 \uCE58\uB9E4\uC5D0 \uAC78\uB9B0 \uAC8C \uC544\uB2CC\uC9C0
+      \uAC04\uB2E8\uD788 \uD655\uC778\uD574 \uBCF4\uACA0\uC2B5\uB2C8\uB2E4."
+    - "(\uCE58, \uCE58\uB9E4\uB77C\uB2C8!)"
+    - "\uADF8\uB7FC \uAC00\uC7A5 \uAC04\uB2E8\uD55C \uC9C8\uBB38\uBD80\uD130."
+    _name:
+    - "\uC774\uB2C8"
+    - "\uC774\uB2C8"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC7AC\uD310\uC7A5"
+    - "\uC774\uB2C8"
+    - "\uC7AC\uD310"
+    _emotion: 060000000100000001000000010000000400000001000000
+    _who: 010000000100000003000000030000000100000003000000
+    _effect: 000000000000000000000000000000000000000000000000
+  choices:
+  - question:
+      name: "\uC124\uBA85\uC744 \uB4E4\uC744\uAE4C...?"
+      sentence:
+      - "\uC124\uBA85\uC744 \uB4E4\uC5B4\uBCFC\uAE4C...?"
+      _name: []
+      _emotion: 06000000
+      _who: 01000000
+      _effect: 
+    answers:
+    - "\uC124\uBA85\uC744 \uB4E3\uB294\uB2E4."
+    - "\uD544\uC694\uB294 \uC5C6\uB2E4."
+  cutImages: []
+  nextEvent: {fileID: 0}
+--- !u!61 &817818043
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817818040}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &979360233
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +424,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979360233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -293,7 +455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717489130
 GameObject:
@@ -304,8 +466,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717489133}
-  - component: {fileID: 1717489132}
   - component: {fileID: 1717489131}
+  - component: {fileID: 1717489132}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -320,7 +482,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717489130}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -428,7 +590,7 @@ MonoBehaviour:
   cutImages:
   - {fileID: 21300000, guid: a814a72d0ae3a54439a900aac99ac4de, type: 3}
   - {fileID: 21300000, guid: 0f20bd689ad3cbb45b1997dc1b5bd862, type: 3}
-  nextEvent: {fileID: 0}
+  nextEvent: {fileID: 817818042}
 --- !u!4 &1717489133
 Transform:
   m_ObjectHideFlags: 0
