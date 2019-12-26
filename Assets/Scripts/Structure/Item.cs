@@ -11,12 +11,6 @@ public class Item
     public Sprite itemIcon;
     public ItemType type;
 
-    public enum ItemType
-    {
-        person, //인물 정보
-        clue, //증거품
-    }
-
     public Item(int _ID, string _name, string _Des, ItemType _type = ItemType.clue)
     {
         itemID = _ID;
@@ -26,4 +20,9 @@ public class Item
 
         itemIcon = Resources.Load("ItemIcon/" + _ID.ToString(), typeof(Sprite)) as Sprite;
     }
+}
+public enum ItemType
+{
+    person, //인물 정보
+    clue, //증거품
 }

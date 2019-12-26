@@ -21,7 +21,8 @@ public abstract class Event : MonoBehaviour
     protected bool isActive = false; //false = start event automatically, 조사용 이벤트인가? 자동 이벤트인가?
 
     private bool IsExcuting => EventHandler.IsExcuting;
-    protected int Result => EventHandler.Result;
+    protected int Answer => EventHandler.Result;
+    protected int Adduced => EventHandler.ReturnValue;
     
     protected WaitForSeconds waitTime = new WaitForSeconds(1f);
     protected WaitUntil waitExit;
@@ -88,17 +89,17 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler.StartChoice(_c);
     }
-    protected void Adduce() //제시 장면으로 진입
+    protected void Adduce(Choice _c) //제시 장면으로 진입
     {
-        EventHandler.GoToInventory(Inventory.ReturnType.Both);
+        EventHandler.Adduce(_c,ReturnType.Both);
     }
-    protected void AdducePerson() //인물 제시
+    protected void AdducePerson(Choice _c) //인물 제시
     {
-        EventHandler.GoToInventory(Inventory.ReturnType.Person);
+        EventHandler.Adduce(_c, ReturnType.Person);
     } 
-    protected void AdduceClue() //증거 제시
+    protected void AdduceClue(Choice _c) //증거 제시
     {
-        EventHandler.GoToInventory(Inventory.ReturnType.Clue);
+        EventHandler.Adduce(_c, ReturnType.Clue);
     }
 
     protected void MoveRight(string _name, int _count = 1)
@@ -154,9 +155,9 @@ public abstract class Event : MonoBehaviour
         EventHandler.PlayBGM(_track);
     }
 
-    protected void GetItem(int _itemID, int _count = 1)
+    protected void GetItem(int _itemID)
     {
-        EventHandler.GetItem(_itemID, _count);
+        EventHandler.GetItem(_itemID);
     }
    
     protected void ExitEvent()

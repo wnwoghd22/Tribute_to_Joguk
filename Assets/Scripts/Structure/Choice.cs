@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Choice
 {
-    public Dialog question;
+    public string name;
+    public string sentence;
+    public emotion _emotion;
+    public who _who;
     public string[] answers;
 }

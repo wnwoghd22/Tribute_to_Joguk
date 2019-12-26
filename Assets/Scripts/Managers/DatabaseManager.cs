@@ -31,22 +31,22 @@ public class DatabaseManager : MonoBehaviour
     void Start()
     {
         #region itemList
-        itemList.Add(new Item(00001, "세월호 뱃지", "인권 변호사의 상징과도 같은 것. 나를 진정한 변호사로 만들어 준다."));
-        itemList.Add(new Item(10002, "생강절임", "마력 10회복"));
-        itemList.Add(new Item(10003, "연어초밥", "체력 50회복"));
-        itemList.Add(new Item(10004, "미소장국", "마력 30회복"));
-        itemList.Add(new Item(11001, "마법상자", "무작위 회복"));
+        itemList.Add(new Item(90001, "세월호 뱃지", "인권 변호사의 상징과도 같은 것. 나를 진정한 변호사로 만들어 준다."));
+        itemList.Add(new Item(91002, "레드준표", "한 때 \'모래시계 검사\'로 이름을 날리던 실력있는 검사.", ItemType.person));
+        //Episode1
+        itemList.Add(new Item(10001, "사건 기록", "피해자, 좌측과 우측 두부 각각 외상. 좌측은 경미, 우측은 깊은 두개골 파열로,우측의 두부외상이 사인이었을 것으로 추정. 사망추정시각은 11시 50분경."));
+        itemList.Add(new Item(10002, "CCTV 사진", "12시경 오토케가 찍혀있는 사진. 룸 문 앞을 찍고 있다."));
+        itemList.Add(new Item(10003, "범행현장의 사진", "피해자가 쓰러져있는 사진. 피해자의 주위가 지나치게 깨끗하다."));
+        itemList.Add(new Item(10004, "재떨이", "사건에 사용된 둔기. 피고인의 오른손 지문이 찍혀있다."));
+        itemList.Add(new Item(10005, "담배꽁초", "피해자의 밑에 깔려있던 한개비의 꽁초. 피해자의 타액은 검출되지 않았다."));
 
-        itemList.Add(new Item(20001, "단도 미사일", "짧은 검. 기본 무기"));       
-        itemList.Add(new Item(20101, "제로식 아머", "가벼운 갑옷. 기본 갑옷"));
-        itemList.Add(new Item(20201, "제로식 건틀렛", "가벼운 장갑. 기본 갑옷"));
-        itemList.Add(new Item(20301, "제로식 팬츠", "가벼운 바지. 기본 갑옷"));
-        itemList.Add(new Item(20401, "제로식 부츠", "가벼운 신발. 기본 갑옷"));
+        itemList.Add(new Item(11001, "오토케 미노가시", "이번 사건의 피고인. 경찰 업무 중 과잉대처로 인한 살인 혐의를 받고 있다.", ItemType.person));
+        itemList.Add(new Item(11002, "우라기리", "이번 사건의 피해자. 두부외상으로 사망했다.", ItemType.person));
+        itemList.Add(new Item(11003, "이츠모 시다바리", "주요 증인. 술집에서 종업원으로 일하고 있다.", ItemType.person));
+        itemList.Add(new Item(11004, "아몰랑 메소라시", "오토케의 동료 경찰. 오토케의 무죄를 믿고 있다.", ItemType.person));
+        
 
-        itemList.Add(new Item(21001, "시간의 반지", "느린 속도로 마력을 회복시켜주는 반지"));
-        itemList.Add(new Item(30001, "고대유물 조각1", "반으로 쪼개진 유물의 파편"));
-        itemList.Add(new Item(30002, "고대유물 조각2", "반으로 쪼개진 유물의 파편"));
-        itemList.Add(new Item(30003, "고대유물", "고대유물"));
+        
         #endregion
     }
 

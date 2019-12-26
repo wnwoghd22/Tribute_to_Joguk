@@ -216,14 +216,22 @@ public class UI : MonoBehaviour
     public string GetSelection() => theMM.GetResult();
     #endregion
     #region Inventory
-    public void GoToInventory(Inventory.ReturnType type = Inventory.ReturnType.None)
+    public void GoToInventory(ReturnType type = ReturnType.None)
     {
         _stack = currentManager;
         theIV.SetType(type);
         ChangeManager(theIV, false); //상태만 전이
     }
+    public void Adduce(Choice _c,ReturnType type = ReturnType.Both)
+    {
+        _stack = currentManager;
+        theIV.SetType(type);
+        ChangeManager(theIV);
+        theIV.Adduce(_c);
+    }
+    public int ReturnValue => theIV.ReturnValue;
     public void AddItem(Item _item) => theIV.AddItem(_item); //아이템 추가
-    public void GetItem(int _itemID, int _c = 1) => theIV.GetItem(_itemID, _c);
+    public void GetItem(int _itemID) => theIV.GetItem(_itemID);
     public void ExitInventory() => ChangeManager(_stack);
     #endregion
     #region Testimony
@@ -234,6 +242,7 @@ public class UI : MonoBehaviour
     }
     public void CallObjection(int _result)
     {
+        ChangeManager(theTM);
         theTM.SetObjection(_result);
     }
     #endregion

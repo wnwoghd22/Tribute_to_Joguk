@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour, Manager
 {
-    public static Inventory instance;
+    //public static Inventory instance;
 
     #region Variables
     private DatabaseManager theDB;
@@ -33,11 +33,9 @@ public class Inventory : MonoBehaviour, Manager
     private Transform tf_item;
     [SerializeField]
     private Text description_Text;
-
-    [SerializeField]
-    private GameObject go; //인벤토리 창 활성화
+    
+    private Animator myAnimator;    
     private GameObject goOOC; //선택지 활성화...또는 증거 상세
-    //public GameObject prefab_FloatingText;
 
     private enum SelectedTab
     {
@@ -138,18 +136,16 @@ public class Inventory : MonoBehaviour, Manager
 
     private bool stopKeyInput = false; //증거 상세 진입 시 키 입력 방지
     private bool preventExc; //중복입력 방지
-
-    public enum ReturnType
-    {
-        None, //단순 열람
-        Objection, //심문 장면
-        Both, //둘 중 하나를 제시해야만 할 때
-        Person, //사람을 제시해야만 할 때
-        Clue, //증거를 제시해야만 할 때
-    }
+    
+    //제시해야만 할 때
     private ReturnType returnType;
     public void SetType(ReturnType type) => returnType = type;
-    private int ReturnValue;
+    public int ReturnValue { get; private set; }
+    private string question;
+    [SerializeField]
+    private Text question_Text;
+    [SerializeField]
+    private GameObject go; //제시해야 할 때
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
     #endregion
@@ -157,12 +153,14 @@ public class Inventory : MonoBehaviour, Manager
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+        //instance = this;
         theDB = FindObjectOfType<DatabaseManager>();
+        myAnimator = GetComponent<Animator>();
         
         inventoryItemList = new List<Item>();
         inventoryTabList = new List<Item>();
         slots = tf_tab.GetComponentsInChildren<InventorySlot>(); //tab. 4X2
+        go.SetActive(false);
     }
     public List<Item> SaveItem()
     {
@@ -176,7 +174,7 @@ public class Inventory : MonoBehaviour, Manager
     {
         inventoryItemList.Add(_item);
     }
-    public void GetItem(int _itemID, int _count = 1)
+    public void GetItem(int _itemID)
     {
         for(int i = 0; i < theDB.itemList.Count; i++) //데이터베이스 검색
         {
@@ -213,14 +211,14 @@ public class Inventory : MonoBehaviour, Manager
             case SelectedTab.Clue:
                 for (int i = 0; i < inventoryItemList.Count; i++)
                 {
-                    if (inventoryItemList[i].type == Item.ItemType.clue)
+                    if (inventoryItemList[i].type == ItemType.clue)
                         inventoryTabList.Add(inventoryItemList[i]);
                 }
                 break;
             case SelectedTab.Person:
                 for (int i = 0; i < inventoryItemList.Count; i++)
                 {
-                    if (inventoryItemList[i].type == Item.ItemType.person)
+                    if (inventoryItemList[i].type == ItemType.person)
                         inventoryTabList.Add(inventoryItemList[i]);
                 }
                 break;
@@ -255,8 +253,8 @@ public class Inventory : MonoBehaviour, Manager
     {
         StopAllCoroutines();
 
-        if (selectedItem >= slotCount)
-            selectedItem = slotCount - 1;
+        if (selectedItem > slotCount)
+            selectedItem = slotCount;
         if (slotCount > -1)
         {
             Color color = slots[0].selected_Item.GetComponent<Image>().color;
@@ -292,7 +290,26 @@ public class Inventory : MonoBehaviour, Manager
         }
 
     }//선택된 슬롯 점멸효과, 접근 금지
+
+    public void Adduce(Choice _q)
+    {
+        question_Text.text = "";
+        ui.SetCutTrigger(_q._who);
+        ui.SetCharacter(_q._who);
+        ui.SetEmotionTrigger(_q._emotion);
+        question = _q.sentence;
     
+        StartCoroutine(TypingQuestion());
+    }
+    IEnumerator TypingQuestion()
+    {
+        for (int i = 0; i < question.Length; i++)
+        {
+            question_Text.text += question[i];
+            yield return waitTime;
+        }
+    }
+
     private void ShowItem()
     {
         if (!tf_item.gameObject.activeSelf)
@@ -321,14 +338,14 @@ public class Inventory : MonoBehaviour, Manager
             switch (currentActivated)
             {
                 case Activated.Tab:
-                    if (Input.GetKeyDown(KeyCode.X) && !preventExc)
+                    if (Input.GetKeyDown(KeyCode.X) & !preventExc)
                     {
-                        if (returnType == ReturnType.None || returnType == ReturnType.Objection)
+                        if (returnType == ReturnType.None | returnType == ReturnType.Objection)
                            ui.ExitInventory();
                     }
-                    else if (Input.GetKeyDown(KeyCode.W) && !preventExc)
+                    else if (Input.GetKeyDown(KeyCode.W) & !preventExc)
                     {
-                        if (returnType != ReturnType.Person && returnType != ReturnType.Clue)
+                        if (returnType != ReturnType.Person & returnType != ReturnType.Clue)
                         {
                             SwitchTab(true);
                             ShowTab();
@@ -336,7 +353,7 @@ public class Inventory : MonoBehaviour, Manager
                     }
                     else if (Input.GetKeyDown(KeyCode.RightArrow))
                     {
-                        if (selectedItem == slotCount - 1)
+                        if (selectedItem == slotCount)
                         {
                             NextPage();
                             selectedItem = 0;
@@ -368,15 +385,15 @@ public class Inventory : MonoBehaviour, Manager
                             SelectedItem();
                         }
                     }
-                    else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+                    else if (Input.GetKeyDown(KeyCode.DownArrow) | Input.GetKeyDown(KeyCode.UpArrow))
                     {
-                        if (selectedItem > 3)
+                        if (selectedItem < 4)
                             selectedItem = selectedItem + 4;
                         else
                             selectedItem = selectedItem - 4;
                         SelectedItem();
                     }
-                    else if (Input.GetKeyDown(KeyCode.Z) && !preventExc)
+                    else if (Input.GetKeyDown(KeyCode.Z) & !preventExc)
                     {
                         ui.PlaySound(enter_sound);
                         
@@ -386,16 +403,16 @@ public class Inventory : MonoBehaviour, Manager
                     }
                     break; //탭 활성화 시
                 case Activated.Item:                   
-                    if (Input.GetKeyDown(KeyCode.X) && !preventExc)
+                    if (Input.GetKeyDown(KeyCode.X) & !preventExc)
                     {
                         preventExc = true;
                         ui.PlaySound(cancel_sound);
                         StopAllCoroutines();
                         ShowTab();
                     }
-                    else if (Input.GetKeyDown(KeyCode.W) && !preventExc)
+                    else if (Input.GetKeyDown(KeyCode.W) & !preventExc)
                     {
-                        if (returnType != ReturnType.Person && returnType != ReturnType.Clue)
+                        if (returnType != ReturnType.Person & returnType != ReturnType.Clue)
                         {
                             SwitchTab(true);
                             ShowItem();
@@ -436,36 +453,71 @@ public class Inventory : MonoBehaviour, Manager
                 default:                   
                     break;
             }
-            if (Input.GetKeyDown(KeyCode.S) && returnType != ReturnType.None && !preventExc)
-            {
-                if (returnType == ReturnType.Objection) //이의 제기 장면으로 진입
-                    ui.CallObjection(ReturnValue);
+            if (Input.GetKeyDown(KeyCode.S) && !preventExc)
+            {               
+                switch (returnType)
+                {
+                    case ReturnType.None:
+                        break;
+                    case ReturnType.Objection:
+                        ui.CallObjection(ReturnValue);//이의 제기 장면으로 진입
+                        break;
+                    case ReturnType.Both:
+                    case ReturnType.Person:
+                    case ReturnType.Clue:
+                        ui.ExitInventory();
+                        break;
+                }
                 //다른 장면에서의 함수를 만들 필요가 있다
             }
             if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.X) || Input.GetKeyUp(KeyCode.W)) //중복 실행 방지
-                preventExc = false;            
+                preventExc = false;
         }
     }
     public void Enter(UI _ui)
     {
         ui = _ui;
-
         ui.PlaySound(open_sound);
-        go.SetActive(true);
-        if (returnType == ReturnType.Person)
-            selectedTab = SelectedTab.Person;
-        else
-            selectedTab = SelectedTab.Clue;
+        ReturnValue = -1;
+        selectedClue = 0;
+        selectedPerson = 0;
+
+        switch (returnType)
+        {
+            case ReturnType.None:
+            case ReturnType.Objection:
+                selectedTab = SelectedTab.Clue;
+                break;
+            case ReturnType.Both:
+            case ReturnType.Clue:
+                selectedTab = SelectedTab.Clue;
+                go.SetActive(true);
+                break;
+            case ReturnType.Person:
+                selectedTab = SelectedTab.Person;
+                go.SetActive(true);
+                break;           
+        }
+        myAnimator.SetBool("appear", true);
         ActivateTab();
         SwitchTab();
         ShowTab();
     }
     public void Exit(bool _b = true)
     {
+        myAnimator.SetBool("appear", false);
         returnType = ReturnType.None;
         currentActivated = Activated.Tab;
         ui.PlaySound(cancel_sound);
         StopAllCoroutines();
         go.SetActive(false);
     }
+}
+public enum ReturnType
+{
+    None, //단순 열람
+    Objection, //심문 장면
+    Both, //둘 중 하나를 제시해야만 할 때
+    Person, //사람을 제시해야만 할 때
+    Clue, //증거를 제시해야만 할 때
 }

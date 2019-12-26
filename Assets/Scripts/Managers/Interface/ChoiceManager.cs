@@ -67,23 +67,22 @@ public class ChoiceManager : MonoBehaviour, Manager
 
     public void ShowChoice(Choice _choice)
     {
-        ui.SetCutTrigger(_choice.question._who[0]);
-        ui.SetCharacter(_choice.question._who[0]);
-        ui.SetEmotionTrigger(_choice.question._emotion[0]);       
-        question = _choice.question.sentence[0];
+        ui.SetCutTrigger(_choice._who);
+        ui.SetCharacter(_choice._who);
+        ui.SetEmotionTrigger(_choice._emotion);
+        question = _choice.sentence;
 
         Result = 0;
-        for (int i = 0; i<_choice.answers.Length; i++)
+        for (int i = 0; i < _choice.answers.Length; i++)
         {
             answerList.Add(_choice.answers[i]);
             answerPanel[i].SetActive(true);
             count = i;
         }
-        anim.SetBool("appear",true);
+        anim.SetBool("appear", true);
         StartCoroutine(ChoiceCoroutine());
         Selection();
     }
-
 
     IEnumerator ChoiceCoroutine()
     {

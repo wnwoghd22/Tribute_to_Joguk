@@ -19,7 +19,7 @@ public class Event2 : Event
 
         yield return waitExit;
 
-        switch (Result)
+        switch (Answer)
         {
             case 0:
                 ExitEvent();

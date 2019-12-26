@@ -108,7 +108,7 @@ public class TestimonyManager : MonoBehaviour, Manager
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
                     hold_box = true;
-                    ui.GoToInventory(Inventory.ReturnType.Objection);
+                    ui.GoToInventory(ReturnType.Objection);
                 } //법정기록 열람
                 else if (Input.GetKeyDown(KeyCode.RightArrow)) 
                 {
