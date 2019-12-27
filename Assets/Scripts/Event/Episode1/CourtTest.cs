@@ -17,28 +17,23 @@ public class CourtTest : TestimonyScene
             case 0:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[0]);
-                yield return waitTime;
+                yield return waitExit;
                 break;
             case 1:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[1]);
-                yield return waitTime;
+                yield return waitExit;
                 break;
             case 2:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[2]);
-                yield return waitTime;
+                yield return waitExit;
                 break;
             case 3:
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[3]);
-                yield return waitTime;
-                break;
-            case 4:
-                yield return new WaitForSeconds(1f);
-                StartInterrogation(dialogs[4]);
-                yield return waitTime;
-                break;
+                yield return waitExit;
+                break;          
             default:
                 break;
         }

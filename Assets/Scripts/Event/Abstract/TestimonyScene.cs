@@ -12,6 +12,8 @@ public abstract class TestimonyScene : Event
     private bool IsTestimony() => theTM.state == TestimonyManager.State.testimony;
     private bool IsCoroutine;
     [SerializeField]
+    protected Dialog start_dialog;
+    [SerializeField]
     protected Dialog backToZero;
 
     protected abstract IEnumerator InterrogationCoroutine(int _i);
@@ -26,11 +28,20 @@ public abstract class TestimonyScene : Event
     }
     protected override IEnumerator EventCoroutine()
     {
-        FadeIn();
-        StartTestimony(testimony);//할당, 심문개시 글자가 전개되고 진입
-
+        FadeIn(); //화면이 밝아진 후       
+        StartTestimony(testimony);//할당, 증언 개시 글자가 전개되고 진입
+        yield return new WaitUntil(() => IsTestimony()); //최초 증언 종료 후
+        FadeOut(); //화면이 어두워 진 후
+        yield return waitTime;
+        FadeIn(); //다시 밝아지고
+        StartInterrogation(start_dialog);
+        yield return waitExit; //개략적인 추궁의 방향을 요약한 뒤 심문 개시      
+        FadeOut();
+        yield return waitTime;
+        
         while (flag)
         {
+            FadeIn();
             ShowTestimony(Count);
 
             yield return new WaitUntil(() => !IsTestimony()); //입력이 있어 상태가 전이될 때까지 대기.
@@ -42,6 +53,8 @@ public abstract class TestimonyScene : Event
                     IsCoroutine = true;
                     StartCoroutine(InterrogationCoroutine(Count));
                     yield return new WaitUntil(() => !IsCoroutine);
+                    FadeOut();
+                    yield return waitTime;
                     break;
                 case TestimonyManager.State.objection:
                     if (theTM.Answer && IsCorrect)
@@ -56,6 +69,8 @@ public abstract class TestimonyScene : Event
                     break;
                 case TestimonyManager.State.back_to_zero:
                     StartInterrogation(backToZero);
+                    yield return waitExit;
+                    FadeOut();
                     yield return waitTime;
                     break;
                 default:

@@ -166,9 +166,10 @@ public class UI : MonoBehaviour
         ChangeManager(theCM, exit);
         theCM.ShowChoice(_choice);
     }
-    public void AssignTestimony(Testimony _testimony)
+    public void StartTestimony(Testimony _testimony)
     {
-        theTM.AssignTestimony(_testimony);
+        ChangeManager(theTM);
+        theTM.StartTestimony(_testimony);
     }
     public void SetCutTrigger(string _s)
     {

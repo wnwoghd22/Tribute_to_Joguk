@@ -33,6 +33,8 @@ public class Inventory : MonoBehaviour, Manager
     private Transform tf_item;
     [SerializeField]
     private Text description_Text;
+    [SerializeField]
+    private Image item_image;
     
     private Animator myAnimator;    
     private GameObject goOOC; //선택지 활성화...또는 증거 상세
@@ -271,7 +273,7 @@ public class Inventory : MonoBehaviour, Manager
     }//슬롯 선택 표시(점멸 효과), 페이지 변경 없이 슬롯만 바뀔 때
     private IEnumerator SelectedItemEffectCoroutine()
     {
-        while (currentActivated == Activated.Item)
+        while (currentActivated == Activated.Tab)
         {
             Color color = slots[selectedItem].selected_Item.GetComponent<Image>().color;
             while (color.a < 0.5f)
@@ -318,7 +320,8 @@ public class Inventory : MonoBehaviour, Manager
         {
             name_text.text = inventoryTabList[selectedItem].itemName;
             description_Text.text = inventoryTabList[selectedItem].itemDescription;
-            ReturnValue = inventoryItemList[selectedItem].itemID;
+            item_image.sprite = inventoryTabList[selectedItem].itemIcon;
+            ReturnValue = inventoryTabList[selectedItem].itemID;
         }
         else
         {

@@ -77,7 +77,7 @@ public abstract class Event : MonoBehaviour
     }
     protected void StartTestimony(Testimony _t) //할당 후 개시 글자가 움직이는 애니메이션.
     {
-        EventHandler.AssignTestimony(_t);
+        EventHandler.StartTestimony(_t);
         //애니메이션 코드를 여기에.
     }
     protected void ShowTestimony(int _i) //i번째 증언

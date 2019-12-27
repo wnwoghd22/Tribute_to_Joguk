@@ -53,5 +53,6 @@ public class ImageCutManager : MonoBehaviour
         myAnimator.ResetTrigger("Prosecutor");
         myAnimator.ResetTrigger("Judge");
         myAnimator.ResetTrigger("Court");
+        myAnimator.ResetTrigger("Witness");
     }
 }

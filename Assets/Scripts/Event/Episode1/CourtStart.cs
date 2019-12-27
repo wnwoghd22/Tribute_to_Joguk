@@ -12,6 +12,7 @@ public class CourtStart : Event
         GetItem(91002);
 
         GetItem(10001);
+        GetItem(10004);
         GetItem(11001);
         GetItem(11002);
 
@@ -61,5 +62,34 @@ public class CourtStart : Event
 
         StartDialogue(dialogs[4]);
         yield return waitExit;
+
+        answer = 10004;
+        while(_b)
+        {
+            AdduceClue(choices[2]);
+            yield return waitExit;
+
+            if (Adduced == answer)
+                break;
+            else
+            {
+                StartDialogue(dialogs[5]);
+                yield return waitExit;
+            }
+        }
+
+        StartDialogue(dialogs[6]);
+        yield return waitExit;
+
+        FadeOut();
+        yield return waitTime;
+        FadeIn();
+
+        StartDialogue(dialogs[7]);
+        yield return waitExit;
+
+        FadeOut();
+        yield return waitTime;
+        NextEvent(nextEvent);
     }
 }
