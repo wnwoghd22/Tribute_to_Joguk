@@ -12,6 +12,8 @@ public class DatabaseManager : MonoBehaviour
     public string[] switch_name;
     public bool[] switches;
 
+    public Sprite[] sprites;
+
     public List<Item> itemList = new List<Item>();
    
     private void Awake()
@@ -35,8 +37,8 @@ public class DatabaseManager : MonoBehaviour
         itemList.Add(new Item(91002, "레드준표", "한 때 \'모래시계 검사\'로 이름을 날리던 실력있는 검사.", ItemType.person));
         //Episode1
         itemList.Add(new Item(10001, "사건 기록", "피해자, 좌측과 우측 두부 각각 외상. 좌측은 경미, 우측은 깊은 두개골 파열로,우측의 두부외상이 사인이었을 것으로 추정. 사망추정시각은 11시 50분경."));
-        itemList.Add(new Item(10002, "CCTV 사진", "12시경 오토케가 찍혀있는 사진. 룸 문 앞을 찍고 있다."));
-        itemList.Add(new Item(10003, "범행현장의 사진", "피해자가 쓰러져있는 사진. 피해자의 주위가 지나치게 깨끗하다."));
+        itemList.Add(new Item(10002, "CCTV 사진", "12시경 오토케가 찍혀있는 사진. 룸 문 앞을 찍고 있다.", sprites[0]));
+        itemList.Add(new Item(10003, "범행현장의 사진", "피해자가 쓰러져있는 사진. 피해자의 주위가 지나치게 깨끗하다.", sprites[1]));
         itemList.Add(new Item(10004, "재떨이", "사건에 사용된 둔기. 피고인의 오른손 지문이 찍혀있다."));
         itemList.Add(new Item(10005, "담배꽁초", "피해자의 밑에 깔려있던 한개비의 꽁초. 피해자의 타액은 검출되지 않았다."));
 

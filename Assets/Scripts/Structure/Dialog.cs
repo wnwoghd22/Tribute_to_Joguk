@@ -17,6 +17,8 @@ public enum emotion
 {
     None,
     normal, //평정
+    serious, //심각
+    confident, //당당
     point, //손가락질
     bang, //책상치기
     shocked, //충격

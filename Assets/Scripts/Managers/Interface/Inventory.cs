@@ -37,7 +37,8 @@ public class Inventory : MonoBehaviour, Manager
     private Image item_image;
     
     private Animator myAnimator;    
-    private GameObject goOOC; //선택지 활성화...또는 증거 상세
+    [SerializeField]
+    private GameObject detail; //선택지 활성화...또는 증거 상세
 
     private enum SelectedTab
     {
@@ -110,6 +111,7 @@ public class Inventory : MonoBehaviour, Manager
     {
         Tab,
         Item,
+        Detail,
     }
     private void ActivateTab()
     {
@@ -134,6 +136,28 @@ public class Inventory : MonoBehaviour, Manager
         selectedClue = page_clue * MAX_SLOTS_COUNT + selectedClue;
 
         tf_item.gameObject.SetActive(true);
+    }
+
+    private int detail_index;
+    private List<Sprite> details;
+    private void ActivateDetail()
+    {
+        detail_index = 0;
+        currentActivated = Activated.Detail;
+        details = slots[selectedItem].details;
+        SetDetail();
+        detail.SetActive(true);
+    }
+    private void SetDetail()
+    {
+        detail.GetComponent<Image>().sprite = details[detail_index];
+    }
+    private void ExitDetail()
+    {
+        detail.SetActive(false);
+        detail.GetComponent<Image>().sprite = null;
+        details.Clear();
+        currentActivated = Activated.Item;
     }
 
     private bool stopKeyInput = false; //증거 상세 진입 시 키 입력 방지
@@ -161,8 +185,10 @@ public class Inventory : MonoBehaviour, Manager
         
         inventoryItemList = new List<Item>();
         inventoryTabList = new List<Item>();
+        details = new List<Sprite>();
         slots = tf_tab.GetComponentsInChildren<InventorySlot>(); //tab. 4X2
         go.SetActive(false);
+        detail.SetActive(false);
     }
     public List<Item> SaveItem()
     {
@@ -344,7 +370,7 @@ public class Inventory : MonoBehaviour, Manager
                     if (Input.GetKeyDown(KeyCode.X) & !preventExc)
                     {
                         if (returnType == ReturnType.None | returnType == ReturnType.Objection)
-                           ui.ExitInventory();
+                            ui.ExitInventory();
                     }
                     else if (Input.GetKeyDown(KeyCode.W) & !preventExc)
                     {
@@ -399,13 +425,13 @@ public class Inventory : MonoBehaviour, Manager
                     else if (Input.GetKeyDown(KeyCode.Z) & !preventExc)
                     {
                         ui.PlaySound(enter_sound);
-                        
+
                         preventExc = true;
 
                         ShowItem();
                     }
                     break; //탭 활성화 시
-                case Activated.Item:                   
+                case Activated.Item:
                     if (Input.GetKeyDown(KeyCode.X) & !preventExc)
                     {
                         preventExc = true;
@@ -425,7 +451,7 @@ public class Inventory : MonoBehaviour, Manager
                     {
                         if (Input.GetKeyDown(KeyCode.RightArrow))
                         {
-                            if(inventoryTabList.Count > 0)
+                            if (inventoryTabList.Count > 0)
                             {
                                 if (selectedItem == inventoryTabList.Count - 1)
                                     selectedItem = 0;
@@ -433,7 +459,7 @@ public class Inventory : MonoBehaviour, Manager
                                     selectedItem++;
                                 ui.PlaySound(key_sound);
                                 ShowItem();
-                            }                            
+                            }
                         }
                         else if (Input.GetKeyDown(KeyCode.LeftArrow))
                         {
@@ -450,10 +476,37 @@ public class Inventory : MonoBehaviour, Manager
                         else if (Input.GetKeyDown(KeyCode.Z) && !preventExc)
                         {
                             //증거 확대.
+                            if (slots[selectedItem].details != null)
+                                ActivateDetail();
                         }
                     }
                     break; //아이템 활성화 시
-                default:                   
+                case Activated.Detail:
+                    if(Input.GetKeyDown(KeyCode.X) & !preventExc)
+                    {
+                        ExitDetail();
+                    }
+                    if(details.Count > 0)
+                    {
+                        if (Input.GetKeyDown(KeyCode.RightArrow))
+                        {
+                            if (detail_index < details.Count)
+                            {
+                                detail_index++;
+                                SetDetail();
+                            }
+                        }
+                        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+                        {
+                            if (detail_index > 0)
+                            {
+                                detail_index--;
+                                SetDetail();
+                            }
+                        }
+                    }                  
+                    break; //상세 확인
+                default:
                     break;
             }
             if (Input.GetKeyDown(KeyCode.S) && !preventExc)

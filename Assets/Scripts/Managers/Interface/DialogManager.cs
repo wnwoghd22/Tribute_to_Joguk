@@ -114,6 +114,7 @@ public class DialogManager : MonoBehaviour, Manager
             text.text += listSentences[count][i];
             if(i % 7 == 1)
             {
+                ui.SetEmotionTrigger("talk");
                 ui.PlaySound(entersound);
             }
             yield return waitLog;

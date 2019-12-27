@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 9faef262079f4be468ac6e4c54dd9d5e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6656299109828101291
+    second: Phoenix Wright_embressed_0
+  - first:
+      213: -5015095538051732789
+    second: Phoenix Wright_embressed_1
+  - first:
+      213: 6348743417374934336
+    second: Phoenix Wright_embressed_2
+  - first:
+      213: 6751178450921203944
+    second: Phoenix Wright_embressed_3
+  - first:
+      213: 2588557024786446905
+    second: Phoenix Wright_embressed_4
+  - first:
+      213: -472767650659865018
+    second: Phoenix Wright_embressed_5
+  - first:
+      213: 6979989769815137561
+    second: Phoenix Wright_embressed_6
+  - first:
+      213: 8290276022656348459
+    second: Phoenix Wright_embressed_7
+  - first:
+      213: -1365642588268072947
+    second: Phoenix Wright_embressed_8
+  - first:
+      213: 2917367292102287670
+    second: Phoenix Wright_embressed_9
+  - first:
+      213: -7523195968840328821
+    second: Phoenix Wright_embressed_10
+  - first:
+      213: -2968367535500390259
+    second: Phoenix Wright_embressed_11
+  - first:
+      213: -6545414500554408285
+    second: Phoenix Wright_embressed_12
+  - first:
+      213: 8021726475464038888
+    second: Phoenix Wright_embressed_13
+  - first:
+      213: -4230011480466800528
+    second: Phoenix Wright_embressed_14
+  - first:
+      213: 1668162585125252381
+    second: Phoenix Wright_embressed_15
+  - first:
+      213: -8687146208644943424
+    second: Phoenix Wright_embressed_16
+  - first:
+      213: 8512208317260110944
+    second: Phoenix Wright_embressed_17
+  - first:
+      213: 559776144792118069
+    second: Phoenix Wright_embressed_18
+  - first:
+      213: 8652191307393408502
+    second: Phoenix Wright_embressed_19
+  - first:
+      213: 6434120978133510921
+    second: Phoenix Wright_embressed_20
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 658
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ae0fd4e67598d44b74ceebb7f21a3c
+      internalID: -6656299109828101291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 658
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83b2b618b2748740911eda74c0d0d41
+      internalID: -5015095538051732789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_2
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 658
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb3ff59a7f6a1a4e9d9cf0041f6f265
+      internalID: 6348743417374934336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_3
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 658
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3608ed5f6711590408b4d3d860fc22b4
+      internalID: 6751178450921203944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_4
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 658
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4804884dfa672b24389fd27171a5578f
+      internalID: 2588557024786446905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_5
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 658
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf5b324e0bd4a043aa305b97b03fd1f
+      internalID: -472767650659865018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 439
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169d4f20e370f5b4d912df4846f7368e
+      internalID: 6979989769815137561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 439
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c80a72c850d3ad4ebad5f05e1b3a826
+      internalID: 8290276022656348459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_8
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 439
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5243063a251a724da2a69f3f0b5b3a6
+      internalID: -1365642588268072947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_9
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 439
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1666d3b6773c4e4d8a2605816e3e5aa
+      internalID: 2917367292102287670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_10
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 439
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2e3e106f4b7ca4087aef534b8f864d
+      internalID: -7523195968840328821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_11
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 439
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed839aaebb8df2441924481737d46255
+      internalID: -2968367535500390259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 220
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd7c3b99850a21489056b7e96cd0710
+      internalID: -6545414500554408285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 220
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009171d0a7149d44e9993d4ab802192d
+      internalID: 8021726475464038888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_14
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 220
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bde114dcefe2b94aa5960812f837c3a
+      internalID: -4230011480466800528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_15
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 220
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbf4c55d6de6944983b57a8e6cc2d25
+      internalID: 1668162585125252381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_16
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 220
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ff6fed6f7862f45b1b7879f03e8be6
+      internalID: -8687146208644943424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_17
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 220
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b37520d7b99904291cc614458084af
+      internalID: 8512208317260110944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bb658ee5b04474cb8a835d469b4022
+      internalID: 559776144792118069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_19
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9a254916d50e945947b010f17620d4
+      internalID: 8652191307393408502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_embressed_20
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1
+        width: 176
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe4b5b885d7eb2f45be6ba437e4f66eb
+      internalID: 6434120978133510921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c6b34fdceb31c674db97a398f8ea4ecc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,28 +1,34 @@
 fileFormatVersion: 2
-guid: 0d79ca44c449b4646950300d20ebe838
+guid: 516c5579dec13e744a92bff2c9402d89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7545352448732324601
-    second: Phoenix Wright_bang_0
+      213: 7806457598070967170
+    second: Winston Payne_confident_0
   - first:
-      213: 4643044410470935738
-    second: Phoenix Wright_bang_1
+      213: -1860418543056331230
+    second: Winston Payne_confident_1
   - first:
-      213: 1787127468526103646
-    second: Phoenix Wright_bang_2
+      213: 7179778775947220454
+    second: Winston Payne_confident_2
   - first:
-      213: -6639208331135898593
-    second: Phoenix Wright_bang_3
+      213: -677754131424424918
+    second: Winston Payne_confident_3
   - first:
-      213: 3886416493677082240
-    second: Phoenix Wright_bang_4
+      213: 2677989348884712152
+    second: Winston Payne_confident_5
   - first:
-      213: -8064135001193643868
-    second: Phoenix Wright_bang_5
+      213: -2724488555203564764
+    second: Winston Payne_confident_6
   - first:
-      213: -3111486957933028891
-    second: Phoenix Wright_bang_6
+      213: 7830425157993413367
+    second: Winston Payne_confident_7
+  - first:
+      213: 3120067614102647526
+    second: Winston Payne_confident_8
+  - first:
+      213: 8195973042123663509
+    second: Winston Payne_confident_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -116,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Phoenix Wright_bang_0
+      name: Winston Payne_confident_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 205
-        width: 288
-        height: 202
+        y: 199
+        width: 177
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55816332f2fae51438d698243ce56b54
-      internalID: -7545352448732324601
+      spriteID: e75c963c166462841ae32f36630a7019
+      internalID: 7806457598070967170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright_bang_1
+      name: Winston Payne_confident_1
       rect:
         serializedVersion: 2
-        x: 292
-        y: 205
-        width: 288
-        height: 202
+        x: 181
+        y: 199
+        width: 177
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fef11f05fb54384fae071dede0b48fe
-      internalID: 4643044410470935738
+      spriteID: 5893a69b707f8fb4eb6e0c8fd0a0e233
+      internalID: -1860418543056331230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright_bang_2
+      name: Winston Payne_confident_2
       rect:
         serializedVersion: 2
-        x: 582
-        y: 205
-        width: 288
-        height: 202
+        x: 360
+        y: 199
+        width: 177
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64e2a7067e766894d90c38ac630122b0
-      internalID: 1787127468526103646
+      spriteID: 44d7b2a3e76075047936dde45160d2fd
+      internalID: 7179778775947220454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright_bang_3
+      name: Winston Payne_confident_3
       rect:
         serializedVersion: 2
-        x: 872
-        y: 205
-        width: 288
-        height: 202
+        x: 539
+        y: 199
+        width: 177
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6db622e223948c1439fab7e41049baf5
-      internalID: -6639208331135898593
+      spriteID: 2bb955f986ed43847adfce7a68824565
+      internalID: -677754131424424918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright_bang_4
+      name: Winston Payne_confident_5
       rect:
         serializedVersion: 2
         x: 2
-        y: 1
-        width: 288
-        height: 202
+        y: 2
+        width: 172
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0577427b286f56a4eb167e03f4396204
-      internalID: 3886416493677082240
+      spriteID: b87d1f1760600f3468f527fa2d4a3017
+      internalID: 2677989348884712152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright_bang_5
+      name: Winston Payne_confident_6
       rect:
         serializedVersion: 2
-        x: 292
-        y: 1
-        width: 288
-        height: 202
+        x: 176
+        y: 2
+        width: 172
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c90362fe5d5a9140b36c3f49a926369
-      internalID: -8064135001193643868
+      spriteID: a57c31a495fa6394f9135e6aff746e34
+      internalID: -2724488555203564764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright_bang_6
+      name: Winston Payne_confident_7
       rect:
         serializedVersion: 2
-        x: 582
-        y: 1
-        width: 288
-        height: 202
+        x: 350
+        y: 2
+        width: 172
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,8 +262,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c39a59a1a9f01494db142d84b025fde1
-      internalID: -3111486957933028891
+      spriteID: ba546455bdada0c4096dd3122748bdc4
+      internalID: 7830425157993413367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winston Payne_confident_8
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 2
+        width: 172
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5788f6558ddf34c85eb076e5c110f1
+      internalID: 3120067614102647526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Winston Payne_confident_9
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 2
+        width: 172
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215511f89c44df340baf56e332f54eb8
+      internalID: 8195973042123663509
       vertices: []
       indices: 
       edges: []
@@ -265,7 +313,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9718d71fd5dbf2d4d92ca9558fb1e01f
+    spriteID: 10a6a4756eb08e2469185e7ffef50f63
     internalID: 0
     vertices: []
     indices: 

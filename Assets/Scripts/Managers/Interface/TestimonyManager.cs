@@ -237,6 +237,7 @@ public class TestimonyManager : MonoBehaviour, Manager
             text_middle.text += description[i];
             if (i % 7 == 1)
             {
+                ui.SetEmotionTrigger("talk");
                 ui.PlaySound(entersound);
             }
             yield return waitTime;

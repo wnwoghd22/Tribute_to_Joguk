@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 8580e8ca54cd1b248ad503bd1b63ea0e
+guid: fab3a9c758529b746a410ca9dda17ede
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -80739588102444872
-    second: Phoenix Wright(1)_0
+      213: -724426137608800146
+    second: Phoenix Wright_confident_0
   - first:
-      213: 3497487302928197215
-    second: Phoenix Wright(1)_1
+      213: -3253299923844370899
+    second: Phoenix Wright_confident_1
   - first:
-      213: 5059917642038442582
-    second: Phoenix Wright(1)_2
+      213: -4287438620964353857
+    second: Phoenix Wright_confident_2
   - first:
-      213: -2353254332296614247
-    second: Phoenix Wright(1)_3
+      213: 8450818446534384922
+    second: Phoenix Wright_confident_3
+  - first:
+      213: 3006516835619057003
+    second: Phoenix Wright_confident_4
+  - first:
+      213: -1378402638708678350
+    second: Phoenix Wright_confident_5
+  - first:
+      213: 6192423276039935654
+    second: Phoenix Wright_confident_6
+  - first:
+      213: 3582882862008585356
+    second: Phoenix Wright_confident_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,13 +119,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Phoenix Wright(1)_0
+      name: Phoenix Wright_confident_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 220
+        width: 275
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78cb90d32eced884181706520c001a50
+      internalID: -724426137608800146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_confident_1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 220
+        width: 275
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441792fb93b18074488b5a16e79a478f
+      internalID: -3253299923844370899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_confident_2
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 220
+        width: 275
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92789ba5660ed244b92b9f79f4722ab5
+      internalID: -4287438620964353857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_confident_3
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 220
+        width: 275
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2f541c2e5062d4f81b880e2ea143fe
+      internalID: 8450818446534384922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_confident_4
       rect:
         serializedVersion: 2
         x: 2
         y: 1
-        width: 259
-        height: 219
+        width: 275
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f4c8f339f509f34d8f239a3b789e3d3
-      internalID: -80739588102444872
+      spriteID: b05a2fbf4de995b4fbab43d2c87e1262
+      internalID: 3006516835619057003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright(1)_1
+      name: Phoenix Wright_confident_5
       rect:
         serializedVersion: 2
-        x: 263
+        x: 279
         y: 1
-        width: 259
-        height: 219
+        width: 275
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 365006e8641ff4c4fabea7474546012e
-      internalID: 3497487302928197215
+      spriteID: 3f5e681d2e101cd4c9acaab611192b87
+      internalID: -1378402638708678350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright(1)_2
+      name: Phoenix Wright_confident_6
       rect:
         serializedVersion: 2
-        x: 524
+        x: 556
         y: 1
-        width: 259
-        height: 219
+        width: 275
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e111c8eab8d176540aacab4de4f46582
-      internalID: 5059917642038442582
+      spriteID: df2dc3fbd050b1742a54948b50023df9
+      internalID: 6192423276039935654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Phoenix Wright(1)_3
+      name: Phoenix Wright_confident_7
       rect:
         serializedVersion: 2
-        x: 785
+        x: 833
         y: 1
-        width: 259
-        height: 219
+        width: 275
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +280,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 956038ca01a90294898b4b3da38c3833
-      internalID: -2353254332296614247
+      spriteID: 6a102ad72f609004c9c6db12c73c8b98
+      internalID: 3582882862008585356
       vertices: []
       indices: 
       edges: []
@@ -193,7 +289,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 962cbe529191e224caa7f2e47b72eb04
+    spriteID: 03d9d5d176288cc46aaa686b0e158363
     internalID: 0
     vertices: []
     indices: 

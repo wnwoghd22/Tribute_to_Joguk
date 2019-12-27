@@ -136,6 +136,10 @@ public class UI : MonoBehaviour
     {
         Player.SetEmotionTrigger(_e);
     }
+    public void SetEmotionTrigger(string _parameter)
+    {
+        Player.SetEmotionTrigger(_parameter);
+    }
 
     #region Event
     public bool IsEvent() => @event != null;

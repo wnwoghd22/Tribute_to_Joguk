@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
         = new Dictionary<emotion, string>
     {
         { emotion.normal,"normal" },
+        { emotion.serious, "serious" },
+        { emotion.confident, "confident" },
         { emotion.point, "point" },
         { emotion.interrogate, "interrogate" },
         { emotion.embarrassed, "embarrassed" },
@@ -94,6 +96,14 @@ public class PlayerController : MonoBehaviour
             EmotionTrigger.SetTrigger(EmoDict[_e]);
         }          
     }
+    public void SetEmotionTrigger(string _parameter)
+    {
+        if (EmotionTrigger != null)
+        {
+            ResetEmotionTrigger();
+            EmotionTrigger.SetTrigger(_parameter);
+        }
+    }
     public void SetEffectTrigger(string _s)
     {
         EffectTrigger.SetTrigger(_s);
@@ -103,6 +113,8 @@ public class PlayerController : MonoBehaviour
         EmotionTrigger.ResetTrigger("normal");
         EmotionTrigger.ResetTrigger("doubt");
         EmotionTrigger.ResetTrigger("talk");
+        EmotionTrigger.ResetTrigger("embarrassed");
+        EmotionTrigger.ResetTrigger("shocked");
     }
 
     public IEnumerator Move(bool _direction, int _count = 1)

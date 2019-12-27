@@ -162,6 +162,11 @@ public class ChoiceManager : MonoBehaviour, Manager
     public void Enter(UI _ui)
     {
         ui = _ui;
+        for (int i = 0; i <= 3; i++)
+        {
+            answer_Text[i].text = "";
+            answerPanel[i].SetActive(false);
+        }
     }
     public void Exit(bool _b = true)
     {
@@ -170,7 +175,7 @@ public class ChoiceManager : MonoBehaviour, Manager
         for (int i = 0; i <= count; i++)
         {
             answer_Text[i].text = "";
-            answerPanel[i].SetActive(false);
+            //answerPanel[i].SetActive(false);
         }
         anim.SetBool("appear", false);
 

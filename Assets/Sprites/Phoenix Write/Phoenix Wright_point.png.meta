@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: db57f0c69e11d424698ae4c69da88c1a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4891460483076048779
+    second: Phoenix Wright_point_0
+  - first:
+      213: 8901612731142488816
+    second: Phoenix Wright_point_1
+  - first:
+      213: 7281834933132277671
+    second: Phoenix Wright_point_2
+  - first:
+      213: -8661875569351938522
+    second: Phoenix Wright_point_3
+  - first:
+      213: 917649718654195117
+    second: Phoenix Wright_point_4
+  - first:
+      213: 620738253627351119
+    second: Phoenix Wright_point_5
+  - first:
+      213: -5438943451674734985
+    second: Phoenix Wright_point_6
+  - first:
+      213: -5535074778680566803
+    second: Phoenix Wright_point_7
+  - first:
+      213: -2749315747848097440
+    second: Phoenix Wright_point_8
+  - first:
+      213: 6475696875086538970
+    second: Phoenix Wright_point_9
+  - first:
+      213: 1353624699255426977
+    second: Phoenix Wright_point_10
+  - first:
+      213: 8099479907683870178
+    second: Phoenix Wright_point_11
+  - first:
+      213: -4770497555954808904
+    second: Phoenix Wright_point_12
+  - first:
+      213: 4776616858161273959
+    second: Phoenix Wright_point_13
+  - first:
+      213: 910313461691101126
+    second: Phoenix Wright_point_14
+  - first:
+      213: 2314549205583007133
+    second: Phoenix Wright_point_15
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +88,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,9 +117,367 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Phoenix Wright_point_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1166
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4612c6cc5499add4fae25d60644889f6
+      internalID: 4891460483076048779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1166
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7557fbd6bbebadb42a1e218f0d58d72e
+      internalID: 8901612731142488816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_2
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1166
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17baeb76f7408b844a1ad83886557a31
+      internalID: 7281834933132277671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 933
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f520c4d1d0d330f469bba959fad2c4b2
+      internalID: -8661875569351938522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 933
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0123bdd6e653b9f4daa886ed7f3fa25d
+      internalID: 917649718654195117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 933
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600657f8015ea5f47bc8b3618a5bb3ec
+      internalID: 620738253627351119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 700
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a985612329b8e48aefc8b6e321e943
+      internalID: -5438943451674734985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 700
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1360d55c4cf9f41be6d51593d10e29
+      internalID: -5535074778680566803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 700
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edab87e11e62f243a8202f224c2eca6
+      internalID: -2749315747848097440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 467
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fdc996f84d4ec349a7743293389ddfa
+      internalID: 6475696875086538970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 467
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79dcfa94123d2af48b9607e622846d82
+      internalID: 1353624699255426977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_11
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 467
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30226f1cdc0c984bab67397247ead19
+      internalID: 8099479907683870178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 234
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c87e5a60b48594cafabcdc3815102a
+      internalID: -4770497555954808904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_13
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 234
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b601227842dc949bcdb06327ae91d1
+      internalID: 4776616858161273959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_14
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 234
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49440edd1237a8048b8fe362a5396073
+      internalID: 910313461691101126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_point_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 372
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdc407e0e4b59b469606028f77ac264
+      internalID: 2314549205583007133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

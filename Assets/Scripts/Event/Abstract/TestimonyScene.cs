@@ -19,6 +19,7 @@ public abstract class TestimonyScene : Event
     protected abstract IEnumerator InterrogationCoroutine(int _i);
     protected abstract IEnumerator WrongAnswerCoroutine();
     protected void ExitCoroutine() => IsCoroutine = false;
+    protected void SetTestimony(int _c, string _s) => theTM.SetTestimony(_c, _s);
 
     // Start is called before the first frame update
     protected override void Start()
@@ -52,9 +53,7 @@ public abstract class TestimonyScene : Event
                     HoldIt();
                     IsCoroutine = true;
                     StartCoroutine(InterrogationCoroutine(Count));
-                    yield return new WaitUntil(() => !IsCoroutine);
-                    FadeOut();
-                    yield return waitTime;
+                    yield return new WaitUntil(() => !IsCoroutine);                  
                     break;
                 case TestimonyManager.State.objection:
                     if (theTM.Answer && IsCorrect)

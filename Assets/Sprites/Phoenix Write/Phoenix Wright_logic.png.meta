@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: 9705481eff8511648a2a3151e25e5ed4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1196510894785075852
+    second: Phoenix Wright_logic_0
+  - first:
+      213: 1568992242837462711
+    second: Phoenix Wright_logic_1
+  - first:
+      213: 8270989125988291879
+    second: Phoenix Wright_logic_2
+  - first:
+      213: -8744206940002359567
+    second: Phoenix Wright_logic_3
+  - first:
+      213: 964077744140169811
+    second: Phoenix Wright_logic_4
+  - first:
+      213: -700074592704170984
+    second: Phoenix Wright_logic_5
+  - first:
+      213: -4228840586501206497
+    second: Phoenix Wright_logic_6
+  - first:
+      213: 6976352569863939739
+    second: Phoenix Wright_logic_7
+  - first:
+      213: 4493676503572758132
+    second: Phoenix Wright_logic_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +67,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,9 +96,220 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 431
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80f1ff07c31e0347b8426ca94c25cfe
+      internalID: -1196510894785075852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_1
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 431
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e331e2e61f4b97c45b3091e285669cac
+      internalID: 1568992242837462711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_2
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 431
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24dbc0b7578df404fa69e05be9eb59fb
+      internalID: 8270989125988291879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_3
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 431
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b2f56b348431c45b149a30c495c20e
+      internalID: -8744206940002359567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 216
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87e666041a360a4bbe7da2375a41715
+      internalID: 964077744140169811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_5
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 216
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f6e9701ef5e9b48968ab5bba6e289d
+      internalID: -700074592704170984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_6
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 216
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03cdef5314bd1fc4690f8934ba733e64
+      internalID: -4228840586501206497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_7
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 216
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ccc3561abf11246b9bd9c1e90639af
+      internalID: 6976352569863939739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phoenix Wright_logic_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4337d0010a33d484f93c0ae3c5a941a5
+      internalID: 4493676503572758132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
