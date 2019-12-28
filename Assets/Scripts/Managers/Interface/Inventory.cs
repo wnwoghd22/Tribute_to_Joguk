@@ -476,7 +476,7 @@ public class Inventory : MonoBehaviour, Manager
                         else if (Input.GetKeyDown(KeyCode.Z) && !preventExc)
                         {
                             //증거 확대.
-                            if (slots[selectedItem].details != null)
+                            if (slots[selectedItem].details.Count > 0)
                                 ActivateDetail();
                         }
                     }

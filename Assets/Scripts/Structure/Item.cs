@@ -19,6 +19,7 @@ public class Item
         itemDescription = _Des;
         type = _type;
         Detail = new List<Sprite>();
+        Detail = null;
 
         itemIcon = Resources.Load("ItemIcon/" + _ID.ToString(), typeof(Sprite)) as Sprite;
     }

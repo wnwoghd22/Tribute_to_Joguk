@@ -68,6 +68,7 @@ public class CourtTest : TestimonyScene
                 yield return new WaitForSeconds(1f);
                 StartInterrogation(dialogs[3]);
                 yield return waitExit;
+                yield return waitTime;
                 break;          
             default:
                 break;
@@ -77,6 +78,12 @@ public class CourtTest : TestimonyScene
 
     protected override IEnumerator WrongAnswerCoroutine()
     {
-        throw new System.NotImplementedException();
+        yield return new WaitForSeconds(1f);
+        StartInterrogation(dialogs[7]);
+        yield return waitExit;
+
+        //panalty
+
+        ExitCoroutine();
     }
 }

@@ -201,6 +201,7 @@ public class TestimonyManager : MonoBehaviour, Manager
             listEmotion.Add(_testimony.testimony._emotion[i]);
             listWho.Add(_testimony.testimony._who[i]);
         }
+        ItemID = _testimony.itemID;
     }
     private void ClearTestimony() //심문 종료, 모든 변수 초기화
     {

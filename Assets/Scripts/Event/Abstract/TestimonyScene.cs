@@ -53,29 +53,35 @@ public abstract class TestimonyScene : Event
                     HoldIt();
                     IsCoroutine = true;
                     StartCoroutine(InterrogationCoroutine(Count));
-                    yield return new WaitUntil(() => !IsCoroutine);                  
+                    yield return new WaitUntil(() => !IsCoroutine);
+                    theTM.NextCount(); 
                     break;
                 case TestimonyManager.State.objection:
                     if (theTM.Answer && IsCorrect)
+                    {
+                        Objection();
                         flag = false;
+                    }                       
                     else
                     {
                         Objection();
                         IsCoroutine = true;
                         StartCoroutine(WrongAnswerCoroutine());
                         yield return new WaitUntil(() => !IsCoroutine);
+                        FadeOut();
+                        yield return waitTime;
                     }
                     break;
                 case TestimonyManager.State.back_to_zero:
                     StartInterrogation(backToZero);
                     yield return waitExit;
                     FadeOut();
+                    theTM.NextCount();
                     yield return waitTime;
                     break;
                 default:
                     break;
-            }
-            theTM.NextCount(); //return to testimony
+            }//return to testimony
         }
         NextEvent(nextEvent);
     } //접근 금지

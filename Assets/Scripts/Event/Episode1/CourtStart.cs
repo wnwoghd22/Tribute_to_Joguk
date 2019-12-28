@@ -81,6 +81,12 @@ public class CourtStart : Event
         StartDialogue(dialogs[6]);
         yield return waitExit;
 
+        GetItem(10002);
+        GetItem(10003);
+
+        StartDialogue(dialogs[8]);
+        yield return waitExit;
+
         FadeOut();
         yield return waitTime;
         FadeIn();
