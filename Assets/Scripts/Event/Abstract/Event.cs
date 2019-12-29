@@ -101,7 +101,10 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler.Adduce(_c, ReturnType.Clue);
     }
-
+    protected void ChangeWitness(RuntimeAnimatorController _a)
+    {
+        EventHandler.ChangeWitness(_a);
+    }
     protected void MoveRight(string _name, int _count = 1)
     {
         EventHandler.Move(true, _count);

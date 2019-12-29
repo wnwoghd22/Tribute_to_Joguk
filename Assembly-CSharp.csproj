@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Event\Abstract\TestimonyScene.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\CourtStart.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\CourtTest.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\CourtTest2.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\TestEvent.cs" />
     <Compile Include="Assets\Scripts\Event\Event1.cs" />

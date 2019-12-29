@@ -250,6 +250,10 @@ public class UI : MonoBehaviour
         ChangeManager(theTM);
         theTM.SetObjection(_result);
     }
+    public void ChangeWitness(RuntimeAnimatorController _a)
+    {
+        Player.ChangeWitness(_a);
+    }
     #endregion
     #region Title
     public void StartAsTitle() => ChangeManager(title);

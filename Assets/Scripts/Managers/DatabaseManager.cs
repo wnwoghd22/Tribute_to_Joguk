@@ -36,15 +36,16 @@ public class DatabaseManager : MonoBehaviour
         itemList.Add(new Item(90001, "세월호 뱃지", "인권 변호사의 상징과도 같은 것. 나를 진정한 변호사로 만들어 준다."));
         itemList.Add(new Item(91002, "레드준표", "한 때 \'모래시계 검사\'로 이름을 날리던 실력있는 검사.", ItemType.person));
         //Episode1
-        itemList.Add(new Item(10001, "사건 기록", "피해자, 좌측과 우측 두부 각각 외상. 좌측은 경미, 우측은 깊은 두개골 파열로,우측의 두부외상이 사인이었을 것으로 추정. 사망추정시각은 11시 50분경."));
+        itemList.Add(new Item(10001, "사건 기록", "12월 말 금요일 연말회식 자리에서 성폭행 신고가 들어온 후 경찰의 과잉진압으로 사망. 피해자 우라기리, 좌측과 우측 두부 각각 외상. 좌측은 경미, 우측은 깊은 두개골 파열로,우측의 두부외상이 사인이었을 것으로 추정. 사망추정시각은 11시 50분경."));
         itemList.Add(new Item(10002, "CCTV 사진", "12시경 오토케가 찍혀있는 사진. 룸 문 앞을 찍고 있다.", sprites[0]));
         itemList.Add(new Item(10003, "범행현장의 사진", "피해자가 쓰러져있는 사진. 피해자의 주위가 지나치게 깨끗하다.", sprites[1]));
         itemList.Add(new Item(10004, "재떨이", "사건에 사용된 둔기. 피고인의 오른손 지문이 찍혀있다."));
         itemList.Add(new Item(10005, "담배꽁초", "피해자의 밑에 깔려있던 한개비의 꽁초. 피해자의 타액은 검출되지 않았다."));
+        itemList.Add(new Item(10006, "오토케의 근무일지", "오토케가 사건 당일 보건휴가를 받았음을 증명하는 일지."));
 
         itemList.Add(new Item(11001, "오토케 미노가시", "이번 사건의 피고인. 경찰 업무 중 과잉대처로 인한 살인 혐의를 받고 있다.", ItemType.person));
-        itemList.Add(new Item(11002, "우라기리", "이번 사건의 피해자. 두부외상으로 사망했다.", ItemType.person));
-        itemList.Add(new Item(11003, "이츠모 시다바리", "주요 증인. 술집에서 종업원으로 일하고 있다.", ItemType.person));
+        itemList.Add(new Item(11002, "우라기리", "이번 사건의 피해자. 경찰 인사업무 담당자로, 연말 회식자리에서 성폭행 신고 가해자로 의심받아 체포중 두부외상으로 사망했다.", ItemType.person));
+        itemList.Add(new Item(11003, "콘카이모 오치루", "주요 증인. 술집에서 종업원으로 일하고 있다.", ItemType.person));
         itemList.Add(new Item(11004, "아몰랑 메소라시", "오토케의 동료 경찰. 오토케의 무죄를 믿고 있다.", ItemType.person));
         
 

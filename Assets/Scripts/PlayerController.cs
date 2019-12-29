@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private GameObject Judge;
     [SerializeField]
     private GameObject Witness;
+    private Animator witness_animator;
     [SerializeField]
     private GameObject Company;
     [SerializeField]
@@ -50,7 +51,8 @@ public class PlayerController : MonoBehaviour
         { emotion.doubt, "doubt" },
         { emotion.check, "check" },
         { emotion.bang, "bang" },
-        {emotion.agree, "agree" },
+        { emotion.agree, "agree" },
+        { emotion.deny, "deny" },
     };
 
     public void SetCharacterActive(who _character)
@@ -116,7 +118,10 @@ public class PlayerController : MonoBehaviour
         EmotionTrigger.ResetTrigger("embarrassed");
         EmotionTrigger.ResetTrigger("shocked");
     }
-
+    public void ChangeWitness(RuntimeAnimatorController _a)
+    {
+        Witness.GetComponent<Animator>().runtimeAnimatorController = _a;
+    }
     public IEnumerator Move(bool _direction, int _count = 1)
     {
         int dir = _direction ? 1 : -1; //true = right, false = left
@@ -131,6 +136,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        witness_animator = Witness.GetComponent<Animator>();
     }
 
     // Update is called once per frame
