@@ -144,7 +144,7 @@ public class Inventory : MonoBehaviour, Manager
     {
         detail_index = 0;
         currentActivated = Activated.Detail;
-        details = slots[selectedItem].details;
+        details.AddRange(slots[selectedItem].details);
         SetDetail();
         detail.SetActive(true);
     }
@@ -509,7 +509,7 @@ public class Inventory : MonoBehaviour, Manager
                 default:
                     break;
             }
-            if (Input.GetKeyDown(KeyCode.S) && !preventExc)
+            if (Input.GetKeyDown(KeyCode.S) & !preventExc & currentActivated != Activated.Detail)
             {               
                 switch (returnType)
                 {

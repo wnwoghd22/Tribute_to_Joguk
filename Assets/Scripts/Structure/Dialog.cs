@@ -24,7 +24,7 @@ public enum emotion
     shocked, //충격
     embarrassed, //당황
     doubt, //의문
-    interrogate, //추궁
+    akward, //멋쩍은 웃음
     check, //확인
     agree, //끄덕이기
     deny, //가로젓기
@@ -38,6 +38,7 @@ public enum who
     Witness,
     Company,
     Talk,
+    Court,
 }
 public enum effect
 {

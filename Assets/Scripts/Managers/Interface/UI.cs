@@ -66,7 +66,8 @@ public class UI : MonoBehaviour
             { who.Judge, "Judge" },
             { who.Witness, "Witness" },
             { who.Company, "Company" },
-            { who.Talk, "Talk" }
+            { who.Talk, "Talk" },
+            { who.Court, "Court" }
         };
 
     private Manager currentManager;

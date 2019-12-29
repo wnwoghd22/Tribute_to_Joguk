@@ -83,6 +83,7 @@ public class CourtStart : Event
 
         GetItem(10002);
         GetItem(10003);
+        GetItem(10005);
 
         StartDialogue(dialogs[8]);
         yield return waitExit;
