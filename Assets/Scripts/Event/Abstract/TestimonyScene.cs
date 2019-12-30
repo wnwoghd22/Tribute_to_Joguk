@@ -68,7 +68,6 @@ public abstract class TestimonyScene : Event
                         IsCoroutine = true;
                         StartCoroutine(WrongAnswerCoroutine());
                         yield return new WaitUntil(() => !IsCoroutine);
-                        FadeOut();
                         yield return waitTime;
                     }
                     break;

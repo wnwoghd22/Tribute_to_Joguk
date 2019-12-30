@@ -157,6 +157,10 @@ public abstract class Event : MonoBehaviour
     {
         EventHandler.PlayBGM(_track);
     }
+    protected void ClearAll()
+    {
+        EventHandler.ClearAll();
+    }
 
     protected void GetItem(int _itemID)
     {

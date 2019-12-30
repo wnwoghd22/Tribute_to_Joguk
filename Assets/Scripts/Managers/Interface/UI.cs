@@ -141,7 +141,12 @@ public class UI : MonoBehaviour
     {
         Player.SetEmotionTrigger(_parameter);
     }
-
+    public void ClearAll()
+    {
+        SetCharacter(who.None);
+        SetCutTrigger("Off");
+        SetCutActive(false);
+    }
     #region Event
     public bool IsEvent() => @event != null;
     public void GetEvent(Event _event) => @event = _event;

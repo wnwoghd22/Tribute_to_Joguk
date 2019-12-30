@@ -68,8 +68,13 @@
     <Compile Include="Assets\Scripts\Event\Episode1\CourtTest.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\CourtTest2.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\CourtTest3.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\CourtTest4.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\CourtTest5.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest2.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest3.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest4.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest5.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\TestEvent.cs" />
     <Compile Include="Assets\Scripts\Event\Event1.cs" />
     <Compile Include="Assets\Scripts\Event\Event2.cs" />

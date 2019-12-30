@@ -2,22 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectionTest2 : Event
+public class ObjectionTest3 : Event
 {
     [SerializeField]
-    RuntimeAnimatorController Otoke;
+    RuntimeAnimatorController Ochiru;
     protected override IEnumerator EventCoroutine()
     {
         yield return waitTime;
         StartDialogue(dialogs[0]);
         yield return waitExit;
+        ClearAll();
+        ChangeCut("Court");
+        yield return waitTime;
+        ChangeCut("Gavel3");
+        yield return waitTime;
+
+        StartDialogue(dialogs[1]);
+        yield return waitExit;
+
         FadeOut();
+        GetItem(11003);
+        ChangeWitness(Ochiru);
+        yield return waitTime;
+        FadeIn();
 
         yield return waitTime;
-        ChangeWitness(Otoke);
-
-        FadeIn();
-        StartDialogue(dialogs[1]);
+        StartDialogue(dialogs[2]);
         yield return waitExit;
 
         FadeOut();

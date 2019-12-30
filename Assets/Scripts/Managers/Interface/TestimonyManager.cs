@@ -40,7 +40,7 @@ public class TestimonyManager : MonoBehaviour, Manager
     private List<emotion> listEmotion;
     private List<who> listWho;
     private int ItemID; //정답 조회용
-    private int answer;
+    public int answer { get; private set; }
     public bool Answer => ItemID == answer;
     private bool hold_box = false;
 
@@ -194,6 +194,11 @@ public class TestimonyManager : MonoBehaviour, Manager
 
     private void AssignTestimony(Testimony _testimony) //심문 내용 넣기
     {
+        Count = -1;
+        listSentences.Clear();
+        listEmotion.Clear();
+        listWho.Clear();
+
         description = _testimony.testimony.name;
         for (int i = 0; i < _testimony.testimony.sentence.Length; i++)
         {

@@ -74,6 +74,7 @@ public class CourtTest3 : TestimonyScene
 
         //panalty
 
+        FadeOut();
         ExitCoroutine();
     }
 }
