@@ -70,7 +70,7 @@ public class CourtTest5 : TestimonyScene
 
         vs.Add(Adduced);
 
-        if (vs.Equals(AnswerSet) & Count == 2)
+        if (vs.SetEquals(AnswerSet) & Count == 2)
             flag = false;
         else
         {

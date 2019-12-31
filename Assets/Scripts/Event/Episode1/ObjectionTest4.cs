@@ -31,8 +31,6 @@ public class ObjectionTest4 : Event
         yield return new WaitForSeconds(0.1f); //깜빡이기
         SetCutActive(false);
         yield return waitExit;
-        ChangeCut("Court");
-        yield return waitTime;
 
         StartDialogue(dialogs[3]);
         yield return waitExit;
