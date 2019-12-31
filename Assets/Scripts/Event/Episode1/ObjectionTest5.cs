@@ -8,7 +8,6 @@ public class ObjectionTest5 : Event
     RuntimeAnimatorController Otoke;
     protected override IEnumerator EventCoroutine()
     {
-        yield return waitTime;
         StartDialogue(dialogs[0]);
         yield return waitExit;
 
@@ -65,7 +64,14 @@ public class ObjectionTest5 : Event
         yield return waitExit;
 
         //무죄 애니메이션
+        ChangeCut("Innocent");
+        yield return waitTime;
 
+        StartDialogue(dialogs[8]);
+        yield return waitExit;
 
+        FadeOut();
+        yield return waitTime;
+        NextEvent(nextEvent);
     }
 }

@@ -60,10 +60,11 @@ public class Title : MonoBehaviour, Manager
 
     void Awake()
     {
-        ui = FindObjectOfType<UI>();
+        //ui = FindObjectOfType<UI>();
     }
     void Start()
     {
+        ui = FindObjectOfType<UI>();
         ui.StartAsTitle();
     }
     public void Enter(UI _ui)
