@@ -52,6 +52,9 @@ public class UI : MonoBehaviour
     private BGMManager theBGM;  
     private ImageCutManager theCut;
     private GameManager theGM;
+
+    private GameObject mainCamera;
+    private GameObject eventSystem;
     #endregion
     private PlayerController Player;
     private Event @event;
@@ -263,6 +266,15 @@ public class UI : MonoBehaviour
     #endregion
     #region Title
     public void StartAsTitle() => ChangeManager(title);
+    public void BackToTitle()
+    {
+        ClearAll();
+        Destroy(Player);
+        Destroy(mainCamera);
+        Destroy(eventSystem);
+        Destroy(this);
+        SceneManager.LoadScene("Title");
+    }
     #endregion
 
     #region AudioManager

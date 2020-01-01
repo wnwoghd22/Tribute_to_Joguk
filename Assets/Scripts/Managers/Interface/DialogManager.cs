@@ -4,25 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour, Manager
-{
-    #region Singleton
-
-    public static DialogManager instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    #endregion Singleton
-
+{    
     [SerializeField]
     private Text text;
     [SerializeField]
