@@ -4,25 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChoiceManager : MonoBehaviour, Manager
-{
-    #region singleton
-
-    static public ChoiceManager instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }        
-    }
-
-    #endregion
+{    
     #region variables
     private UI ui;
     private BaseManager theB;

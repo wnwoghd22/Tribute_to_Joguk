@@ -10,6 +10,9 @@ public class TestEvent : Event
         StartDialogue(dialogs[0]);
         yield return waitExit;
 
+        //NextEvent("Title"); //for debugging
+        //yield break;
+
         FadeOut();
         yield return waitTime;
         SetCutActive(true);

@@ -52,8 +52,9 @@ public class UI : MonoBehaviour
     private BGMManager theBGM;  
     private ImageCutManager theCut;
     private GameManager theGM;
-
+    [SerializeField]
     private GameObject mainCamera;
+    [SerializeField]
     private GameObject eventSystem;
     #endregion
     private PlayerController Player;
@@ -272,7 +273,7 @@ public class UI : MonoBehaviour
         Destroy(Player);
         Destroy(mainCamera);
         Destroy(eventSystem);
-        Destroy(this);
+        Destroy(this.gameObject);
         SceneManager.LoadScene("Title");
     }
     #endregion

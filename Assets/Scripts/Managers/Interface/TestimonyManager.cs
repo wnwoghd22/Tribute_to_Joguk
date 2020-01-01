@@ -230,6 +230,10 @@ public class TestimonyManager : MonoBehaviour, Manager
         text_middle.text = "";
 
         Dialog.SetBool("Appear", true);
+        if (state == State.start)
+            ui.SetCutTrigger("StartTestimony");
+        else if (state == State.testimony)
+            ui.SetCutTrigger("StartInterrogation");
 
         ui.SetCutTrigger(who.Witness);
         ui.SetCharacter(who.Witness);

@@ -16,8 +16,10 @@ public class CourtStart : Event
         GetItem(11001);
         GetItem(11002);
 
+        ClearAll();
+        ChangeCut("Court");
         FadeIn();
-
+        yield return waitTime;
         ChangeCut("Gavel");
         yield return waitTime;
 

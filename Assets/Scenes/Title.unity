@@ -3173,6 +3173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd3362e8af928a41856ba940fbbd317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1129200720}
+  eventSystem: {fileID: 1595225368}
 --- !u!114 &861080869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4284,6 +4286,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122283971}
   m_CullTransparentMesh: 0
+--- !u!1 &1129200720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3884949109245044971, guid: 3a05031d67096b344a3ebf161e437372,
+    type: 3}
+  m_PrefabInstance: {fileID: 554667718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1134865266
 GameObject:
   m_ObjectHideFlags: 0

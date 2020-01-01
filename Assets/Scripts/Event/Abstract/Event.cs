@@ -178,7 +178,16 @@ public abstract class Event : MonoBehaviour
     }
     protected void NextEvent(string _s) //다른 맵으로
     {
-        ExitEvent();
-        EventHandler.ChangeMap(_s);
+        if (_s == "Title")
+        {
+            EventHandler.BackToTitle();
+            return;
+        }
+        else
+        {
+            ExitEvent();
+            EventHandler.ChangeMap(_s);
+        }
+       
     }
 }
