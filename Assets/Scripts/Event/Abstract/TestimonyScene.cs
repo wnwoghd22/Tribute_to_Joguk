@@ -16,6 +16,7 @@ public abstract class TestimonyScene : Event
     [SerializeField]
     protected Dialog backToZero;
 
+    //protected abstract IEnumerator StartTestimony();
     protected abstract IEnumerator InterrogationCoroutine(int _i);
     protected abstract IEnumerator WrongAnswerCoroutine();
     protected void ExitCoroutine() => IsCoroutine = false;

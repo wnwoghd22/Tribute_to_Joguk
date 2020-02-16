@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Managers\Interface\ChoiceManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Managers\Interface\InvestigationManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Manager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\MapSelectManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\TestimonyManager.cs" />
