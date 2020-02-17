@@ -6,16 +6,26 @@ public class InvestigationManager : MonoBehaviour, Manager
 {
     [SerializeField]
     private GameObject cursor;
+    private float[] cursorPos = { 0f, 0f };
 
-    public void Enter(UI ui)
+    private UI ui;
+
+    public void Enter(UI _ui)
     {
-        SetCursor();
-        //이벤트를 비울 것.
+        ui = _ui;
+        ui.ClearEvent();
+
+        ActivateCursor(true);
+
     }
 
     public void Exit(bool _b = true)
     {
-        throw new System.NotImplementedException();
+        ActivateCursor(false);
+        if (_b == true)
+        {
+            cursorPos[0] = 0.5f; cursorPos[1] = 0.5f;
+        }
     }
 
     public void HandleInput()
@@ -24,7 +34,10 @@ public class InvestigationManager : MonoBehaviour, Manager
 
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            //이벤트가 있는가?
+            if (ui.IsEvent) //이벤트가 있는가?
+                ui.StartEvent(); //이벤트 진입
+            //else
+                //특별한 것은 없다
         }
         if(Input.GetKeyDown(KeyCode.X))
         {
@@ -57,6 +70,25 @@ public class InvestigationManager : MonoBehaviour, Manager
             viewPos.y = y;
         }
         cursor.transform.position = Camera.main.WorldToViewportPoint(viewPos);
+    }
+    float[] GetCursor()
+    {
+        Vector3 viewPos = Camera.main.ViewportToWorldPoint(cursor.transform.position);
+        float[] result = { viewPos.x, viewPos.y };
+        return result;
+    }
+    void ActivateCursor(bool _active)
+    {
+        cursor.gameObject.SetActive(_active);
+        if (_active == true)
+            SetCursor(cursorPos[0], cursorPos[1]);
+        else
+            cursorPos = GetCursor();
+    }
+
+    void Start()
+    {
+        cursor.SetActive(false);
     }
 
     // Update is called once per frame

@@ -35,7 +35,7 @@ public abstract class Event : MonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision) //조사화면에서 커서를 맞출 때.
     {
-        if (!flag && collision.gameObject.tag == "Player")
+        if (!flag && collision.gameObject.tag == "cursor")
         {
             EventHandler.GetEvent(this);
             if (!isActive)
@@ -44,7 +44,7 @@ public abstract class Event : MonoBehaviour
     }
     protected virtual void OnTriggerExit2D(Collider2D collision) //커서가 벗어날 때
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "cursor")
         {
             EventHandler.ClearEvent();
         }

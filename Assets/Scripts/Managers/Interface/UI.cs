@@ -152,7 +152,7 @@ public class UI : MonoBehaviour
         SetCutActive(false);
     }
     #region Event
-    public bool IsEvent() => @event != null;
+    public bool IsEvent => @event != null;
     public void GetEvent(Event _event) => @event = _event;
     public void ClearEvent() => @event = null;
     public void StartEvent()

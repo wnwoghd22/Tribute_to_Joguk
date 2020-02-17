@@ -21,7 +21,7 @@ public class BaseManager : MonoBehaviour, Manager
             ui.GoToInventory();
         else if (Input.GetKeyDown(KeyCode.C)) //InterAct.
         {
-            if (ui.IsEvent())
+            if (ui.IsEvent)
                 ui.StartEvent();
             else if (ui.IsMap)
                 ui.StartChangeMap();

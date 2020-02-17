@@ -77,8 +77,9 @@
     <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest4.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest5.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\TestEvent.cs" />
-    <Compile Include="Assets\Scripts\Event\Event1.cs" />
-    <Compile Include="Assets\Scripts\Event\Event2.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode2\Scene2_Start.cs" />
+    <Compile Include="Assets\Scripts\Event\Example\Event1.cs" />
+    <Compile Include="Assets\Scripts\Event\Example\Event2.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\BGMManager.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Assets\Scripts\Managers\Interface\InvestigationManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Manager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\MapSelectManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\Interface\Menu.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\TestimonyManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\Title.cs" />
     <Compile Include="Assets\Scripts\Managers\Interface\UI.cs" />
