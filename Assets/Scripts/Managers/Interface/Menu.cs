@@ -62,6 +62,7 @@ public class Menu : MonoBehaviour, Manager
                         case 0: //map
                             break;
                         case 1: //investigate
+                            ui.Investigate();
                             break;
                         case 2: //talk
                             break;

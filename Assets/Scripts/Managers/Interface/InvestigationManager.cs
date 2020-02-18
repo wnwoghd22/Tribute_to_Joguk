@@ -8,6 +8,8 @@ public class InvestigationManager : MonoBehaviour, Manager
     private GameObject cursor;
     private float[] cursorPos = { 0f, 0f };
 
+    private bool Absolute = false;
+
     private UI ui;
 
     public void Enter(UI _ui)
@@ -18,6 +20,7 @@ public class InvestigationManager : MonoBehaviour, Manager
         ActivateCursor(true);
 
     }
+    public void SetAbs(bool _abs) => Absolute = _abs;
 
     public void Exit(bool _b = true)
     {
@@ -36,11 +39,12 @@ public class InvestigationManager : MonoBehaviour, Manager
         {
             if (ui.IsEvent) //이벤트가 있는가?
                 ui.StartEvent(); //이벤트 진입
-            //else
-                //특별한 것은 없다
+            else
+                return; //특별한 것은 없다
         }
-        if(Input.GetKeyDown(KeyCode.X))
+        if(Input.GetKeyDown(KeyCode.X) & !Absolute)
         {
+            ui.PopState();
             //나가기
         }
     }

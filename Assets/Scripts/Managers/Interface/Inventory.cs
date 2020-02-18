@@ -370,7 +370,7 @@ public class Inventory : MonoBehaviour, Manager
                     if (Input.GetKeyDown(KeyCode.X) & !preventExc)
                     {
                         if (returnType == ReturnType.None | returnType == ReturnType.Objection | returnType == ReturnType.Adduce)
-                            ui.ExitInventory();
+                            ui.PopState();
                     }
                     else if (Input.GetKeyDown(KeyCode.W) & !preventExc)
                     {
@@ -522,7 +522,7 @@ public class Inventory : MonoBehaviour, Manager
                     case ReturnType.Both:
                     case ReturnType.Person:
                     case ReturnType.Clue:
-                        ui.ExitInventory();
+                        ui.PopState();
                         break;
                 }
                 //다른 장면에서의 함수를 만들 필요가 있다

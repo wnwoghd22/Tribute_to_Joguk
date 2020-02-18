@@ -16,6 +16,7 @@ public class UI : MonoBehaviour
         theCM = FindObjectOfType<ChoiceManager>();
         theDM = FindObjectOfType<DialogManager>();
         theTM = FindObjectOfType<TestimonyManager>();
+        theIM = FindObjectOfType<InvestigationManager>();
         theMenu = FindObjectOfType<Menu>();
 
         theFM = FindObjectOfType<FadeManager>();
@@ -46,6 +47,7 @@ public class UI : MonoBehaviour
     private TestimonyManager theTM;
     private ChoiceManager theCM;
     private MapSelectManager theMM;
+    private InvestigationManager theIM;
     private Inventory theIV;
     private Menu theMenu;
     //sub
@@ -85,12 +87,7 @@ public class UI : MonoBehaviour
         currentManager.Enter(this);
     }
     private Manager _stack;
-    public enum StateStack
-    {
-        BaseManager,
-        Testimony,
-        MapSelect,
-    }  //스택이 필요할까 - 인벤토리(법정기록)을 열었다 닫을 때 필요. ...할까?
+    public void PopState() => ChangeManager(_stack);
     public void SetBase() => ChangeManager(theB);
 
     // Start is called before the first frame update
@@ -249,7 +246,6 @@ public class UI : MonoBehaviour
     public int ReturnValue => theIV.ReturnValue;
     public void AddItem(Item _item) => theIV.AddItem(_item); //아이템 추가
     public void GetItem(int _itemID) => theIV.GetItem(_itemID);
-    public void ExitInventory() => ChangeManager(_stack);
     #endregion
     #region Testimony
     public void CallTestimony(int _c)
@@ -269,6 +265,14 @@ public class UI : MonoBehaviour
     #endregion
     #region Menu
     public void ActivateMenu() => ChangeManager(theMenu);
+    #endregion
+    #region investigation
+    public void Investigate(bool _abs = false) //false = 조사 장면에서 빠져나오기 가능
+    {
+        _stack = currentManager;
+        theIM.SetAbs(_abs);
+        ChangeManager(theIM);
+    }
     #endregion
     #region Title
     public void StartAsTitle() => ChangeManager(title);
