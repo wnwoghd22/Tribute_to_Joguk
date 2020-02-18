@@ -63,6 +63,12 @@ public abstract class Event : MonoBehaviour
         StartCoroutine(EventCoroutine());
     }
 
+    protected void ShowMenu()
+    {
+        ExitEvent(); //모든 이벤트 종료, 클리어
+        EventHandler.ActivateMenu();
+    }
+
     protected void StartDialogue(Dialog _d) //대사 진입.
     {
         EventHandler.StartDialogue(_d);    

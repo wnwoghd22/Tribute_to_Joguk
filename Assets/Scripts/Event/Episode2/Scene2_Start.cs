@@ -9,6 +9,7 @@ public class Scene2_Start : Event
         StartDialogue(dialogs[0]);
         yield return waitExit;
 
+        ShowMenu();
         //조사화면으로 넘어갈 것.
     }
 

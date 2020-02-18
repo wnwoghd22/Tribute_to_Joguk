@@ -369,7 +369,7 @@ public class Inventory : MonoBehaviour, Manager
                 case Activated.Tab:
                     if (Input.GetKeyDown(KeyCode.X) & !preventExc)
                     {
-                        if (returnType == ReturnType.None | returnType == ReturnType.Objection)
+                        if (returnType == ReturnType.None | returnType == ReturnType.Objection | returnType == ReturnType.Adduce)
                             ui.ExitInventory();
                     }
                     else if (Input.GetKeyDown(KeyCode.W) & !preventExc)
@@ -518,6 +518,7 @@ public class Inventory : MonoBehaviour, Manager
                     case ReturnType.Objection:
                         ui.CallObjection(ReturnValue);//이의 제기 장면으로 진입
                         break;
+                    case ReturnType.Adduce:
                     case ReturnType.Both:
                     case ReturnType.Person:
                     case ReturnType.Clue:
@@ -542,6 +543,7 @@ public class Inventory : MonoBehaviour, Manager
         {
             case ReturnType.None:
             case ReturnType.Objection:
+            case ReturnType.Adduce:
                 selectedTab = SelectedTab.Clue;
                 break;
             case ReturnType.Both:
@@ -573,6 +575,7 @@ public enum ReturnType
 {
     None, //단순 열람
     Objection, //심문 장면
+    Adduce, //탐정 파트
     Both, //둘 중 하나를 제시해야만 할 때
     Person, //사람을 제시해야만 할 때
     Clue, //증거를 제시해야만 할 때

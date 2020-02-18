@@ -11,17 +11,6 @@ public class Menu : MonoBehaviour, Manager
 
     private Animator myAnimator;
     private int index;
-    private int Index
-    {
-        get => index;
-        set
-        {
-            if (index + value > 3) index = 0;
-            else if (index + value < 0) index = 3;
-            else index += value;
-
-        }
-    }
     private enum State
     {
         menu,
@@ -42,6 +31,11 @@ public class Menu : MonoBehaviour, Manager
     public void Exit(bool _b = true)
     {
         myAnimator.SetTrigger("disappear");
+        if(_b == true)
+        {
+            index = 0;
+            state = State.menu;
+        }
     }
 
     public void HandleInput()
@@ -51,15 +45,17 @@ public class Menu : MonoBehaviour, Manager
             case State.menu:
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    Index++;
+                    if (index < 3) index++;
+                    else index = 0;
                     myAnimator.SetTrigger("button" + index);
                 }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    Index--;
+                    if (index > 0) index--;
+                    else index = 3;
                     myAnimator.SetTrigger("button" + index);
                 }
-                if (Input.GetKeyDown(KeyCode.Z))
+                else if (Input.GetKeyDown(KeyCode.Z))
                 {
                     switch (index)
                     {
@@ -70,9 +66,14 @@ public class Menu : MonoBehaviour, Manager
                         case 2: //talk
                             break;
                         case 3: //clue
-
+                            ui.GoToInventory(ReturnType.Adduce);
                             break;
                     }
+                }
+                else if(Input.GetKeyDown(KeyCode.W))
+                {
+                    index = 3;
+                    ui.GoToInventory(ReturnType.Adduce);
                 }
                 break;
             case State.talk:
@@ -86,11 +87,12 @@ public class Menu : MonoBehaviour, Manager
     {
         myAnimator = GetComponent<Animator>();
         index = 0;
+        state = State.menu;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

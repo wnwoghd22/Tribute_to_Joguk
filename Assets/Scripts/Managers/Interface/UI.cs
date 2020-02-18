@@ -16,6 +16,7 @@ public class UI : MonoBehaviour
         theCM = FindObjectOfType<ChoiceManager>();
         theDM = FindObjectOfType<DialogManager>();
         theTM = FindObjectOfType<TestimonyManager>();
+        theMenu = FindObjectOfType<Menu>();
 
         theFM = FindObjectOfType<FadeManager>();
         theIV = FindObjectOfType<Inventory>();
@@ -46,6 +47,7 @@ public class UI : MonoBehaviour
     private ChoiceManager theCM;
     private MapSelectManager theMM;
     private Inventory theIV;
+    private Menu theMenu;
     //sub
     private FadeManager theFM;
     private AudioManager theAM;
@@ -264,6 +266,9 @@ public class UI : MonoBehaviour
     {
         Player.ChangeWitness(_a);
     }
+    #endregion
+    #region Menu
+    public void ActivateMenu() => ChangeManager(theMenu);
     #endregion
     #region Title
     public void StartAsTitle() => ChangeManager(title);
