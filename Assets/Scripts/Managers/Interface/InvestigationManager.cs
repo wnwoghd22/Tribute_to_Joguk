@@ -56,15 +56,16 @@ public class InvestigationManager : MonoBehaviour, Manager
 
         Vector3 position = cursor.transform.position;
         position += move * 3 * Time.deltaTime;
+        //cursor.transform.position = position;
 
-        Vector3 viewPos = Camera.main.ViewportToWorldPoint(position);
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(position);
         {
             if (viewPos.x < 0f) viewPos.x = 0f;
             if (viewPos.x > 1f) viewPos.x = 1f;
             if (viewPos.y < 0f) viewPos.y = 0f;
             if (viewPos.y > 1f) viewPos.y = 1f;
         }
-        cursor.transform.position = Camera.main.WorldToViewportPoint(viewPos);
+        cursor.transform.position = Camera.main.ViewportToWorldPoint(viewPos);
     }
     void SetCursor(float x = 0.5f, float y = 0.5f)
     {
