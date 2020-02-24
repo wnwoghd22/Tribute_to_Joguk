@@ -18,7 +18,8 @@ public abstract class Event : MonoBehaviour
 
     private UI EventHandler;
     protected bool flag = false;
-    protected bool isActive = false; //false = start event automatically, 조사용 이벤트인가? 자동 이벤트인가?
+    protected bool isActive = false; //false = start event automatically
+    protected bool isClue = false; //조사화면용 이벤트인가?
 
     private bool IsExcuting => EventHandler.IsExcuting;
     protected int Answer => EventHandler.Result;
@@ -27,19 +28,22 @@ public abstract class Event : MonoBehaviour
     protected WaitForSeconds waitTime = new WaitForSeconds(1f);
     protected WaitUntil waitExit;
 
+    private void Awake()
+    {
+        EventHandler = FindObjectOfType<UI>();
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        EventHandler = FindObjectOfType<UI>();
+        //EventHandler = FindObjectOfType<UI>();
         waitExit = new WaitUntil(() => !EventHandler.IsExcuting);
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision) //조사화면에서 커서를 맞출 때.
     {
-        if (!flag && collision.gameObject.tag == "cursor")
+        if (isClue && collision.gameObject.tag == "cursor")
         {
             EventHandler.GetEvent(this);
-            if (!isActive)
-                EventHandler.StartEvent();
         }       
     }
     protected virtual void OnTriggerExit2D(Collider2D collision) //커서가 벗어날 때

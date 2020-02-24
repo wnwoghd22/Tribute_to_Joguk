@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Event\Episode1\ObjectionTest5.cs" />
     <Compile Include="Assets\Scripts\Event\Episode1\TestEvent.cs" />
     <Compile Include="Assets\Scripts\Event\Episode2\Scene2_Start.cs" />
+    <Compile Include="Assets\Scripts\Event\Episode2\TestClue.cs" />
     <Compile Include="Assets\Scripts\Event\Example\Event1.cs" />
     <Compile Include="Assets\Scripts\Event\Example\Event2.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
