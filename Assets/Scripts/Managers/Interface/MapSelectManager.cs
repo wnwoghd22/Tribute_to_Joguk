@@ -8,74 +8,95 @@ public class MapSelectManager : MonoBehaviour, Manager
 {
     private UI ui;
 
-    private string[] mapList;
     [SerializeField]
-    private GameObject[] mapShape;
+    private GameObject[] buttons;
+    [SerializeField]
+    private Text[] mapName;
+    [SerializeField]
+    private Image mapImage;
+    private List<Map> mapList;
 
     private int count;
-    private int result;
-    private int current;
+    public string result { get; private set; }
 
-    public Text text;
-
-    public Animator map;
+    private Animator myAnimator;
 
     //public bool choicing;
     private bool keyInput;
 
-    #region Singlton
-
-    public static MapSelectManager instance;
-
-    private void Awake()
+    public void Enter(UI _ui)
     {
-        if (instance == null)
+        ui = _ui;
+        mapList.AddRange(ui.GetMap());
+
+        ShowChoice();
+    }
+    public void Exit(bool _b = true)
+    {
+        count = 0;
+        for (int i = 0; i < mapList.Count; i++)
         {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
+            buttons[i].SetActive(false);
+            mapName[i].text = "";
         }
-        else
+        mapList.Clear();
+        result = "";
+        myAnimator.SetTrigger("disappear");
+        keyInput = false;
+        //choicing = false;
+        StopAllCoroutines();
+    }
+    public void HandleInput()
+    {
+        if (keyInput)
         {
-            Destroy(this.gameObject);
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if (count > 0)
+                    count--;
+                else
+                    count = mapList.Count;
+                Selection();
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (count < mapList.Count)
+                    count++;
+                else
+                    count = 0;
+                Selection();
+            }
+            else if (Input.GetKeyDown(KeyCode.X))
+            {
+                ui.PopState();
+            }
+            else if (Input.GetKeyDown(KeyCode.Z))
+            {
+                result = mapList[count].sceneName;
+                ui.SetBase();
+                ui.ChangeMap(result);
+            }
         }
     }
-    #endregion Singlton
 
     // Start is called before the first frame update
     void Start()
     {
         ui = FindObjectOfType<UI>();
-
-        //text.text = "";
-        //for ( int i = 0; i < mapList.Length; i++)
-        //{
-        //    mapShape[i].SetActive(false);
-        //}
-        //keyInput = false;
-    }
-
-    void Update()
-    {
-        //Debug.Log(mapList[result]);
+        myAnimator = GetComponent<Animator>();
+        mapList = new List<Map>();
     }
 
     public void ShowChoice()
     {
         //choicing = true;
-        result = 0;
-        for (int i = 0; i < mapList.Length; i++)
-        {
-            if (ui.PlayerSceneName== mapList[i])
-            {
-                result = i;
-                current = i;
-            }               
-            count = i;
-            mapShape[i].SetActive(true);
-            text.text = mapList[result];
+        count = 0;
+        for (int i = 0; i < mapList.Count; i++)
+        {  
+            buttons[i].SetActive(true);
+            mapName[i].text = mapList[i].mapName;
         }
-
-        map.SetBool("Appear", true);
+        myAnimator.SetTrigger("appear");
         StartCoroutine(ChoiceCoroutine());
         Selection();       
     }
@@ -89,70 +110,13 @@ public class MapSelectManager : MonoBehaviour, Manager
     
     public void Selection()
     {
-        Color color = mapShape[0].GetComponent<Image>().color;
+        Color color = buttons[0].GetComponent<Image>().color;
         color.a = 0.5f;
         for (int i = 0; i <= count; i++)
         {
-            mapShape[i].GetComponent<Image>().color = color;
+            buttons[i].GetComponent<Image>().color = color;
         }
         color.a = 1f;
-        mapShape[result].GetComponent<Image>().color = color;
-    }
-    public string GetResult()
-    {
-        return mapList[result];
-    }
-    
-    public void HandleInput()
-    {
-        if (keyInput)
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                if (result > 0)
-                    result--;
-                else
-                    result = count;
-                text.text = mapList[result];
-                Selection();
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                if (result < count)
-                    result++;
-                else
-                    result = 0;
-                text.text = mapList[result];
-                Selection();
-            }
-            else if (Input.GetKeyDown(KeyCode.Z))
-            {
-                ui.SetBase();
-            }
-            else if (Input.GetKeyDown(KeyCode.C))
-            {
-                result = current;
-                ui.SetBase();
-            }
-        }
-    }
-    public void Enter(UI _ui)
-    {
-        ui = _ui;
-
-        ShowChoice();
-    }
-    public void Exit(bool _b = true)
-    {
-        count = 0;
-        //result = 0;
-        map.SetBool("Appear", false);
-        for (int i = 0; i < mapList.Length; i++)
-        {
-            mapShape[i].SetActive(false);
-        }
-        keyInput = false;
-        //choicing = false;
-        StopAllCoroutines();
+        buttons[count].GetComponent<Image>().color = color;
     }
 }

@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour
         EmotionTrigger.ResetTrigger("embarrassed");
         EmotionTrigger.ResetTrigger("shocked");
     }
+
     public void ChangeWitness(RuntimeAnimatorController _a)
     {
         Witness.GetComponent<Animator>().runtimeAnimatorController = _a;

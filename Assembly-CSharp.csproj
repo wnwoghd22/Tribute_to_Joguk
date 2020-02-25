@@ -102,11 +102,11 @@
     <Compile Include="Assets\Scripts\Managers\Interface\UI.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Structure\ChangeMap.cs" />
     <Compile Include="Assets\Scripts\Structure\Choice.cs" />
     <Compile Include="Assets\Scripts\Structure\Dialog.cs" />
     <Compile Include="Assets\Scripts\Structure\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Structure\Item.cs" />
+    <Compile Include="Assets\Scripts\Structure\Map.cs" />
     <Compile Include="Assets\Scripts\Structure\Testimony.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unji_saiban/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -60,6 +60,7 @@ public class Menu : MonoBehaviour, Manager
                     switch (index)
                     {
                         case 0: //map
+                            ui.StartMapSelect();
                             break;
                         case 1: //investigate
                             ui.Investigate();

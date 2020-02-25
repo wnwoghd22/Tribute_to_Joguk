@@ -7,7 +7,7 @@ public class ChoiceManager : MonoBehaviour, Manager
 {    
     #region variables
     private UI ui;
-    private BaseManager theB;
+    //private BaseManager theB;
     //private AudioManager theAM;
     private string question;
     private List<string> answerList;

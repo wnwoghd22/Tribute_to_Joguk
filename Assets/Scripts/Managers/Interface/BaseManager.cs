@@ -17,16 +17,7 @@ public class BaseManager : MonoBehaviour, Manager
     }
     public void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-            ui.GoToInventory();
-        else if (Input.GetKeyDown(KeyCode.C)) //InterAct.
-        {
-            if (ui.IsEvent)
-                ui.StartEvent();
-            else if (ui.IsMap)
-                ui.StartChangeMap();
-        }
-        return;
+        
     }
 
     // Start is called before the first frame update

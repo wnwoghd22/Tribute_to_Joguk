@@ -63,7 +63,7 @@ public class UI : MonoBehaviour
     #endregion
     private PlayerController Player;
     private Event @event;
-    private ChangeMap @map;
+    private List<Map> @map;
 
     private Dictionary<who, string> WhoDict
         = new Dictionary<who, string>
@@ -94,8 +94,8 @@ public class UI : MonoBehaviour
     void Start()
     {
         _stack = new Stack<Manager>();
+        @map = new List<Map>();
         @event = null;
-        @map = null;
     }
 
     // Update is called once per frame
@@ -104,14 +104,14 @@ public class UI : MonoBehaviour
         currentManager.HandleInput();
     }
 
-    public void SetHUDactive(bool _b)
+    public void SetHUDactive(bool _b) //체력 표시. 추후 제작
     {
 
     }
 
     public void Move(bool _dir, int _c = 1)
     {
-        Player.Move(_dir, _c);
+        Player.Move(_dir, _c); //필요한가?
     }
     public void Effect(effect _e = effect.None) //패러미터를 두 개 받는 걸로 할까
     {
@@ -133,18 +133,9 @@ public class UI : MonoBehaviour
                 break;
         }
     }
-    public void SetCharacter(who _c = who.None)
-    {
-        Player.SetCharacterActive(_c);
-    }
-    public void SetEmotionTrigger(emotion _e = emotion.normal)
-    {
-        Player.SetEmotionTrigger(_e);
-    }
-    public void SetEmotionTrigger(string _parameter)
-    {
-        Player.SetEmotionTrigger(_parameter);
-    }
+    public void SetCharacter(who _c = who.None) => Player.SetCharacterActive(_c);
+    public void SetEmotionTrigger(emotion _e = emotion.normal) => Player.SetEmotionTrigger(_e);
+    public void SetEmotionTrigger(string _parameter) => Player.SetEmotionTrigger(_parameter);
     public void ClearAll()
     {
         SetCharacter(who.None);
@@ -213,9 +204,9 @@ public class UI : MonoBehaviour
     #endregion
     #region Map
     public bool IsMap => @map != null;
-    public void GetMap(ChangeMap _map) => @map = _map;
-    public void ClearMap() => @map = null;
-    public void StartChangeMap() => @map.Excute(); //player stop, start event
+    public void SetMap(Map[] _map) => @map.AddRange(_map);
+    public List<Map> GetMap() => map;
+    public void ClearMap() => @map.Clear();
     public void ChangeMap(string _name)
     {
         FadeOut();
@@ -225,13 +216,12 @@ public class UI : MonoBehaviour
 
         SceneManager.LoadScene(PlayerSceneName);
     }
-    public void ExitChangeMap()
+    public void StartMapSelect()
     {
-
+        _stack.Push(currentManager);
+        ChangeManager(theMM);
     }
-    public void StartMapSelect() => ChangeManager(theMM);
     public string PlayerSceneName { get => Player.SceneName; private set => Player.SceneName = value; }
-    public string GetSelection() => theMM.GetResult();
     #endregion
     #region Inventory
     public void GoToInventory(ReturnType type = ReturnType.None)

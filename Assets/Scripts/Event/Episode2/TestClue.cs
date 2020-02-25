@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TestClue : Event
 {
+    [SerializeField]
+    Map[] maps;
+
     protected override IEnumerator EventCoroutine()
     {
         StartDialogue(dialogs[0]);
@@ -17,6 +20,7 @@ public class TestClue : Event
     {
         base.Start();
         isClue = true;
+        UI.instance.SetMap(maps);
     }
 
     // Update is called once per frame

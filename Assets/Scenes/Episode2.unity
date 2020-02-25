@@ -260,6 +260,13 @@ MonoBehaviour:
   choices: []
   cutImages: []
   nextEvent: {fileID: 0}
+  maps:
+  - mapName: "\uD0C0\uC774\uD2C0\uB85C"
+    sceneName: title
+    mapImage: {fileID: 0}
+  - mapName: "\uBC95\uC815"
+    sceneName: Episode1
+    mapImage: {fileID: 0}
 --- !u!61 &638093973
 BoxCollider2D:
   m_ObjectHideFlags: 0
