@@ -38,7 +38,7 @@ public class InvestigationManager : MonoBehaviour, Manager
         if(Input.GetKeyDown(KeyCode.Z))
         {
             if (ui.IsEvent) //이벤트가 있는가?
-                ui.StartEvent(); //이벤트 진입
+                ui.Search(); //이벤트 진입
             else
                 return; //특별한 것은 없다
         }

@@ -86,13 +86,14 @@ public class UI : MonoBehaviour
         currentManager = _manager;
         currentManager.Enter(this);
     }
-    private Manager _stack;
-    public void PopState() => ChangeManager(_stack);
+    private Stack<Manager> _stack;
+    public void PopState() => ChangeManager(_stack.Pop());
     public void SetBase() => ChangeManager(theB);
 
     // Start is called before the first frame update
     void Start()
     {
+        _stack = new Stack<Manager>();
         @event = null;
         @map = null;
     }
@@ -159,10 +160,13 @@ public class UI : MonoBehaviour
         SetCharacter();
         @event.Excute();
     }//player stop, start event
-    public void ExitEvent()
+    public void ExitEvent(bool _b = true) //false - stack
     {
         ClearEvent();
-        SetBase();
+        if (_b == true)
+            SetBase();
+        else
+            PopState();
     }
     public void StartDialogue(Dialog _log, bool exit = true) //exit = true - 이벤트를 완전히 종료
     {
@@ -232,13 +236,13 @@ public class UI : MonoBehaviour
     #region Inventory
     public void GoToInventory(ReturnType type = ReturnType.None)
     {
-        _stack = currentManager;
+        _stack.Push(currentManager);
         theIV.SetType(type);
         ChangeManager(theIV, false); //상태만 전이
     }
     public void Adduce(Choice _c,ReturnType type = ReturnType.Both)
     {
-        _stack = currentManager;
+        //_stack.Push(currentManager);
         theIV.SetType(type);
         ChangeManager(theIV);
         theIV.Adduce(_c);
@@ -269,9 +273,14 @@ public class UI : MonoBehaviour
     #region investigation
     public void Investigate(bool _abs = false) //false = 조사 장면에서 빠져나오기 가능
     {
-        _stack = currentManager;
+        _stack.Push(currentManager);
         theIM.SetAbs(_abs);
         ChangeManager(theIM);
+    }
+    public void Search()
+    {
+        _stack.Push(currentManager);
+        StartEvent();
     }
     #endregion
     #region Title

@@ -27,16 +27,11 @@ public abstract class Event : MonoBehaviour
     
     protected WaitForSeconds waitTime = new WaitForSeconds(1f);
     protected WaitUntil waitExit;
-
-    private void Awake()
-    {
-        EventHandler = FindObjectOfType<UI>();
-    }
-
+    
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        //EventHandler = FindObjectOfType<UI>();
+        EventHandler = FindObjectOfType<UI>();
         waitExit = new WaitUntil(() => !EventHandler.IsExcuting);
     }
     protected virtual void OnTriggerEnter2D(Collider2D collision) //조사화면에서 커서를 맞출 때.
@@ -177,10 +172,10 @@ public abstract class Event : MonoBehaviour
         EventHandler.GetItem(_itemID);
     }
    
-    protected void ExitEvent()
+    protected void ExitEvent(bool _b = true) //단순 이벤트 종료. 증거 수집 등 false - stack.Pop()
     {
-        EventHandler.ExitEvent();
-    } //단순 이벤트 종료. 증거 수집 등
+        EventHandler.ExitEvent(_b);
+    } 
     protected void NextEvent(Event _e) //다음 이벤트로
     {
         ExitEvent();

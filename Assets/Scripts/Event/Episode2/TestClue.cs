@@ -9,12 +9,13 @@ public class TestClue : Event
         StartDialogue(dialogs[0]);
         yield return waitExit;
 
-        ExitEvent();
+        ExitEvent(false);
     }
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
         isClue = true;
     }
 
