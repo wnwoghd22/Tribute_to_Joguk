@@ -34,7 +34,7 @@ public class MapSelectManager : MonoBehaviour, Manager
     public void Exit(bool _b = true)
     {
         count = 0;
-        for (int i = 0; i < mapList.Count; i++)
+        for (int i = 0; i < 4; i++)
         {
             buttons[i].SetActive(false);
             mapName[i].text = "";
@@ -55,12 +55,12 @@ public class MapSelectManager : MonoBehaviour, Manager
                 if (count > 0)
                     count--;
                 else
-                    count = mapList.Count;
+                    count = mapList.Count - 1;
                 Selection();
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (count < mapList.Count)
+                if (count < mapList.Count - 1)
                     count++;
                 else
                     count = 0;
@@ -73,8 +73,9 @@ public class MapSelectManager : MonoBehaviour, Manager
             else if (Input.GetKeyDown(KeyCode.Z))
             {
                 result = mapList[count].sceneName;
-                ui.SetBase();
                 ui.ChangeMap(result);
+
+                ui.SetBase();
             }
         }
     }
@@ -110,13 +111,14 @@ public class MapSelectManager : MonoBehaviour, Manager
     
     public void Selection()
     {
-        Color color = buttons[0].GetComponent<Image>().color;
+        Color color = buttons[0].GetComponent<SpriteRenderer>().color;
         color.a = 0.5f;
-        for (int i = 0; i <= count; i++)
+        for (int i = 0; i <= mapList.Count; i++)
         {
-            buttons[i].GetComponent<Image>().color = color;
+            buttons[i].GetComponent<SpriteRenderer>().color = color;
         }
         color.a = 1f;
-        buttons[count].GetComponent<Image>().color = color;
+        buttons[count].GetComponent<SpriteRenderer>().color = color;
+        mapImage.sprite = mapList[count].mapImage;
     }
 }

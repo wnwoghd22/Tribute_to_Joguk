@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestClue : Event
+public class TestClue : Clue
 {
-    [SerializeField]
-    Map[] maps;
+    protected override void Start()
+    {
+        base.Start();
+        PosX = 0f;
+        PosY = 0f;
+        SetPos(PosX, PosY);
+    }
 
     protected override IEnumerator EventCoroutine()
     {
@@ -13,19 +18,5 @@ public class TestClue : Event
         yield return waitExit;
 
         ExitEvent(false);
-    }
-
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
-        isClue = true;
-        UI.instance.SetMap(maps);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

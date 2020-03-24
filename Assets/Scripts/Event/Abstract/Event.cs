@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class Event : MonoBehaviour
 {
+    [SerializeField]
+    public string EventName { get; protected set; }
     [SerializeField][TextArea(1,2)]
     protected string[] texts;
     [SerializeField]

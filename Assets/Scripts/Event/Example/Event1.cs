@@ -13,7 +13,8 @@ public class Event1 : Event
     }
 
     protected override IEnumerator EventCoroutine()
-    {       
+    {
+        EventName = "테스트";
         StartDialogue(dialogue1);
 
         yield return waitTime;

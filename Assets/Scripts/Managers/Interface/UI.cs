@@ -190,15 +190,8 @@ public class UI : MonoBehaviour
         if (_who != who.None)
             theCut.SetTrigger(WhoDict[_who]);
     }
-    public void ChangeCut(Sprite _sprite)
-    {
-        theCut.ChangeCut(_sprite);
-    }
-    
-    public void SetCutActive(bool _b)
-    {
-        theCut.SetCutActive(_b);
-    }
+    public void ChangeCut(Sprite _sprite) => theCut.ChangeCut(_sprite);
+    public void SetCutActive(bool _b) => theCut.SetCutActive(_b);
     public bool IsExcuting => (object)currentManager != theB;
     public int Result => theCM.Result;
     #endregion
@@ -258,6 +251,14 @@ public class UI : MonoBehaviour
     }
     #endregion
     #region Menu
+    public void SetScene(Event[] _talk, Event _clue, Map[] _maps, Sprite _sprite)
+    {
+        theMenu.SetDialogues(_talk);
+        theMenu.SetAdduce(_clue);
+        @map.AddRange(_maps);
+        SetCutActive(true);
+        ChangeCut(_sprite);
+    }
     public void ActivateMenu() => ChangeManager(theMenu);
     #endregion
     #region investigation
